@@ -120,8 +120,6 @@ html {
 }
 
 
-Step 3) Add JavaScript:
-Example
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -255,9 +253,8 @@ margin-bottom: 30px;
 
 
  /* icons */
-.bootstrap > img {
-  height: 10px;
-}
+#bootstrap 
+
 .icon {
   text-align: center;
 
@@ -273,8 +270,8 @@ margin-bottom: 30px;
   text-align: center;
   font-size: 5em;
   padding-bottom: 1rem;
-  color: white;
-  background-color: #1B242F;
+  color: #E31B6D;
+
    border-radius: 25px;
    padding: 20px;
 }
@@ -289,8 +286,14 @@ margin-bottom: 30px;
   text-align: center;
   padding-bottom: 1rem;
   color: #616161;
+
 }
- 
+.icon1 h3 {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #616161;
+
+}
 
 /* end icon */
 
@@ -307,7 +310,7 @@ margin-bottom: 30px;
   }
 }
 
-/* projects */
+/* SKILLS*/
 .floatwrapper {
   display: block;
   clear: both;
@@ -345,6 +348,8 @@ margin-bottom: 30px;
 .flex-container2 > div p {
   text-align: center;
 }
+
+
 
 .wrapper2 {
   background-color: #f5f5f5;
