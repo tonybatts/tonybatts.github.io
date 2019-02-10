@@ -20,9 +20,7 @@ body h1 {
   color: #444649;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 
 
@@ -141,8 +139,8 @@ function myFunction() {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 20vh;
+.sticky + .headings {
+  padding-top: 100px;
 }
 
 /* HERO IMAGE */
@@ -211,6 +209,10 @@ function myFunction() {
 
 
 /* ABOUT SECTION */
+#about {
+  padding-top: 2em;
+}
+
 .wrapper1 {
   padding-bottom: 5em;
   padding-top: 2.2em;
@@ -311,23 +313,7 @@ margin-bottom: 30px;
 }
 
 /* SKILLS*/
-.floatwrapper {
-  display: block;
-  clear: both;
-}
-.floatcontainerright {
-  float: ;
-  clear: both;
-}
-.floatcontainer {
-  float: left;
-  clear: both;
-}
 
-.skills ul {
-  list-style: square;
-  padding-left: 3em;
-}
 
 .flex-container2 {
   display: flex;
@@ -587,8 +573,6 @@ background-color: #04C2C9;
     padding-right: 0px;
   }
 }
-
-
 
 
 @media screen and (max-width: 600px) {
