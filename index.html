@@ -12,7 +12,7 @@
 </head>
 <body>
  
-  <!–– HERO IMAGE -->
+  <!-- HERO IMAGE -->
   <div class="heroimage" id="home">
    <img src="images/heroimage.png" alt="Hero Image">
    <div class="textcenter">
@@ -24,7 +24,7 @@
    </div>
   </div>
   <div class="mainwrapper">
-  <!–– DROPDOWN NAV -->
+  <!-- DROPDOWN NAV -->
 <div id="activeButton">
 <div class="scrollsticky" id="scroll">  
 <div class="topnav" id="myTopnav">
@@ -44,7 +44,7 @@
 
 
 
-<!–– ABOUT SECTION -->
+<!-- ABOUT SECTION -->
  <div class="headings" id="about">
   <h1>ABOUT</h1>
  </div>
@@ -85,10 +85,10 @@
     Once I get into something, I REALLY get into it. 
     </p>
   </div>
- </div>
  </section>
+</div>
 
-<!–– SKILLS SECTION -->
+<!-- SKILLS SECTION -->
 
 <div class="wrapper2" id="projects">
   <div class="headings">
@@ -146,35 +146,35 @@
   </section> 
 </div>
 
-  <!–– GALLERY-->
+  <!-- GALLERY -->
 <div class="wrapper4" id="gallery">
   <div class="headingtravel">
     <h1>ADVENTURES</h1>  
   </div>
   <div class="gallery">
     <figure class="gallery__item gallery__item--1">
-      <img src="images/GoldenGateBridge.jpg" alt="Golden Gate" class="gallery__img" alt="Image 2">
+      <img src="images/GoldenGateBridge.jpg" alt="Golden Gate" class="gallery__img">
     </figure>
     <figure class="gallery__item gallery__item--2">
-      <img src="images/IMG_4454.JPG" alt="Adventure" class="gallery__img" alt="Image 2">
+      <img src="images/IMG_4454.JPG" alt="Adventure" class="gallery__img">
     </figure>
     <figure class="gallery__item gallery__item--3">
-      <img src="images/newyork.jpg" alt="New York" class="gallery__img" alt="Image 3">
+      <img src="images/newyork.jpg" alt="New York" class="gallery__img">
     </figure>
     <figure class="gallery__item gallery__item--4">
-      <img src="images/music3.jpg" alt="Circa Survive" class="gallery__img" alt="Image 4">
+      <img src="images/music3.jpg" alt="Circa Survive" class="gallery__img">
     </figure>
     <figure class="gallery__item gallery__item--5">
-      <img src="images/newyork4.jpg" alt="New York" class="gallery__img" alt="Image 5">
+      <img src="images/newyork4.jpg" alt="New York" class="gallery__img">
     </figure>
     <figure class="gallery__item gallery__item--6">
-      <img src="images/pyramid.jpg" alt="Pyramid" class="gallery__img" alt="Image 6">
+      <img src="images/pyramid.jpg" alt="Pyramid" class="gallery__img">
     </figure>
   </div>
 </div>
 
 <!-- MOBILE GALLERY -->
-<div class="header" id="myHeader">
+<div class="header" id="buttonActive">
   <button class="btn" onclick="one()">1</button>
   <button class="btn active" onclick="two()">2</button>
 </div> 
@@ -198,7 +198,7 @@
 </div>
 </div>
 
-<!–– CONTACT-->
+<!-- CONTACT -->
   <div class="wrapper3" id="contact">
     <div class="headings">
       <h1>CONTACT</h1>
@@ -208,7 +208,7 @@
     </div> 
   </div>  
 
-<!–– FOOTER-->
+<!-- FOOTER -->
  
 <footer>
  <div class="backtotop">
@@ -224,7 +224,7 @@
  </p>
 
 
-<!––RESPONSIVE DROPDOWN NAV-->
+<!-- RESPONSIVE DROPDOWN NAV -->
 <script>
 function myFunction1() {
   var x = document.getElementById("myTopnav");
@@ -236,7 +236,7 @@ function myFunction1() {
 }
 </script>
 
-<!––STICKY SCROLL NAV-->
+<!-- STICKY SCROLL NAV -->
 <script>
 window.onscroll = function() {myFunction()};
 
@@ -252,7 +252,7 @@ function myFunction() {
 }
 </script>
 
-<!––ACTIVE NAV-->
+<!-- ACTIVE NAV -->
 <script>
 // Get the container element
 var btnContainer = document.getElementById("activeButton");
@@ -270,7 +270,7 @@ for (var i = 0; i < btns.length; i++) {
 }
 </script>
 
-<!––MOBILEGALLERY-->
+<!-- MOBILE GALLERY -->
 <script>
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
@@ -297,7 +297,7 @@ function two() {
 
 
 // Add active class to the current button (highlight it)
-var header = document.getElementById("myHeader");
+var header = document.getElementById("buttonActive");
 var btns = header.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
@@ -336,6 +336,6 @@ $(document).ready(function(){
 });
 </script>
 </footer>
-</div>
+
 </body>
 </html>
