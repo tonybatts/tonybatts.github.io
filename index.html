@@ -2,18 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <title>Tony Batts</title>
   <meta name="description" content="Portfolio">
-  <meta name="keywords" content="HTML,CSS,XML,JavaScript, Tony Batts">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript, Portfolio, Tony Batts">
   <meta name="author" content="Tony Batts">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> 
 </head>
 <body>
-
-
-  
  
   <!–– HERO IMAGE -->
   <div class="heroimage" id="home">
@@ -35,7 +32,7 @@
   <a href="#about" class="btns">ABOUT</a>
   <a href="#projects" class="btns">SKILLS</a>
   <div class="dropdown">
-    <button class="dropbtn">Nothing 
+    <button class="dropbtn">Nothing
     </button>
   </div> 
   <a href="#contact" class="btns">CONTACT</a>
@@ -48,9 +45,9 @@
 
 
 <!–– ABOUT SECTION -->
-<div class="wrapper1" id="about">
- <div class="headings">
+ <div class="headings" id="about">
   <h1>ABOUT</h1>
+ </div>
   <section class="flex-container">
   <div>
     <div class="icon">
@@ -86,10 +83,10 @@
     </div>
     <p>
     Once I get into something, I REALLY get into it. 
-    </div>
+    </p>
+  </div>
  </div>
- </div>
- 
+ </section>
 
 <!–– SKILLS SECTION -->
 
@@ -122,7 +119,7 @@
      <h3>Bootstrap</h3>
     </div>
   </div>
-    <div>
+  <div>
     <div class="icon1">
      <i class="fab fa-git-square" aria-hidden="true"></i>
      <h3>Git</h3>
@@ -145,9 +142,9 @@
      <i class="fas fa-mouse-pointer" aria-hidden="true"></i>
      <h3>InDesign</h3>
     </div> 
-  </div> 
   </div>
-
+  </section> 
+</div>
 
   <!–– GALLERY-->
 <div class="wrapper4" id="gallery">
@@ -198,8 +195,9 @@
     <img src="images/anthony.jpg" alt="Anthony Green" style="width:100%">
     <img src="images/music3.jpg" alt="Circa Survive" style="width:100%">
   </div>  
-  </div>
 </div>
+</div>
+
 <!–– CONTACT-->
   <div class="wrapper3" id="contact">
     <div class="headings">
@@ -208,14 +206,13 @@
     <div id="contactinfo">
       <p>Have a question or want to work together?</p>
     </div> 
-  </div>
-  
-  
+  </div>  
+
 <!–– FOOTER-->
  
 <footer>
  <div class="backtotop">
-  <a href="#top"><i class="fas fa-angle-double-up" aria-hidden="true"></i></a>
+  <a href="#home"><i class="fas fa-angle-double-up" aria-hidden="true"></i></a>
  </div>
  <div class="media">
   <a href="#"><i class="fab fa-git-square" aria-hidden="true"></i></a>
@@ -309,6 +306,34 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
 </script>
 </footer>
 </div>
