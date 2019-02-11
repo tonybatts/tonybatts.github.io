@@ -730,8 +730,10 @@ background-color: #04C2C9;
 }
 
 @media screen and (max-width: 1000px) {
-  .projectwords h3, p {
-   text-align: center;
+  .wrapper3 p {
+  
+   padding-left: 0pc;
+   padding-right: 0pc;
   }
 }
 
