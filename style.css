@@ -21,27 +21,6 @@ body h1 {
 }
 
 
-#buttonpadding {
-  padding-top: 2em;
-}
-a.button1 {
-  display: inline-block;
-  padding: 0.35em 1.2em;
-  border: 0.1em solid #FFFFFF;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: #FFFFFF;
-  text-align: center;
-  transition: all 0.5s;
-}
-
-a.button1:hover {
-  color: #E31B6D;
-  background-color: #f5f5f5;
-}
-
 
 
 /*DROPDOWN NAV*/
@@ -121,7 +100,8 @@ a.button1:hover {
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
+ 
+  transition: all 0.5s;
   color: white;
 }
 
