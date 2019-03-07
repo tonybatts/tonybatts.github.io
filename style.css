@@ -551,21 +551,10 @@ form {
   padding-bottom: 4em;
 }
 input[type=text], select, textarea {
+  border-width: 0px;
   cursor: pointer;
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */  
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-input[type=email], select, textarea {
-  cursor: pointer;
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */  
-  border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
@@ -573,13 +562,27 @@ input[type=email], select, textarea {
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
+
+input[type=email], select, textarea {
+
+  border-width: 0px;
+  cursor: pointer;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
   cursor: pointer;
   display: inline-block;
   background-color: #252934;
   padding: 0.35em 1.2em;
-  border: 0.1em solid #FFFFFF;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.12em;
   box-sizing: border-box;
@@ -595,13 +598,16 @@ input[type=submit]:hover {
   background-color: #02C2C7;
 }
 
+
+
 /* Add a background color and some padding around the form */
 .containerform {
   display: flex;
   justify-content: center;
-  border-radius: 5px;
   background-color: #252934;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 22%;
+  padding-right: 22%;
 }
 
 /* FOOTER */
@@ -785,7 +791,14 @@ background-color: #04C2C9;
     text-align: left;
   }
 }
+@media screen and (max-width: 600px) {
+  .containerform {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+  }
 
+}
 @media screen and (max-width: 600px) {
   .dropdown {
     display: none;
