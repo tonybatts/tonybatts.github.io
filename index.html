@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
   <title>Tony Batts</title>
   <meta name="description" content="Portfolio">
-  <meta name="keywords" content="HTML,CSS,XML,JavaScript, Portfolio, Tony Batts">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript, Portfolio, Tony Batts, Web Developer, webdev">
   <meta name="author" content="Tony Batts">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -229,6 +229,17 @@
     </div> 
   </div>  
 
+  <div class="containerform" id="contact-form">
+  <form action="https://formspree.io/tonybatts@gmail.com" method="POST">
+
+    <input placeholder="Name" type="text" name="name" required="">
+    <input placeholder="Enter email" type="email" name="email" required="">
+    <textarea placeholder="Your Message" type="text" name="message"></textarea>
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
 <!-- FOOTER -->
  
 <footer>
@@ -355,6 +366,27 @@ $(document).ready(function(){
       });
     } // End if
   });
+});
+</script>
+<script>
+    $('#contact-form').submit(function(e) {
+    e.preventDefault();
+
+      $.ajax({
+          url: "https://formspree.io/tonybatts@gmail.com",
+          method: "POST",
+          data: { message: $('form').serialize() },
+          dataType: "json"
+      }).done(function(response) {
+          $('#success').addClass('expand');
+          $('#contact-form').find("input[type=text], input[type=email], textarea").val("");
+      });
+  });
+
+  $('#close').click(function() {
+    $('#success').removeClass('expand');
+  })
+
 });
 </script>
 </footer>
