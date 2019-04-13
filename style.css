@@ -1,4 +1,4 @@
-* {box-sizing: border-box;
+ * {box-sizing: border-box;
 margin: 0;
 padding: 0;
 }
@@ -346,6 +346,31 @@ margin-bottom: 30px;
   
 }
 /*PROJECTS*/
+
+#buttonpadding2 {
+  padding-top: 2em;
+}
+a.button2 {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  font-size: .8em;
+  border: 0.1em solid #616161;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #616161;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+a.button2:hover {
+  color: #04C2C9;
+  border-color: #04C2C9;
+ 
+}
+
+
 .wrapper4 {
   padding-top: 2em;
 }
@@ -355,8 +380,22 @@ margin-bottom: 30px;
 .flex-container3 > div {
   display: flex;
   flex-wrap: wrap;
+  margin: -10px;
 
 }
+.flex-container4 > div {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.flex-container4 {
+  margin: -10px;
+}
+.projectwords {
+  padding-bottom: 2em;
+}
+
 .projectwords h3, p {
   color: #616161;
   text-align: left;
@@ -821,12 +860,23 @@ background-color: #04C2C9;
 
 
 @media screen and (max-width: 1000px) {
-  .projectwords h3, p {
+  .projectwords h3, p, a {
    text-align: center;
    padding-left: 3em;
    padding-right: 3em;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .projectwords > div, a {
+   text-align: center;
+   padding-left: 3em;
+   padding-right: 3em;
+  }
+}
+
+
+
 
 @media screen and (max-width: 1000px) {
   .wrapper3 p {
