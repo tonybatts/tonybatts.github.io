@@ -385,21 +385,8 @@ a.button2:hover {
 .flex-container3 > div {
   display: flex;
   flex-wrap: wrap;
-  margin: -10px;
-
-}
-.flex-container4 > div {
-  display: flex;
-  flex-wrap: wrap;
-
 }
 
-.flex-container4 {
-  margin: -10px;
-}
-.projectwords {
-  padding-bottom: 2em;
-}
 
 .projectwords h3, p {
   color: #616161;
@@ -865,7 +852,7 @@ background-color: #04C2C9;
 
 
 @media screen and (max-width: 1000px) {
-  .projectwords h3, p, a {
+  .projectwords h3, p {
    text-align: center;
    padding-left: 3em;
    padding-right: 3em;
@@ -873,7 +860,7 @@ background-color: #04C2C9;
 }
 
 @media screen and (max-width: 1000px) {
-  .projectwords > div, a {
+  .buttonpadding2 {
    text-align: center;
    padding-left: 3em;
    padding-right: 3em;
