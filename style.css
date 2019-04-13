@@ -377,6 +377,11 @@ a.button2:hover {
 #projects {
   padding-bottom: 4.5em;
 }
+
+#projects2 {
+  padding-bottom: 4.5em;
+}
+
 .flex-container3 > div {
   display: flex;
   flex-wrap: wrap;
