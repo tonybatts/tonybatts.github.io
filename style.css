@@ -324,7 +324,7 @@ margin-bottom: 30px;
 }
 
 .flex-container2 > div {
-  width: 300px;
+  width: 400px;
   padding-bottom: 4rem;
 }
 .flex-container2 > div h1 {
@@ -737,6 +737,20 @@ background-color: #04C2C9;
 @media screen and (max-width: 800px) {
    .flex-container2 > div {
     width: 45%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+   .flex-container2 > div {
+    width: 40%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+   .flex-container2 > div {
+    width: 25%;
     justify-content: center;
   }
 }
