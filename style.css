@@ -534,20 +534,22 @@ a.button2:hover {
 
 /* Style the buttons */
 .btn {
-  border: none;
-  color: white;
-  border-radius: 8px;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #E31B6D;
-  cursor: pointer;
-  font-size: 18px;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  font-size: .8em;
+  border: 0.1em solid #616161;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #616161;
+  text-align: center;
+  transition: all 0.5s;
 }
 
 .btn:hover {
-  background-color: #04C2C9;
-  color: #E31B6D;
-  transition: background .5s;
+  color: #04C2C9 !important;
+  border-color: #04C2C9;
 }
 
 .btn.active {
