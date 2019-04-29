@@ -26,7 +26,7 @@ body h1 {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: #1B242F;
   overflow: hidden;
   font-weight: lighter;
   border-bottom: solid 4px;
@@ -42,7 +42,7 @@ body h1 {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 28px;
+  padding: 14px 20px;
   text-decoration: none;
   font-size: 17px;
   cursor: pointer;
@@ -64,6 +64,7 @@ body h1 {
 .dropdown {
   float: left;
   overflow: hidden;
+
 }
 
 /* Style the dropdown button to fit inside the topnav */
@@ -77,11 +78,12 @@ body h1 {
   margin: 0;
 }
 
+
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #333;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -114,6 +116,7 @@ body h1 {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
@@ -157,7 +160,7 @@ function myFunction() {
   text-align: center;
   color: white;
   overflow: hidden;
-  background-color: #333;
+  background-color: #1B242F;
 }
 
 .textcenter {
@@ -823,7 +826,6 @@ background-color: #04C2C9;
     position: absolute;
     right: 0;
     top: 0;
- 
   }
   .topnav.responsive a {
     float: none;
@@ -838,6 +840,9 @@ background-color: #04C2C9;
     text-align: left;
   }
 }
+
+
+
 @media screen and (max-width: 600px) {
   .containerform {
     padding-left: 1em;
