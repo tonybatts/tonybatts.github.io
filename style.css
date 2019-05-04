@@ -550,16 +550,27 @@ a.button2:hover {
   color: #616161;
   text-align: center;
   transition: all 0.5s;
+  -webkit-appearance: none;
 }
 
 .btn:hover {
-  color: #04C2C9 !important;
+  color: #04C2C9;
   border-color: #04C2C9;
 }
 
-.btn.active {
-  background-color: #666;
-  color: white;
+.btn:active {
+  color: #04C2C9;
+  border-color: #04C2C9;
+}
+
+.btn.active2 {
+  color: #04C2C9;
+  border-color: #04C2C9;
+}
+
+.active2 {
+    color: #04C2C9;
+  border-color: #04C2C9;
 }
 
 
@@ -618,16 +629,17 @@ input[type=email], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  -webkit-appearance: none !important;
+  -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
+  border: 0.1em solid #ffffff;
   background-color: #252934;
   padding: 0.35em 1.2em;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
-  color: #ddd;
+  color: #FFFFFF;
   text-align: center;
   transition: all 0.5s;
 }
