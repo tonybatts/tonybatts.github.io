@@ -16,9 +16,14 @@ body p {
   color: #616161;
 }
 
-body h1 {
+body h1, h2 {
   color: #444649;
 }
+
+body h2 {
+  font-size: 2em;
+}
+
 
 
 
@@ -152,7 +157,7 @@ function myFunction() {
 /* HERO IMAGE */
 
 
-  .heroimage img {
+.heroimage img {
   height: calc(100vh + 53px);
   width: calc(100vw + 53px);
 }
@@ -188,6 +193,7 @@ function myFunction() {
 #buttonpadding {
   padding-top: 2em;
 }
+
 a.button1 {
   display: inline-block;
   padding: 0.35em 1.2em;
@@ -208,7 +214,7 @@ a.button1:hover {
 
 
 /* heading styles */
-.headings h1 {
+.headings h2 {
   text-align: center;
   padding-top: 1em;
   padding-bottom: 2em;
@@ -260,7 +266,7 @@ font-size: 16px;
 margin-bottom: 10px;
 }
 
-#about-us h1 {
+#about-us h2 {
 margin-bottom: 30px;
 }
 
@@ -332,7 +338,7 @@ margin-bottom: 30px;
   width: 400px;
   padding-bottom: 4rem;
 }
-.flex-container2 > div h1 {
+.flex-container2 > div h2 {
   padding: 1rem;
   text-align: center;
 }
@@ -418,14 +424,16 @@ a.button2:hover {
 
 
 /*GALLERY*/
-.headingtravel h1 {
+.headingtravel h2 {
    text-align: center;
   padding-top: .9em;
   padding-bottom: 2em;
  
 }
 
-
+.gallerywrapper img {
+  width: 100%;
+}
 
 .headingslast h3 {
   text-align: center;
@@ -585,7 +593,7 @@ a.button2:hover {
   padding-right: 4em;
 }
 
-.wrapper3 h1 {
+.wrapper3 h2 {
   color: white;
 }
 
