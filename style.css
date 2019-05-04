@@ -143,9 +143,11 @@ function myFunction() {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .headings {
-  padding-top: 200px;
+.sticky + #about {
+  padding-top: 98px;
 }
+
+
 
 /* HERO IMAGE */
 
@@ -613,8 +615,10 @@ input[type=email], select, textarea {
 }
 
 
+
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
+  -webkit-appearance: none !important;
   cursor: pointer;
   display: inline-block;
   background-color: #252934;
@@ -627,6 +631,9 @@ input[type=submit] {
   text-align: center;
   transition: all 0.5s;
 }
+
+
+
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
@@ -854,7 +861,29 @@ background-color: #04C2C9;
     width: 100%;
   }
 
+  .sticky + #about {
+  padding-top: 88px;
+  }
+
 }
+
+@media screen and (min-width: 600px) {
+
+  .sticky + #about {
+  padding-top: 80px;
+  }
+
+}
+
+@media screen and (min-width: 982px) {
+
+  .sticky + #about {
+  padding-top: 100px;
+  }
+
+}
+
+
 @media screen and (max-width: 600px) {
   .dropdown {
     display: none;
@@ -873,6 +902,7 @@ background-color: #04C2C9;
   .flex-container3 > div {
     width: 100%;
   }
+
 }
 
 
