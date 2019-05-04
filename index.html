@@ -217,7 +217,7 @@
 <div id="mobilecolor">
 <div class="header" id="buttonActive">
   <button class="btn" onclick="one()">1</button>
-  <button class="btn" onclick="two()">2</button>
+  <button class="btn active2" onclick="two()">2</button>
 </div> 
 <div class="gallerywrapper">
 <div class="row"> 
@@ -355,9 +355,9 @@ var header = document.getElementById("buttonActive");
 var btns = header.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+    var current = document.getElementsByClassName("active2");
+    current[0].className = current[0].className.replace(" active2", "");
+    this.className += " active2";
   });
 }
 
