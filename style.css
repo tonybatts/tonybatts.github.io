@@ -745,6 +745,7 @@ background-color: #04C2C9;
     font-weight: 700;
   }
 }
+
 @media screen and (max-width: 768px) {
    .textcenter {
     font-size: .7em;
@@ -769,6 +770,34 @@ background-color: #04C2C9;
 @media screen and (max-width: 800px) {
    .flex-container2 > div {
     width: 45%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+   .flex-container > div {
+    width: 40%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+   .flex-container > div > p {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+   .flex-container > div > p {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+   .flex-container > div {
+    width: 25%;
     justify-content: center;
   }
 }
@@ -882,7 +911,7 @@ background-color: #04C2C9;
   }
 
   .sticky + #about {
-  padding-top: 88px;
+  padding-top: 90px;
   }
 
 }
