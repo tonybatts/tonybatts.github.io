@@ -221,7 +221,11 @@ a.button1:hover {
 }
 
 
-
+.contactheading h2 {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 
 /* ABOUT SECTION */
 
@@ -644,14 +648,14 @@ input[type=submit] {
   display: inline-block;
   border: 0.1em solid #ffffff;
   background-color: #252934;
-  padding: 0.35em 1.2em;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
+  padding: 10px 30px;
+  margin: 5px 0 0 0;
   box-sizing: border-box;
   text-decoration: none;
   color: #FFFFFF;
   text-align: center;
   transition: all 0.5s;
+  font-size: .8em;
 }
 
 
@@ -735,10 +739,16 @@ background-color: #04C2C9;
 
 #smalltext {
   text-align: center;
-  font-size: .8rem;
   padding-top: 2em;
 }
 
+#myName {
+  color:  #D3D3D3;
+}
+
+#year {
+  color: #E31B6D;
+}
 
 @media screen and (max-width: 700px) {
    .textcenter {
