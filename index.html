@@ -29,14 +29,14 @@
 <div class="scrollsticky" id="scroll">
   <div id="activeButton">  
     <div class="topnav" id="myTopnav">
-      <a href="#home" class="btns active mobilenone">HOME</a>
-      <a href="#about" class="btns">ABOUT</a>
-      <a href="#skills" class="btns">SKILLS</a>
-      <a href="#projects" class="btns">PROJECTS</a>
+      <a href="#home" onclick="myFunction1()" class="btns active mobilenone">HOME</a>
+      <a href="#about"onclick="myFunction1()" class="btns">ABOUT</a>
+      <a href="#skills" onclick="myFunction1()" class="btns">SKILLS</a>
+      <a href="#projects" onclick="myFunction1()" class="btns">PROJECTS</a>
         <div class="dropdown">
           <button class="dropbtn">Nothing</button>
         </div> 
-      <a href="#contact" class="btns">CONTACT</a>
+      <a href="#contact" onclick="myFunction1()" class="btns">CONTACT</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction1()">&#9776;</a>
     </div>
   </div>
@@ -242,7 +242,7 @@
 
 <!-- CONTACT -->
   <div class="wrapper3" id="contact">
-    <div class="headings">
+    <div class="contactheading">
       <h2>CONTACT</h2>
     </div>
     <div id="contactinfo">
@@ -254,7 +254,7 @@
     <input placeholder="Name" type="text" name="name" required="">
     <input placeholder="Enter email" type="email" name="email" required="">
     <textarea placeholder="Your Message"  name="message"></textarea>
-    <input type="submit" value="Submit"> 
+    <input type="submit" value="SUBMIT"> 
   </form>
 </div>
 
@@ -271,13 +271,13 @@
     <a href="mailto:tonybatts@gmail.com" aria-label="gmail"><i class="fas fa-envelope" aria-hidden="true"></i></a>
  </div>
  <p id="smalltext">
-  TONY BATTS &copy;2019
+  <span id="myName">TONY BATTS</span><span id="year"> &copy;2019</span>
  </p>
 
 
 <!-- RESPONSIVE DROPDOWN NAV -->
 <script>
-document.getElementById('myTopnav').onclick = function myFunction1() {
+function myFunction1() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -285,6 +285,8 @@ document.getElementById('myTopnav').onclick = function myFunction1() {
     x.className = "topnav";
   }
 }
+
+
 </script>
 
 <!-- STICKY SCROLL NAV -->
