@@ -252,10 +252,10 @@
   <div class="containerform" id="contact-form">
   <form action="https://formspree.io/tonybatts@gmail.com" method="POST">
   	<label for="Name">Name</label>
-    <input type="text" name="name" required="">
+    <input type="text" name="name" id="Name" required>
     <label for="email">Email</label>
-    <input type="email" name="email" required="">
-    <label for="message">Your Message</label>
+    <input type="email" name="email" id="email" required>
+    <label for="message" id="message">Your Message</label>
     <textarea name="message"></textarea>
     <input type="submit" value="SUBMIT"> 
   </form>
@@ -288,8 +288,6 @@ function myFunction1() {
     x.className = "topnav";
   }
 }
-
-
 </script>
 
 <!-- STICKY SCROLL NAV -->
@@ -364,7 +362,8 @@ for (var i = 0; i < btns.length; i++) {
 }
 
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- add smoother scrolling -->
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -391,28 +390,6 @@ $(document).ready(function(){
   });
 });
 </script>
-<script>
-    $('#contact-form').submit(function(e) {
-    e.preventDefault();
-
-      $.ajax({
-          url: "https://formspree.io/tonybatts@gmail.com",
-          method: "POST",
-          data: { message: $('form').serialize() },
-          dataType: "json"
-      }).done(function(response) {
-          $('#success').addClass('expand');
-          $('#contact-form').find("input[type=text], input[type=email], textarea").val("");
-      });
-  });
-
-  $('#close').click(function() {
-    $('#success').removeClass('expand');
-  })
-
-
-</script>
-
 
 <script>
 function init() {
