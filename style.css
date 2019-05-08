@@ -104,9 +104,10 @@ function myFunction() {
 /* HERO IMAGE */
 
 
-.heroimage img {
-  height: calc(100vh + 53px);
-  width: calc(100vw + 53px);
+.heroimage {
+  height: calc(100vh);
+  width: calc(100vw);
+  overflow: hidden;
 }
 
 .heroimage {
