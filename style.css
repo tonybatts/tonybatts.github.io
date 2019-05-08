@@ -53,6 +53,8 @@ body h2 {
   cursor: pointer;
 }
 
+
+
 /* Add an active class to highlight the current page */
 .active, .btns:hover {
   color: #E31B6D !important;
@@ -589,7 +591,10 @@ a.button2:hover {
 
 /* CONTACT */
 
-
+label {
+  color: lightgrey;
+  font-size: .7em;
+}
 
 .wrapper3 {
   background-color: #252934;
@@ -606,6 +611,7 @@ a.button2:hover {
 #contactinfo p {
   text-align: center;
   color: #02C2C7;
+  padding-bottom: 1em;
 }
 
 
@@ -770,6 +776,12 @@ background-color: #04C2C9;
 @media screen and (max-width: 600px) {
    .mainwrapper {
     font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+   .btns  {
+    width: 125px;
   }
 }
 
