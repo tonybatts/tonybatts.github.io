@@ -104,7 +104,7 @@ function myFunction() {
 /* HERO IMAGE */
 
 
-.heroimage img {
+.heroimage {
   height: calc(100vh + 53px);
   width: calc(100vw + 53px);
 }
@@ -113,7 +113,7 @@ function myFunction() {
   position: relative;
   text-align: center;
   overflow: hidden;
-  background-color: #1B242F;
+  background-color: #252934;
 }
 
 .textcenter {
