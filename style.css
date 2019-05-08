@@ -489,7 +489,7 @@ a.button2:hover {
 /* CONTACT */
 
 label {
-  color: lightgrey;
+  color: #ffffff;
   font-size: .7em;
 }
 
@@ -508,6 +508,7 @@ label {
   text-align: center;
   color: #02C2C7;
   padding-bottom: 1em;
+  font-size: 1.1rem;
 }
 
 
@@ -667,9 +668,9 @@ background-color: #04C2C9;
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
    .mainwrapper {
-    font-size: .9em;
+    font-size: 1.2rem;
   }
 }
 
@@ -757,7 +758,8 @@ background-color: #04C2C9;
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  body {font-size: .9em;}
+  body {font-size: 2rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
