@@ -24,7 +24,8 @@
       </div>
    </div>
   </div>
-  <div class="mainwrapper">
+
+<div class="mainwrapper">
   <!-- DROPDOWN NAV -->
 <div class="scrollsticky" id="scroll">
   <div id="activeButton">  
@@ -33,16 +34,11 @@
       <a href="#about" onclick="myFunction1()" class="btns">ABOUT</a>
       <a href="#skills" onclick="myFunction1()" class="btns">SKILLS</a>
       <a href="#projects" onclick="myFunction1()" class="btns">PROJECTS</a>
-        <div class="dropdown">
-          <button class="dropbtn">Nothing</button>
-        </div> 
       <a href="#contact" onclick="myFunction1()" class="btns">CONTACT</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction1()">&#9776;</a>
     </div>
   </div>
 </div>
-
-
 
 
 <!-- ABOUT SECTION -->
@@ -86,7 +82,7 @@
     Once I get into something, I REALLY get into it. 
     </p>
   </div>
- </section>
+  </section>
 </div>
 
 <!-- SKILLS SECTION -->
@@ -169,8 +165,8 @@
 </div>
 
 <div class="wrapper4" id="projects2">
- <section class="flex-container3">
-  <div>
+   <section class="flex-container3">
+   <div>
     <div class="projectwords">
      <h3>Nieves Landscape</h3>
      <p>Nieves Landscape is a multi-million dollar landscaping firm based in Orange County. They hired me to get rid of their old broken site and build them a new fresh mobile first website. I tried to show the personality of the business in the design. I optimized it to load quickly, and I did some SEO to make sure they ranked high on google searches.</p>
@@ -178,7 +174,7 @@
        <a href="https://nieveslandscape.com" target="_blank"  rel="noopener" class="button2">View Live Site</a>
      </div>
     </div>
-  </div>
+    </div>
   <div class="video">
    <iframe src="" data-src="https://www.youtube.com/embed/3mvnYSJQStE" title="Nieves Landscape" width="560" height="315" allowfullscreen="allowfullscreen"></iframe>
   </div> 
@@ -250,7 +246,7 @@
     </div> 
   </div>  
   <div class="containerform" id="contact-form">
-  <form action="https://formspree.io/tonybatts@gmail.com" method="POST">
+  <form action="https://formspree.io/tonybatts@gmail.com" target="_blank" rel="noopener" method="POST">
   	<label for="Name">Name</label>
     <input type="text" name="name" id="Name" required>
     <label for="email">Email</label>
@@ -288,10 +284,10 @@ function myFunction1() {
     x.className = "topnav";
   }
 }
-</script>
 
-<!-- STICKY SCROLL NAV -->
-<script>
+
+// <!-- STICKY SCROLL NAV -->
+
 window.onscroll = function() {myFunction()};
 
 var scrollsticky = document.getElementById("scroll");
@@ -304,10 +300,10 @@ function myFunction() {
     scrollsticky.classList.remove("sticky");
   }
 }
-</script>
 
-<!-- ACTIVE NAV -->
-<script>
+
+// <!-- ACTIVE NAV -->
+
 // Get the container element
 var btnContainer = document.getElementById("activeButton");
 
@@ -322,10 +318,10 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-</script>
 
-<!-- MOBILE GALLERY -->
-<script>
+
+// <!-- MOBILE GALLERY -->
+
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
 
@@ -361,10 +357,10 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-</script>
 
-<!-- add smoother scrolling -->
-<script>
+
+// <!-- add smoother scrolling -->
+
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
@@ -389,9 +385,9 @@ $(document).ready(function(){
     } // End if
   });
 });
-</script>
 
-<script>
+
+
 function init() {
 var vidDefer = document.getElementsByTagName('iframe');
 for (var i=0; i<vidDefer.length; i++) {

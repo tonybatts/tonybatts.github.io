@@ -55,9 +55,11 @@ body h2 {
 
 
 
-/* Add an active class to highlight the current page */
-.active, .btns:hover {
-  color: #E31B6D !important;
+/* Add an active class to highlight the current page on the nav*/
+
+.topnav .active, .btns:hover {
+  color: #E31B6D;
+  transition: all 0.5s;
 }
 
 
@@ -65,63 +67,6 @@ body h2 {
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
-}
-
-/* Dropdown container - needed to position the dropdown content */
-.dropdown {
-  float: left;
-  overflow: hidden;
-
-}
-
-/* Style the dropdown button to fit inside the topnav */
-.dropdown .dropbtn {
-  font-size: 17px; 
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  font-family: inherit;
-  margin: 0;
-}
-
-
-/* Style the dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Style the links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a dark background on topnav links and the dropdown button on hover */
-.topnav a:hover, .dropdown:hover .dropbtn {
- 
-  transition: all 0.5s;
-  color: white;
-}
-
-/* Add a grey background to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Show the dropdown menu when the user moves the mouse over the dropdown button */
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 
@@ -167,7 +112,6 @@ function myFunction() {
 .heroimage {
   position: relative;
   text-align: center;
-  color: white;
   overflow: hidden;
   background-color: #1B242F;
 }
@@ -236,12 +180,6 @@ a.button1:hover {
 }
 
 
-
-.wrapper1 {
-  padding-bottom: 5em;
-  padding-top: 2.2em;
-}
-
 .flex-container p {
   text-align: center;
 }
@@ -257,24 +195,7 @@ a.button1:hover {
   width: 300px;
   padding-bottom: 5em;
 }
- #about-us {
-background-color: white;
-padding: 60px 0;
-}
 
-#about-us h2 {
-margin-top: 0;
-color: #333;
-}
-
-#about-us .lead {
-font-size: 16px;
-margin-bottom: 10px;
-}
-
-#about-us h2 {
-margin-bottom: 30px;
-}
 
  /* icons */
 
@@ -315,20 +236,7 @@ margin-bottom: 30px;
 
 }
 
-/* end icon */
 
-/* Clear floats after the columns */
-.skillsfloat:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .skillscolumn {
-    width: 100%;
-  }
-}
 
 /* SKILLS*/
 
@@ -353,15 +261,12 @@ margin-bottom: 30px;
   text-align: center;
 }
 
-
-
 .wrapper2 {
   background-color: #f5f5f5;
   padding-bottom: 1em;
   padding-top: 2.2em;
-
-  
 }
+
 /*PROJECTS*/
 
 .buttonpadding2 {
@@ -441,14 +346,7 @@ a.button2:hover {
   width: 100%;
 }
 
-.headingslast h3 {
-  text-align: center;
-  padding-top: .8em;
-  padding-bottom: 2em;
-  font-size: 1.2em;
-  color: #616161;
 
-}
 
 #gallery{
   background-color: #f5f5f5;
@@ -529,9 +427,7 @@ a.button2:hover {
   background-color: #f5f5f5;
 
 }
-.header {
-    background-color: #f5f5f5;
-}
+
 .row {
 
    display: flex;
@@ -598,7 +494,6 @@ label {
 
 .wrapper3 {
   background-color: #252934;
-  
   padding-top: 2.2em;
   padding-left: 4em;
   padding-right: 4em;
@@ -698,7 +593,6 @@ footer i {
 }
 
 .backtotop {
-  border-radius: 8px;
   text-align: center;
   position: absolute;
   top: -25px;
@@ -723,7 +617,6 @@ background-color: #04C2C9;
 }
 
 .backtotop i:hover {
-
   color:  #E31B6D;
   transition: background .5s;
 }
@@ -861,15 +754,6 @@ background-color: #04C2C9;
 }
 
 
-@media screen and (max-width: 600px) {
-   .icontravel {
-    display: block;
-    padding: 0px;
-    margin: 0px;
-    font-size: .7em;
-  }
-}
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   body {font-size: .9em;}
@@ -916,9 +800,9 @@ background-color: #04C2C9;
     display: block;
     text-align: left;
   }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
+  .topnav.responsive {float: none;}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
     display: block;
     width: 100%;
     text-align: left;
@@ -933,7 +817,6 @@ background-color: #04C2C9;
     padding-right: 1em;
     width: 100%;
   }
-
   .sticky + #about {
   padding-top: 90px;
   }
@@ -941,7 +824,6 @@ background-color: #04C2C9;
 }
 
 @media screen and (min-width: 600px) {
-
   .sticky + #about {
   padding-top: 80px;
   }
@@ -949,25 +831,10 @@ background-color: #04C2C9;
 }
 
 @media screen and (min-width: 982px) {
-
   .sticky + #about {
   padding-top: 100px;
   }
 
-}
-
-
-@media screen and (max-width: 600px) {
-  .dropdown {
-    display: none;
-  }
-
-}
-
-@media screen and (min-width: 600px) {
-  .dropdown {
-    display: none;
-  }
 }
 
 
@@ -1000,7 +867,6 @@ background-color: #04C2C9;
 
 @media screen and (max-width: 1000px) {
   .wrapper3 p {
-  
    padding-left: 0pc;
    padding-right: 0pc;
   }
