@@ -801,7 +801,7 @@ background-color: #04C2C9;
     width: 100%;
   }
   .sticky + #about {
-  padding-top: 96px;
+  padding-top: 95px;
   }
 
 }
