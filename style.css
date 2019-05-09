@@ -518,6 +518,7 @@ form {
 }
 input[type=text], select, textarea {
   border-width: 0px;
+  font-size: 16px;
   cursor: pointer;
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */  
@@ -530,7 +531,7 @@ input[type=text], select, textarea {
 
 
 input[type=email], select, textarea {
-
+  font-size: 16px;
   border-width: 0px;
   cursor: pointer;
   width: 100%; /* Full width */
