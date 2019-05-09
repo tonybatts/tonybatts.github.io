@@ -96,7 +96,7 @@ function myFunction() {
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + #about {
-  padding-top: 98px;
+  padding-top: 94px;
 }
 
 
@@ -490,7 +490,7 @@ a.button2:hover {
 
 label {
   color: #ffffff;
-  font-size: .7em;
+  font-size: 16px;
 }
 
 .wrapper3 {
@@ -659,13 +659,6 @@ background-color: #04C2C9;
   }
 }
 
-@media screen and (max-width: 768px) {
-   .textcenter {
-    font-size: .7em;
-    width: 100%;
-    font-weight: 700;
-  }
-}
 
 
 @media screen and (max-width: 800px) {
@@ -756,21 +749,7 @@ background-color: #04C2C9;
 }
 
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  body {font-size: 2rem;
-  }
-}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  body {font-size: .9em;}
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  body {font-size: 1.5em;}
-} 
 
 
 
@@ -821,24 +800,26 @@ background-color: #04C2C9;
     width: 100%;
   }
   .sticky + #about {
-  padding-top: 90px;
+  padding-top: 96px;
   }
 
 }
 
 @media screen and (min-width: 600px) {
   .sticky + #about {
-  padding-top: 80px;
+  padding-top: 92px;
   }
 
 }
 
 @media screen and (min-width: 982px) {
   .sticky + #about {
-  padding-top: 100px;
+  padding-top: 92px;
   }
 
 }
+
+
 
 
 @media screen and (max-width: 1000px) {
