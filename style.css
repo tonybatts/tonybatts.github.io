@@ -26,6 +26,15 @@ body h2 {
 
 
 
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0
+}
+
 
 /*DROPDOWN NAV*/
 
@@ -60,6 +69,7 @@ body h2 {
 .topnav .active, .btns:hover {
   color: #E31B6D;
   transition: all 0.5s;
+   
 }
 
 
