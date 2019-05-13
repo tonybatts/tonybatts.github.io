@@ -993,7 +993,12 @@ background-color: #04C2C9;
     padding-right: 2em;
   }
 }
-
+@media screen and (max-width: 600px) {
+   .flex-container > div > p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 @media screen and (min-width: 1200px) {
    .flex-container > div > p {
     padding-left: 4em;
