@@ -187,6 +187,41 @@ a.button1:hover {
 
 /* ABOUT SECTION */
 
+#about span {
+  position: relative;
+}
+
+#about span::before, #about span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #444649;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#about span::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+#about span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#about span::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+#about  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+
 #about {
   padding-top: 2em;
 }
@@ -251,7 +286,40 @@ a.button1:hover {
 
 
 /* SKILLS*/
+#skills span {
+  position: relative;
+}
 
+#skills span::before, #skills span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #444649;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#skills span::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+#skills span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#skills span::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+#skills  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
 
 .flex-container2 {
   display: flex;
@@ -280,6 +348,41 @@ a.button1:hover {
 }
 
 /*PROJECTS*/
+
+#projects span {
+  position: relative;
+}
+
+#projects span::before, #projects span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #444649;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#projects span::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+#projects span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#projects span::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+#projects  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
 
 .buttonpadding2 {
   padding-top: 2em;
@@ -347,6 +450,42 @@ a.button2:hover {
 
 
 /*GALLERY*/
+#gallery span {
+  position: relative;
+}
+
+#gallery span::before, #gallery span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #444649;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+#gallery span::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+#gallery span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#gallery span::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+#gallery  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+
+
 .headingtravel h2 {
    text-align: center;
   padding-top: .9em;
@@ -425,6 +564,7 @@ a.button2:hover {
 
 /* MOBILE GALLERY */
 
+
 .header {
   text-align: center;
   padding: 32px;
@@ -498,6 +638,43 @@ a.button2:hover {
 
 
 /* CONTACT */
+.contactheading span {
+  position: relative;
+}
+
+.contactheading span::before, .contactheading span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #04C2C9;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.contactheading span::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+.contactheading span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+.contactheading span::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+.contactheading  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+
+
+
 .formpadding {
   position: relative;
 }
@@ -697,9 +874,11 @@ footer i {
 }
 
 .backtotop {
+  display: inline-block;
   text-align: center;
   position: absolute;
   top: -25px;
+  border-radius: 2px;
   background: #E31B6D;
   font-size: 30pt;
   width: 47px;
