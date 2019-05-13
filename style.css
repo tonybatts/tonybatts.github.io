@@ -149,6 +149,7 @@ function myFunction() {
 
 #buttonpadding {
   padding-top: 2em;
+ 
 }
 
 a.button1 {
@@ -497,6 +498,96 @@ a.button2:hover {
 
 
 /* CONTACT */
+.formpadding {
+  position: relative;
+}
+
+input, textarea {
+  width: 6.5em;
+  color: white;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: #1B242F;
+  padding: 0.35em 0.45em;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+input:-webkit-autofill, textarea:-webkit-autofill {
+    -webkit-box-shadow: #1B242F inset;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #ffffff;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+
+.formpadding span {
+  position: absolute;
+  background-color: #3cefff;
+  transition: transform 0.5s ease;
+}
+
+
+
+.bottom,
+.top {
+  height: 1px;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+.left,
+.right {
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  transform: scaleY(0);
+}
+
+.bottom {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+input:focus ~ .bottom, textarea:focus ~ .bottom {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.right {
+  right: 0;
+  transform-origin: top right;
+}
+
+input:focus ~ .right, textarea:focus ~ .right {
+  transform-origin: bottom right;
+  transform: scaleY(1);
+}
+
+.top {
+  top: 0;
+  transform-origin: top left;
+}
+
+input:focus ~ .top, textarea:focus ~ .top {
+  transform-origin: top right;
+  transform: scaleX(1);
+}
+
+.left {
+  left: 0;
+  transform-origin: bottom left;
+}
+
+input:focus ~ .left, textarea:focus ~.left {
+  transform-origin: top left;
+  transform: scaleY(1);
+}
+
+
 
 label {
   color: #ffffff;
@@ -521,7 +612,10 @@ label {
   font-size: 1.1rem;
 }
 
-
+.formpadding {
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
 /* Style inputs with type="text", select elements and textareas */
 form {
   padding-bottom: 4em;
@@ -530,12 +624,10 @@ input[type=text], select, textarea {
   border-width: 0px;
   font-size: 16px;
   cursor: pointer;
-  width: 100%; /* Full width */
+  width: 500px; /* Full width */
   padding: 12px; /* Some padding */  
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
@@ -548,8 +640,6 @@ input[type=email], select, textarea {
   padding: 12px; /* Some padding */  
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
@@ -566,6 +656,7 @@ input[type=submit] {
   margin: 5px 0 0 0;
   box-sizing: border-box;
   text-decoration: none;
+  width: 130px;
   color: #FFFFFF;
   text-align: center;
   transition: all 0.5s;
@@ -660,6 +751,19 @@ background-color: #04C2C9;
 
 #year {
   color: #04C2C9;
+}
+
+@media screen and (max-width: 600px) {
+  input[type=text], select, textarea {
+  width: 350px;
+  }
+
+}
+@media screen and (max-width: 374px) {
+  input[type=text], select, textarea {
+  width: 300px;
+  }
+
 }
 
 @media screen and (max-width: 700px) {
