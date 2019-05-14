@@ -207,7 +207,12 @@ a.button1:hover {
   transform-origin: center right;
 }
 
-#about span:hover::before, #about span:active::before {
+#about span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+#about span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -217,7 +222,11 @@ a.button1:hover {
   transform-origin: center left;
 }
 
-#about  span:hover::after, #about span:active::after {
+#about span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+#about span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -290,7 +299,7 @@ a.button1:hover {
   position: relative;
 }
 
-#skills span::before, #skills span::after {
+#skills span::before, span::after {
   content: '';
   position: absolute;
   left: 0;
@@ -306,7 +315,11 @@ a.button1:hover {
   transform-origin: center right;
 }
 
-#skills span:hover::before, #skills span:active::before {
+#skills span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+#skills span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -316,7 +329,11 @@ a.button1:hover {
   transform-origin: center left;
 }
 
-#skills  span:hover::after, #skills span:active::after {
+#skills  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+#skills span:hover::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -364,22 +381,30 @@ a.button1:hover {
   transition: transform 0.5s ease;
 }
 
+
 #projects span::before {
   top: 0;
   transform-origin: center right;
 }
 
-#projects span:hover::before, #projects span:active::before {
+#projects span:hover::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
-
+#projects span:active::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
 #projects span::after {
   bottom: 0;
   transform-origin: center left;
 }
 
-#projects  span:hover::after, #projects span:active::after {
+#projects  span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+#projects span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -470,7 +495,11 @@ a.button2:hover {
   transform-origin: center right;
 }
 
-#gallery span:hover::before, #gallery span:active::before {
+#gallery span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+#gallery span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -480,7 +509,11 @@ a.button2:hover {
   transform-origin: center left;
 }
 
-#gallery  span:hover::after, #gallery span:active::after {
+#gallery span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+#gallery span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -662,6 +695,10 @@ a.button2:hover {
   transform-origin: center left;
   transform: scaleX(1);
 }
+.contactheading span:active::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
 
 .contactheading span::after {
   bottom: 0;
@@ -672,7 +709,10 @@ a.button2:hover {
   transform-origin: center right;
   transform: scaleX(1);
 }
-
+.contactheading  span:active::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
 
 
 .formpadding {
