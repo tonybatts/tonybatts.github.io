@@ -207,7 +207,7 @@ a.button1:hover {
   transform-origin: center right;
 }
 
-#about span:hover::before {
+#about span:hover::before, #about span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -217,7 +217,7 @@ a.button1:hover {
   transform-origin: center left;
 }
 
-#about  span:hover::after {
+#about  span:hover::after, #about span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -306,7 +306,7 @@ a.button1:hover {
   transform-origin: center right;
 }
 
-#skills span:hover::before {
+#skills span:hover::before, #skills span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -316,7 +316,7 @@ a.button1:hover {
   transform-origin: center left;
 }
 
-#skills  span:hover::after {
+#skills  span:hover::after, #skills span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -369,7 +369,7 @@ a.button1:hover {
   transform-origin: center right;
 }
 
-#projects span:hover::before {
+#projects span:hover::before, #projects span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -379,7 +379,7 @@ a.button1:hover {
   transform-origin: center left;
 }
 
-#projects  span:hover::after {
+#projects  span:hover::after, #projects span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
@@ -470,7 +470,7 @@ a.button2:hover {
   transform-origin: center right;
 }
 
-#gallery span:hover::before {
+#gallery span:hover::before, #gallery span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
@@ -480,7 +480,7 @@ a.button2:hover {
   transform-origin: center left;
 }
 
-#gallery  span:hover::after {
+#gallery  span:hover::after, #gallery span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
