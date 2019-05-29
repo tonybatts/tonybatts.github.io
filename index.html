@@ -194,6 +194,23 @@
   </section> 
 </div>
 
+<div class="wrapper4" id="projects3">
+   <section class="flex-container3">
+   <div>
+    <div class="projectwords">
+     <h3>Picnics In Central Park</h3>
+     <p>Picnics In Central Park is a company that provides a packaged picnic experience delivered directly to the customer in Central Park, New York. I was tasked to take the feel of their old site and make it fresh and responsive. As with most projects my original design was changed by the clients request and it is what it is now. They wanted very simple and to the point. I have optimized the site and did some SEO work that got them from the second page to the first on google.</p>
+     <div class="buttonpadding2">
+       <a href="https://picnicsincentralpark.com" target="_blank"  rel="noopener" class="button2">View Live Site</a>
+     </div>
+    </div>
+    </div>
+  <div class="video">
+   <iframe src="" data-src="https://www.youtube-nocookie.com/embed/Ut02Rn3nx80?controls=0" title="Picnics In Central Park" width="560" height="315"allowfullscreen="allowfullscreen"></iframe>
+  </div> 
+  </section> 
+</div>
+
 
   <!-- GALLERY -->
 <div class="wrapper4" id="gallery">
@@ -433,15 +450,10 @@ function myFunction1() {
     x.className = "topnav";
   }
 }
-
-
 // <!-- STICKY SCROLL NAV -->
-
 window.onscroll = function() {myFunction()};
-
 var scrollsticky = document.getElementById("scroll");
 var sticky = scrollsticky.offsetTop;
-
 function myFunction() {
   if (window.pageYOffset > sticky) {
     scrollsticky.classList.add("sticky");
@@ -449,16 +461,11 @@ function myFunction() {
     scrollsticky.classList.remove("sticky");
   }
 }
-
-
 // <!-- ACTIVE NAV -->
-
 // Get the container element
 var btnContainer = document.getElementById("activeButton");
-
 // Get all buttons with class="btn" inside the container
 var btns = btnContainer.getElementsByClassName("btns");
-
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
@@ -467,16 +474,11 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-
-
 // <!-- MOBILE GALLERY -->
-
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
-
 // Declare a loop variable
 var i;
-
 // Full-width images
 function one() {
     for (i = 0; i < elements.length; i++) {
@@ -484,7 +486,6 @@ function one() {
     elements[i].style.flex = "100%";
   }
 }
-
 // Two images side by side
 function two() {
   for (i = 0; i < elements.length; i++) {
@@ -492,9 +493,6 @@ function two() {
     elements[i].style.flex = "50%";
   }
 }
-
-
-
 // Add active class to the current button (highlight it)
 var header = document.getElementById("buttonActive");
 var btns = header.getElementsByClassName("btn");
@@ -505,38 +503,27 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active2";
   });
 }
-
-
-
 // <!-- add smoother scrolling -->
-
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
-
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
       event.preventDefault();
-
       // Store hash
       var hash = this.hash;
-
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 800, function(){
-
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
     } // End if
   });
 });
-
-
-
 function init() {
 var vidDefer = document.getElementsByTagName('iframe');
 for (var i=0; i<vidDefer.length; i++) {
