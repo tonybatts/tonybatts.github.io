@@ -49,7 +49,13 @@
       <a href="#skills" onclick="myFunction1()" class="btns">SKILLS</a>
       <a href="#projects" onclick="myFunction1()" class="btns">PROJECTS</a>
       <a href="#contact" onclick="myFunction1()" class="btns">CONTACT</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction1()">&#9776;</a>
+      <a href="javascript:void(0);" class="icon hamburger" onclick="myFunction1()">
+        <div id="nav-icon1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -451,6 +457,16 @@ function myFunction1() {
     x.className = "topnav";
   }
 }
+
+// <!-- Hamburger animation-->
+$(document).ready(function(){
+  $('#nav-icon1').click(function(){
+    $(this).toggleClass('open');
+  });
+});
+
+
+
 // <!-- STICKY SCROLL NAV -->
 window.onscroll = function() {myFunction()};
 var scrollsticky = document.getElementById("scroll");
