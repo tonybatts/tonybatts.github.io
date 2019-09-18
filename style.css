@@ -8,6 +8,7 @@
 }
 /* Icon 1 */
 
+
 #nav-icon1 {
   width: 30px;
   height: 27px;
@@ -57,10 +58,11 @@
 
 #nav-icon1.open span:nth-child(1) {
   top: 10px;
-  -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  transform: translate(0, -14px);
 }
 
 #nav-icon1.open span:nth-child(2) {
@@ -70,10 +72,11 @@
 
 #nav-icon1.open span:nth-child(3) {
   top: 10px;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
 }
 
 
