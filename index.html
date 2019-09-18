@@ -44,12 +44,18 @@
 <div class="scrollsticky" id="scroll">
   <div id="activeButton">  
     <div class="topnav" id="myTopnav">
-      <a href="#home" onclick="myFunction1()" class="btns active mobilenone">HOME</a>
-      <a href="#about" onclick="myFunction1()" class="btns">ABOUT</a>
-      <a href="#skills" onclick="myFunction1()" class="btns">SKILLS</a>
-      <a href="#projects" onclick="myFunction1()" class="btns">PROJECTS</a>
-      <a href="#contact" onclick="myFunction1()" class="btns">CONTACT</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction1()">&#9776;</a>
+      <a href="#home" onclick="myFunction1(); hamburger()" class="btns active mobilenone">HOME</a>
+      <a href="#about" onclick="myFunction1(); hamburger()" class="btns">ABOUT</a>
+      <a href="#skills" onclick="myFunction1(); hamburger()" class="btns">SKILLS</a>
+      <a href="#projects" onclick="myFunction1(); hamburger()" class="btns">PROJECTS</a>
+      <a href="#contact" onclick="myFunction1();hamburger()" class="btns">CONTACT</a>
+      <a href="javascript:void(0);" class="icon hamburger" onclick="myFunction1()">
+        <div id="nav-icon1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -451,6 +457,21 @@ function myFunction1() {
     x.className = "topnav";
   }
 }
+
+// <!-- Hamburger animation-->
+$(document).ready(function(){
+  $('#nav-icon1').click(function(){
+    $(this).toggleClass('open');
+  });
+});
+
+function hamburger(){
+  var icon = document.getElementById('nav-icon1')
+  icon.classList.remove('open')
+}
+
+
+
 // <!-- STICKY SCROLL NAV -->
 window.onscroll = function() {myFunction()};
 var scrollsticky = document.getElementById("scroll");
