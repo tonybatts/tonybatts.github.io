@@ -1,3 +1,6 @@
+
+
+
 /* fix hamburger padding issue */
 
 .hamburger {
@@ -124,7 +127,7 @@ body h2 {
 /*DROPDOWN NAV*/
 
 .topnav.responsive {
-  transition: all 0.5s;
+  transition: all 0.5s ease;
   max-height: 700px;
 }
 
