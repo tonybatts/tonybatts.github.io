@@ -50,7 +50,7 @@
       <a href="#projects" onclick="myFunction1(); hamburger()" class="btns">PROJECTS</a>
       <a href="#contact" onclick="myFunction1();hamburger()" class="btns">CONTACT</a>
       <a href="javascript:void(0);" class="icon hamburger" onclick="myFunction1()">
-        <div id="nav-icon1">
+        <div id="nav-icon1" onclick="hamburgerOpen()">
           <span></span>
           <span></span>
           <span></span>
@@ -332,6 +332,8 @@
   <span id="myName">TONY BATTS</span><span id="year"> &copy;2019</span>
  </p>
 
+
+
 <script>
  particlesJS("particles-js", {
   "particles": {
@@ -443,36 +445,11 @@
   },
   "retina_detect": true
 });
-</script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- RESPONSIVE DROPDOWN NAV -->
-<script>
-function myFunction1() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-// <!-- Hamburger animation-->
-$(document).ready(function(){
-  $('#nav-icon1').click(function(){
-    $(this).toggleClass('open');
-  });
-});
-
-function hamburger(){
-  var icon = document.getElementById('nav-icon1')
-  icon.classList.remove('open')
-}
 
 
 
 // <!-- STICKY SCROLL NAV -->
+
 window.onscroll = function() {myFunction()};
 var scrollsticky = document.getElementById("scroll");
 var sticky = scrollsticky.offsetTop;
@@ -483,6 +460,7 @@ function myFunction() {
     scrollsticky.classList.remove("sticky");
   }
 }
+
 // <!-- ACTIVE NAV -->
 // Get the container element
 var btnContainer = document.getElementById("activeButton");
@@ -496,6 +474,21 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+
+//<!-- RESPONSIVE DROPDOWN NAV -->
+
+function myFunction1() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
 // <!-- MOBILE GALLERY -->
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
@@ -525,27 +518,10 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active2";
   });
 }
-// <!-- add smoother scrolling -->
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
+
+
+// Defer youtube
+
 function init() {
 var vidDefer = document.getElementsByTagName('iframe');
 for (var i=0; i<vidDefer.length; i++) {
@@ -553,7 +529,24 @@ if(vidDefer[i].getAttribute('data-src')) {
 vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
 } } }
 window.onload = init;
+
+ // <!-- Hamburger animation-->
+
+
+function hamburger(){
+  var icon = document.getElementById('nav-icon1')
+  icon.classList.remove('open')
+}
+
+function hamburgerOpen(){
+  var icon = document.getElementById('nav-icon1')
+  icon.classList.toggle('open')
+}
+
+
 </script>
+<script src="zenscroll-min.js"></script>
+
 </footer>
 
 </body>
