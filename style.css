@@ -52,9 +52,9 @@ body h2 {
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration: 1s;
+  -webkit-animation-duration:.7s;
+  -moz-animation-duration:.7s;
+  animation-duration: .7s;
 
   animation-delay: .04s;
 }
