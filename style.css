@@ -1,5 +1,4 @@
-
-
+     
  * {box-sizing: border-box;
 margin: 0;
 padding: 0;
@@ -19,7 +18,7 @@ body p {
   color: #616161;
 }
 
-body h1, h2 {
+body h1, h2, h3 {
   color: #444649;
 }
 
@@ -451,14 +450,98 @@ a.button1:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: .7em;
+  padding-right: .7em;
 }
 
 .flex-container > div {
   width: 300px;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
 }
+
+
+/** AOUT CARD **/
+
+.card {
+  position: relative;
+  width: 400px;
+  margin-top: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card:before {
+  content: '';
+  position: absolute;
+  left: calc(-100% + 4px);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover:before {
+  left: 0;
+}
+
+.card:nth-child(1):before {
+  background: #04C2C9;
+  color: white;
+}
+.card:nth-child(2):before {
+  background: #E31B6D;
+}
+.card:nth-child(3):before {
+  background: #E31B6D;
+}
+.card:nth-child(4):before {
+  background: #04C2C9;
+}
+
+.card div, p {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+.flex-container .card:hover div h3,
+.flex-container .card:hover p {
+  color: #F0F0F0;
+  transition: all .08s ease-in-out;
+  transition-delay: .08s;
+}
+
+
+.flex-container .bluecard:hover i {
+  color: #E31B6D;
+  transition: all .08s ease-in-out;
+  transition-delay: .09s;
+
+}
+
+.flex-container .pinkcard:hover i {
+  color: #02C2C7;
+  transition: all .08s ease-in-out;
+
+}
+
+@media screen and (max-width: 1300px) {
+  .flex-container {
+   padding-bottom: 4em;
+  }
+}
+
+
+.card:nth-child(1) { order: 1; }
+.card:nth-child(2) { order: 2; }
+.card:nth-child(3) { order: 4; }
+.card:nth-child(4) { order: 3; }
+   
 
 
  /* icons */
@@ -484,7 +567,7 @@ a.button1:hover {
   text-align: center;
   font-size: 5em;
   padding-bottom: 1rem;
-  color: #04C2C9;
+  color: #444649;
 }
 
 .icon h3 {
@@ -663,13 +746,11 @@ a.button2:hover {
 
 
 .projectwords h3, p {
-  color: #616161;
   text-align: left;
 
 }
 .projectwords h3 {
   padding-bottom: .6em;
-  color: #616161;
   text-align: left;
 
 }
@@ -1251,6 +1332,9 @@ background-color: #04C2C9;
     padding-right: 0px;
   }
 }
+
+
+
 @media screen and (min-width: 1200px) {
    .flex-container > div > p {
     padding-left: 4em;
