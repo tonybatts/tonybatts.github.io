@@ -635,17 +635,6 @@ color: rgb(21, 114, 182);
   }
 }
 
-@media screen and (max-width: 750px) {
-  .giticon i {
-   padding-right: 5px;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .wpicon i {
-   padding-left: 10px;
-  }
-}
 
 
 
@@ -653,7 +642,7 @@ color: rgb(21, 114, 182);
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
    padding-right: 5px;
-   padding-left: 5px;
+   padding-left: 0px;
    margin: 5px;
   }
 }
