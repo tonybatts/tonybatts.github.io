@@ -635,9 +635,15 @@ color: rgb(21, 114, 182);
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
   .giticon i {
    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .wpicon i {
+   padding-left: 3px;
   }
 }
 
