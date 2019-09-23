@@ -636,17 +636,19 @@ color: rgb(21, 114, 182);
 }
 
 @media screen and (max-width: 800px) {
-  .wpicon i {
-   text-align: center;
-   font-size: 12px;
+  .giticon i {
+   padding-right: 5px;
   }
 }
+
+
 
 @media screen and (max-width: 800px) {
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
    padding-right: 5px;
    padding-left: 5px;
+   overflow-y: hidden;
   }
 }
 
