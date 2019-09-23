@@ -253,22 +253,22 @@
   </div>
   <div class="gallery">
     <figure class="gallery__item gallery__item--1">
-      <img src="images/GoldenGateBridge.jpg" alt="Tony Batts Golden Gate" class="gallery__img">
+      <img src="" data-src="images/GoldenGateBridge.jpg" data-srcset="images/GoldenGateBridge.jpg" alt="Tony Batts Golden Gate" class="gallery__img lazy">
     </figure>
     <figure class="gallery__item gallery__item--2">
-      <img src="images/IMG_4454.JPG" alt="Tony Batts Adventure" class="gallery__img">
+      <img src="" data-src="images/IMG_4454.JPG" data-srcset="images/IMG_4454.JPG" alt="Tony Batts Adventure" class="gallery__img lazy">
     </figure>
     <figure class="gallery__item gallery__item--3">
-      <img src="images/newyork.jpg" alt="Tony Batts New York" class="gallery__img">
+      <img src="" data-src="images/newyork.jpg" data-srcset="images/newyork.jpg" alt="Tony Batts New York" class="gallery__img lazy">
     </figure>
     <figure class="gallery__item gallery__item--4">
-      <img src="images/music3.jpg" alt="Tony Batts Circa Survive" class="gallery__img">
+      <img src="" data-src="images/music3.jpg" data-srcset="images/music3.jpg" alt="Tony Batts Circa Survive" class="gallery__img lazy">
     </figure>
     <figure class="gallery__item gallery__item--5">
-      <img src="images/Tonybattsnewyork.jpg" alt="Tony Batts New York" class="gallery__img">
+      <img src="" data-src="images/Tonybattsnewyork.jpg" data-srcset="images/Tonybattsnewyork.jpg" alt="Tony Batts New York" class="gallery__img lazy">
     </figure>
     <figure class="gallery__item gallery__item--6">
-      <img src="images/tonybattspyramid.jpg" alt="Tony Batts Pyramid" class="gallery__img">
+      <img src="" data-src="images/tonybattspyramid.jpg" data-srcset="images/tonybattspyramid.jpg" alt="Tony Batts Pyramid" class="gallery__img lazy">
     </figure>
   </div>
 </div>
@@ -282,11 +282,11 @@
 <div class="gallerywrapper">
 <div class="row"> 
   <div class="column">
-    <img src="images/GoldenGateBridge.jpg" alt="Tony Batts Golden Gate">
-    <img src="images/IMG_4454.JPG" alt="Tony Batts Adventure">
-    <img src="images/mexico.jpg" alt="Tony Batts Mexico">
-    <img src="images/mexico1.jpg" alt="Tony Batts Mexico">
-    <img src="images/music2.jpg" alt="Tony Batts Carpenter Brut"> 
+    <img src="" data-src="images/GoldenGateBridge.jpg" data-srcset="images/GoldenGateBridge.jpg" alt="Tony Batts Golden Gate" class="lazy">
+    <img src="" data-src="images/IMG_4454.JPG" data-srcset="images/IMG_4454.JPG" alt="Tony Batts Adventure" class="lazy">
+    <img src="" data-src="images/mexico.jpg" data-srcset="images/mexico.jpg" alt="Tony Batts Mexico" class="lazy">
+    <img src="" data-src="images/mexico1.jpg" data-srcset="images/mexico1.jpg" alt="Tony Batts Mexico" class="lazy">
+    <img src="" data-src="images/music2.jpg" data-srcset="images/music2.jpg" alt="Tony Batts Carpenter Brut" class="lazy"> 
   </div>
   <div class="column">
     <img src="images/IMG_1742.jpg" alt="Tony Batts Adventure">
@@ -551,6 +551,32 @@ function hamburgerOpen(){
   var icon = document.getElementById('nav-icon1')
   icon.classList.toggle('open')
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } 
+});
+
+
+
 </script>
 <script src="zenscroll-min.js"></script>
 
