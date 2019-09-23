@@ -636,8 +636,6 @@ color: rgb(21, 114, 182);
 }
 
 
-
-
 @media screen and (max-width: 800px) {
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
@@ -1371,8 +1369,8 @@ background-color: #04C2C9;
 
 @media screen and (max-width: 800px) {
    .flex-container2 > div {
-    width: 26%;
-    justify-content: center;
+    width: 45%;
+    justify-content: space-between;
   }
 }
 
@@ -1380,15 +1378,10 @@ background-color: #04C2C9;
 
 @media screen and (max-width: 800px) {
    .icon1 i {
-    font-size: 6em;
+    font-size: 7em;
   }
 }
 
-@media screen and (max-width: 750px) {
-   .icon1 i {
-    font-size: 5em;
-  }
-}
 
 @media screen and (min-width: 800px) {
    .flex-container > div {
