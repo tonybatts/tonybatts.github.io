@@ -1382,7 +1382,13 @@ background-color: #04C2C9;
 
 @media screen and (max-width: 800px) {
    .icon1 i {
-    font-size: 6em;
+    font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+   .flex-container2 > div {
+    padding-bottom: 40px;
   }
 }
 
