@@ -27,15 +27,18 @@
   <!-- HERO IMAGE -->
 
   <div class="heroimage" id="home">
-    <div id="particles-js">
-   <div class="textcenter">
+  <div id="particles-js">
+   <div class="textcenter box fade-in one">
+    <div id="tonyimage">
+      <img src="images/tonyhero.png" alt="Tony Batts">
     <h1>Hello, I'm <span id="tony">Tony Batts.</span></h1>
     <h1>I'm a web developer</h1>
       <div id="buttonpadding">
        <a href="#scroll" class="button1">View my work</a>
       </div>
+    </div>
    </div>
-   </div>
+  </div>
   </div>
       
 
@@ -44,12 +47,18 @@
 <div class="scrollsticky" id="scroll">
   <div id="activeButton">  
     <div class="topnav" id="myTopnav">
-      <a href="#home" onclick="myFunction1()" class="btns active mobilenone">HOME</a>
-      <a href="#about" onclick="myFunction1()" class="btns">ABOUT</a>
-      <a href="#skills" onclick="myFunction1()" class="btns">SKILLS</a>
-      <a href="#projects" onclick="myFunction1()" class="btns">PROJECTS</a>
-      <a href="#contact" onclick="myFunction1()" class="btns">CONTACT</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction1()">&#9776;</a>
+      <a href="#home" onclick="myFunction1(); hamburger()" class="btns active mobilenone">HOME</a>
+      <a href="#about" onclick="myFunction1(); hamburger()" class="btns">ABOUT</a>
+      <a href="#skills" onclick="myFunction1(); hamburger()" class="btns">SKILLS</a>
+      <a href="#projects" onclick="myFunction1(); hamburger()" class="btns">PROJECTS</a>
+      <a href="#contact" onclick="myFunction1();hamburger()" class="btns">CONTACT</a>
+      <a href="javascript:void(0);" class="icon hamburger" aria-label="Mobile Menu Toggle" onclick="myFunction1()">
+        <div id="nav-icon1" onclick="hamburgerOpen()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -60,7 +69,7 @@
   <h2><span>ABOUT</span></h2>
  </div>
   <section class="flex-container">
-  <div>
+  <div class="card bluecard">
     <div class="icon">
      <i class="fas fa-book" aria-hidden="true"></i>
      <h3>Always Improving</h3>
@@ -69,16 +78,16 @@
     When I'm not working I spend my days studying and building. This website is constantly evolving, comeback in a few days and you might notice a few changes (or a few bugs). 
     </p>
   </div>
-  <div>
+  <div class="card pinkcard">
     <div class="icon">
      <i class="fas fa-coffee" aria-hidden="true"></i>
      <h3>Fueled By Coffee</h3>
     </div>
-    <p>
+    <p id="pcard">
     Coffee is my one and true vice. I would never get anything done without my fix. I may or may not have more coffee gear than my local coffee shop.
     </p>
   </div>
-  <div>
+  <div class="card pinkcard">
     <div class="icon">
      <i class="fas fa-bed" aria-hidden="true"></i>
      <h3>A Little Awkward</h3>
@@ -87,7 +96,7 @@
     Always a bit uncomfortable but always going out of my comfort zone. "Enjoy your meal" "you too..." is pretty common in my day to day. I like to call it charm.
     </p>
   </div>
-  <div>
+  <div class="card bluecard">
     <div class="icon">
      <i class="fas fa-code" aria-hidden="true"></i>
      <h3>A little obsessive</h3>
@@ -107,51 +116,75 @@
   </div>
   <section class="flex-container2">
   <div>
-    <div class="icon1">
+    <div class="icon1 skillicon">
      <i class="fab fa-html5" aria-hidden="true"></i>
      <h3>HTML</h3>
     </div>
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 cicon">
      <i class="fab fa-css3" aria-hidden="true"></i>
      <h3>CSS</h3>
     </div> 
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 jsicon">
      <i class="fab fa-js" aria-hidden="true"></i>
      <h3>JavaScript</h3>
     </div>
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 bsicon">
      <i class="fas fa-bold" aria-hidden="true"></i>
      <h3>Bootstrap</h3>
     </div>
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 giticon">
      <i class="fab fa-git-square" aria-hidden="true"></i>
      <h3>Git</h3>
     </div>
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 wpicon">
      <i class="fab fa-wordpress" aria-hidden="true"></i>
      <h3>WordPress</h3>
     </div>
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 psicon">
      <i class="fas fa-magic" aria-hidden="true"></i>
      <h3>Photoshop</h3>
     </div>
   </div>
   <div>
-    <div class="icon1">
+    <div class="icon1 idicon">
      <i class="fas fa-mouse-pointer" aria-hidden="true"></i>
      <h3>InDesign</h3>
+    </div> 
+  </div>
+   <div>
+    <div class="icon1 aicon">
+     <i class="fab fa-apple" aria-hidden="true"></i>
+     <h3>Apple</h3>
+    </div> 
+  </div>
+   <div>
+    <div class="icon1 liicon">
+     <i class="fa fa-lock" aria-hidden="true"></i>
+     <h3>Let's Encrypt</h3>
+    </div> 
+  </div>
+   <div>
+    <div class="icon1 eicon">
+     <i class="fas fa-file-excel" aria-hidden="true"></i>
+     <h3>Excel</h3>
+    </div> 
+  </div>
+   <div>
+    <div class="icon1 soicon">
+     <i class="fab fa-stack-overflow" aria-hidden="true"></i>
+     <h3>Stack-Overflow</h3>
     </div> 
   </div>
   </section> 
@@ -278,8 +311,8 @@
   </div>  
   <div class="containerform" id="contact-form">
   <form action="https://formspree.io/tonybatts@gmail.com" target="_blank" rel="noopener" method="POST">
-  	<label for="Name">Name</label>
-  	<div class="formpadding">
+    <label for="Name">Name</label>
+    <div class="formpadding">
     <input type="text" name="name" id="Name" required>
     <span class="bottom"></span>
     <span class="right"></span>
@@ -317,14 +350,16 @@
    </div>
  </a>
  <div class="media">
- 	<a href="https://github.com/tonybatts" target="_blank" aria-label="Github" rel="noopener"><i class="fab fa-git-square" aria-hidden="true"></i></a>
- 	<a href="https://www.linkedin.com/in/tonybatts" aria-label="Linkedin" target="_blank"  rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
- 	<a href="https://www.instagram.com/tonyrbatts/" aria-label="Instagram" target="_blank"  rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+  <a href="https://github.com/tonybatts" target="_blank" aria-label="Github" rel="noopener"><i class="fab fa-git-square" aria-hidden="true"></i></a>
+  <a href="https://www.linkedin.com/in/tonybatts" aria-label="Linkedin" target="_blank"  rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+  <a href="https://www.instagram.com/tonyrbatts/" aria-label="Instagram" target="_blank"  rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
     <a href="mailto:tonybatts@gmail.com" aria-label="gmail"><i class="fas fa-envelope" aria-hidden="true"></i></a>
  </div>
  <p id="smalltext">
   <span id="myName">TONY BATTS</span><span id="year"> &copy;2019</span>
  </p>
+
+
 
 <script>
  particlesJS("particles-js", {
@@ -437,20 +472,6 @@
   },
   "retina_detect": true
 });
-</script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- RESPONSIVE DROPDOWN NAV -->
-<script>
-function myFunction1() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
 // <!-- STICKY SCROLL NAV -->
 window.onscroll = function() {myFunction()};
 var scrollsticky = document.getElementById("scroll");
@@ -474,6 +495,15 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
+}
+//<!-- RESPONSIVE DROPDOWN NAV -->
+function myFunction1() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }
 // <!-- MOBILE GALLERY -->
 // Get the elements with class="column"
@@ -504,27 +534,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active2";
   });
 }
-// <!-- add smoother scrolling -->
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
+// Defer youtube
 function init() {
 var vidDefer = document.getElementsByTagName('iframe');
 for (var i=0; i<vidDefer.length; i++) {
@@ -532,7 +542,18 @@ if(vidDefer[i].getAttribute('data-src')) {
 vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
 } } }
 window.onload = init;
+ // <!-- Hamburger animation-->
+function hamburger(){
+  var icon = document.getElementById('nav-icon1')
+  icon.classList.remove('open')
+}
+function hamburgerOpen(){
+  var icon = document.getElementById('nav-icon1')
+  icon.classList.toggle('open')
+}
 </script>
+<script src="zenscroll-min.js"></script>
+
 </footer>
 
 </body>
