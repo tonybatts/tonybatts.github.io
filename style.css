@@ -520,15 +520,12 @@ a.button1:hover {
   color: #E31B6D;
   transition: all .08s ease-in-out;
   transition-delay: .09s;
-
 }
 
 .flex-container .pinkcard:hover i {
   color: #02C2C7;
   transition: all .08s ease-in-out;
-
 }
-
 @media screen and (max-width: 1300px) {
   .flex-container {
    padding-bottom: 4em;
@@ -634,21 +631,22 @@ color: rgb(21, 114, 182);
 /* SKILLS*/
 @media screen and (max-width: 800px) {
   .wrapper2 h3 {
-   font-size: 16px;
+   font-size: 14px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .wpicon i {
    text-align: center;
-   padding-right: 0px;
-   padding-left: 0px;
+   font-size: 12px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
+   padding-right: 5px;
+   padding-left: 5px;
   }
 }
 
@@ -1378,15 +1376,20 @@ background-color: #04C2C9;
    .flex-container2 > div {
     width: 30%;
     justify-content: center;
-    padding: 0px;
-    margin: 0px;
   }
 }
 
 
+
 @media screen and (max-width: 800px) {
    .icon1 i {
-    font-size: 7em;
+    font-size: 6em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+   .icon1 i {
+    font-size: 5em;
   }
 }
 
