@@ -324,14 +324,12 @@ function myFunction() {
   height: calc(100vh);
   width: calc(100vw);
   overflow: hidden;
-}
-
-.heroimage {
   position: relative;
   text-align: center;
-  overflow: hidden;
   background-color: #252934;
 }
+
+
 
 .textcenter {
   position: absolute;
@@ -453,13 +451,8 @@ a.button1:hover {
   padding-right: .7em;
 }
 
-.flex-container > div {
-  width: 300px;
-  padding-bottom: 2em;
-}
 
-
-/** AOUT CARD **/
+/** ABOUT CARD **/
 
 .card {
   position: relative;
@@ -635,11 +628,8 @@ color: rgb(21, 114, 182);
 @media screen and (max-width: 800px) {
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
-  
   }
 }
-
-
 
 
 #skills span {
@@ -689,21 +679,17 @@ color: rgb(21, 114, 182);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
- 
 }
 
 .flex-container2 > div {
-  width: 400px;
   padding-bottom: 4rem;
 }
+
 .flex-container2 > div h2 {
   padding: 1rem;
   text-align: center;
 }
 
-.flex-container2 > div p {
-  text-align: center;
-}
 
 .wrapper2 {
   background-color: #f5f5f5;
@@ -798,8 +784,15 @@ a.button2:hover {
 .flex-container3 > div {
   display: flex;
   flex-wrap: wrap;
+  width: 40%;
 }
 
+
+.flex-container3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 .projectwords h3, p {
   text-align: left;
@@ -811,15 +804,8 @@ a.button2:hover {
 
 }
 
-.flex-container3 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
-.flex-container3 > div {
-  width: 40%;
-}
+
 
 
 
@@ -872,7 +858,12 @@ a.button2:hover {
    text-align: center;
   padding-top: .9em;
   padding-bottom: 2em;
- 
+}
+
+@media screen and (max-width: 600px) {
+   .headingtravel h2 {
+    padding-bottom: 0px;
+  }
 }
 
 .gallerywrapper img {
@@ -881,7 +872,7 @@ a.button2:hover {
 
 
 
-#gallery{
+#gallery {
   background-color: #f5f5f5;
  
 }
