@@ -643,7 +643,7 @@ color: rgb(21, 114, 182);
 
 @media screen and (max-width: 750px) {
   .wpicon i {
-   padding-left: 3px;
+   padding-left: 10px;
   }
 }
 
@@ -654,7 +654,7 @@ color: rgb(21, 114, 182);
    padding-bottom: 2em;
    padding-right: 5px;
    padding-left: 5px;
-   overflow-y: hidden;
+   margin: 5px;
   }
 }
 
@@ -1382,7 +1382,7 @@ background-color: #04C2C9;
 
 @media screen and (max-width: 800px) {
    .flex-container2 > div {
-    width: 30%;
+    width: 26%;
     justify-content: center;
   }
 }
