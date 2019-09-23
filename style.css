@@ -600,11 +600,8 @@ color: rgb(21, 114, 182);
 }
 
 .icon1 i {
-  text-align: center;
   font-size: 5em;
   padding-bottom: 1rem;
-  border-radius: 25px;
-  padding: 20px;
 }
 .icon i {
   text-align: center;
@@ -621,7 +618,6 @@ color: rgb(21, 114, 182);
 }
 .icon1 h3 {
   text-align: center;
-  padding-bottom: 1rem;
   color: #616161;
 
 }
@@ -639,11 +635,10 @@ color: rgb(21, 114, 182);
 @media screen and (max-width: 800px) {
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
-   padding-right: 5px;
-   padding-left: 0px;
-   margin: 5px;
+  
   }
 }
+
 
 
 
@@ -1367,9 +1362,18 @@ background-color: #04C2C9;
   }
 }
 
+
+
 @media screen and (max-width: 800px) {
    .flex-container2 > div {
-    width: 45%;
+    width: 30%;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 800px) {
+   .wrapper2 > div {
+    width: 100%;
     justify-content: space-between;
   }
 }
@@ -1378,7 +1382,7 @@ background-color: #04C2C9;
 
 @media screen and (max-width: 800px) {
    .icon1 i {
-    font-size: 7em;
+    font-size: 6em;
   }
 }
 
