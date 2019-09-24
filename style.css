@@ -26,6 +26,12 @@ body h2 {
 }
 
 
+.lazy {
+  filter: blur(3px);
+  width: fill;
+}
+
+
 /* Hero Image */
 #tonyimage img {
   display: block;
