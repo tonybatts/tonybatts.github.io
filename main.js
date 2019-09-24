@@ -109,7 +109,9 @@
   },
   "retina_detect": true
 });
+
 // <!-- STICKY SCROLL NAV -->
+
 window.onscroll = function() {myFunction()};
 var scrollsticky = document.getElementById("scroll");
 var sticky = scrollsticky.offsetTop;
@@ -120,7 +122,9 @@ function myFunction() {
     scrollsticky.classList.remove("sticky");
   }
 }
+
 // <!-- ACTIVE NAV -->
+
 // Get the container element
 var btnContainer = document.getElementById("activeButton");
 // Get all buttons with class="btn" inside the container
@@ -133,7 +137,9 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
 //<!-- RESPONSIVE DROPDOWN NAV -->
+
 function myFunction1() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -143,6 +149,7 @@ function myFunction1() {
   }
 }
 // <!-- MOBILE GALLERY -->
+
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
 // Declare a loop variable
@@ -161,7 +168,9 @@ function two() {
     elements[i].style.flex = "50%";
   }
 }
+
 // Add active class to the current button (highlight it)
+
 var header = document.getElementById("buttonActive");
 var btns = header.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
@@ -171,15 +180,11 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active2";
   });
 }
-// Defer youtube
-function init() {
-var vidDefer = document.getElementsByTagName('iframe');
-for (var i=0; i<vidDefer.length; i++) {
-if(vidDefer[i].getAttribute('data-src')) {
-vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-} } }
-window.onload = init;
+
+
+
  // <!-- Hamburger animation-->
+
 function hamburger(){
   var icon = document.getElementById('nav-icon1')
   icon.classList.remove('open')
