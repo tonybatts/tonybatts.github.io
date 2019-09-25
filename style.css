@@ -13,7 +13,6 @@ body {
 
 body p {
   font-size: 1rem;
-  font-weight: 100;
   color: #616161;
 }
 
@@ -26,10 +25,6 @@ body h2 {
 }
 
 
-.lazy {
-  filter: blur(3px);
-  width: fill;
-}
 
 
 /* Hero Image */
@@ -455,6 +450,7 @@ a.button1:hover {
   justify-content: space-around;
   padding-left: .7em;
   padding-right: .7em;
+  padding-bottom: 8em;
 }
 
 
@@ -465,7 +461,10 @@ a.button1:hover {
   width: 400px;
   margin-top: 20px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
   overflow: hidden;
 }
 
@@ -598,6 +597,8 @@ color: rgb(21, 114, 182);
   text-align: center;
 }
 
+
+
 .icon1 i {
   font-size: 5em;
   padding-bottom: 1rem;
@@ -685,10 +686,14 @@ color: rgb(21, 114, 182);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
+
 }
 
 .flex-container2 > div {
   padding-bottom: 4rem;
+
+
 }
 
 .flex-container2 > div h2 {
@@ -816,6 +821,13 @@ a.button2:hover {
 
 
 /*GALLERY*/
+.lazy {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  width: fill;
+}
+
+
 #gallery span {
   position: relative;
 }
@@ -897,6 +909,11 @@ a.button2:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+box-shadow: 0 1px 1px rgba(0,0,0,0.2), 
+              0 2px 2px rgba(0,0,0,0.2), 
+              0 4px 4px rgba(0,0,0,0.2), 
+              0 8px 8px rgba(0,0,0,0.2);
+
 }
 
 .gallery__item--1 {
@@ -1421,15 +1438,16 @@ background-color: #04C2C9;
 
 @media screen and (min-width: 1500px) {
    .flex-container > div > p {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
 @media screen and (min-width: 1300px) {
    .flex-container > div {
-    width: 25%;
+    width: 20%;
     justify-content: center;
+    flex-basis: 22%;
   }
 }
 
