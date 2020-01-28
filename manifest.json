@@ -1,0 +1,17 @@
+{
+    "name": "Tony Batts",
+    "short_name": "Tony",
+    "theme_color": "#1B242F",
+    "background_color": "#f5f5f5",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "https://tonybatts.com/",
+    "description": "Portfolio for Tony Batts",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "https://github.com/tonybatts/tonybatts.github.io/favicon-32x32.png",
+            "sizes": "32x32"
+        }
+    ]
+}
