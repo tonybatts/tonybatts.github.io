@@ -23,6 +23,7 @@
   <script defer src="zenscroll-min.js"></script>
   <script defer src="main.js"></script>
   <link rel="canonical" href="https://www.tonybatts.com/">
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
  
@@ -370,7 +371,29 @@
          console.log("Service worker has been registered for scope: " + reg.scope);
      });
  }
+  
+  // promt download of app
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  });
+  
+  window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can add to home screen
+  btnAdd.style.display = 'block';
+});
+  
 </script>
+  
+  
 
 </body>
 </html>
