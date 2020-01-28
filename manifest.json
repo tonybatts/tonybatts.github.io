@@ -13,5 +13,10 @@
             "src": "https://github.com/tonybatts/tonybatts.github.io/favicon-32x32.png",
             "sizes": "32x32"
         }
+        {
+        
+            "src": "https://github.com/tonybatts/tonybatts.github.io/android-chrome-512x512.png",
+            "sizes": "512x512"
+        }
     ]
 }
