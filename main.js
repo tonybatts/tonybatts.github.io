@@ -213,5 +213,20 @@ document.addEventListener("DOMContentLoaded", function() {
   } 
 });
 
+/* animate on scroll */
+(function (){
+const images = document.querySelectorAll('.item');
 
+observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.classList.add('animate');
+    } 
+  });
+});
+
+images.forEach(image => {
+  observer.observe(image);
+});
+})()
 

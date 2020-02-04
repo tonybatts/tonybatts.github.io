@@ -24,6 +24,31 @@ body h2 {
   font-size: 2em;
 }
 
+/*SLIDE-IN ANIMATIONS */
+
+.item {
+    position: absolute;
+    bottom: -300px;
+}
+
+
+@-webkit-keyframes slide {
+    100% { bottom: 0; }
+}
+
+@keyframes slide {
+    100% { bottom: 0; }
+}
+
+.item.animate {
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: .1s;
+    animation: slide 0.5s ease forwards;
+    
+}
+
+
+
 
 
 
@@ -40,30 +65,24 @@ body h2 {
 @-moz-keyframes fadeIn { from { opacity:.0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:.0; } to { opacity:1; } }
 
-
 .fade-in {
   opacity:0;  /* make things invisible upon start */
   -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
   -moz-animation:fadeIn ease-in 1;
   animation:fadeIn ease-in 1;
-
   -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
-
   -webkit-animation-duration:.7s;
   -moz-animation-duration:.7s;
   animation-duration: .7s;
-
   animation-delay: .04s;
 }
 
-
-
 /* Hamburger menu */
 
-.hamburger {
-  padding: 0px !important;
+.topnav > .hamburger {
+  padding: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
@@ -151,87 +170,6 @@ body h2 {
     left: 0
 }
 
-/* Hamburger menu */
-
-.hamburger {
-  padding: 0px !important;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
-
-
-#nav-icon1 {
-  width: 30px;
-  height: 27px;
-  padding: 10px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
-}
-
-#nav-icon1 span {
-  display: block;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: #f2f2f2;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
-}
-
-#nav-icon1 span:nth-child(1) {
-  top: 0px;
-}
-
-#nav-icon1 span:nth-child(2) {
-  top: 10px;
-}
-
-#nav-icon1 span:nth-child(3) {
-  top: 20px;
-}
-
-#nav-icon1.open span:nth-child(1) {
-  top: 10px;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-  transform: translate(0, -14px);
-}
-
-#nav-icon1.open span:nth-child(2) {
-  opacity: 0;
-  left: -60px;
-}
-
-#nav-icon1.open span:nth-child(3) {
-  top: 10px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-
-}
-
-
 /*DROPDOWN NAV*/
 
 .topnav.responsive {
@@ -252,9 +190,7 @@ body h2 {
   border-bottom: solid 4px;
   border-color: #04C2C9;
 
-
 }
-
 
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -269,8 +205,6 @@ body h2 {
 
 }
 
-
-
 /* Add an active class to highlight the current page on the nav*/
 
 .topnav .active, .btns:hover {
@@ -279,14 +213,10 @@ body h2 {
    
 }
 
-
-
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
 }
-
-
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
 function myFunction() {
@@ -316,10 +246,7 @@ function myFunction() {
   padding-top: 94px;
 }
 
-
-
 /* HERO IMAGE */
-
 
 .heroimage {
   height: calc(100vh);
@@ -329,8 +256,6 @@ function myFunction() {
   text-align: center;
   background-color: #252934;
 }
-
-
 
 .textcenter {
   position: absolute;
@@ -375,14 +300,12 @@ a.button1:hover {
   background-color: #f5f5f5;
 }
 
-
 /* heading styles */
 .headings h2 {
   text-align: center;
   padding-top: 1em;
   padding-bottom: 2em;
 }
-
 
 .contactheading h2 {
   text-align: center;
@@ -440,10 +363,10 @@ a.button1:hover {
   padding-top: 2em;
 }
 
-
 .flex-container p {
   text-align: center;
 }
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -452,7 +375,6 @@ a.button1:hover {
   padding-right: .7em;
   padding-bottom: 8em;
 }
-
 
 /** ABOUT CARD **/
 
@@ -488,12 +410,15 @@ a.button1:hover {
   background: #04C2C9;
   color: white;
 }
+
 .card:nth-child(2):before {
   background: #E31B6D;
 }
+
 .card:nth-child(3):before {
   background: #E31B6D;
 }
+
 .card:nth-child(4):before {
   background: #04C2C9;
 }
@@ -503,16 +428,12 @@ a.button1:hover {
   z-index: 1;
 }
 
-
-
-
 .flex-container .card:hover div h3,
 .flex-container .card:hover p {
   color: #F0F0F0;
   transition: all .08s ease-in-out;
   transition-delay: .08s;
 }
-
 
 .flex-container .bluecard:hover i {
   color: #E31B6D;
@@ -524,20 +445,8 @@ a.button1:hover {
   color: #02C2C7;
   transition: all .08s ease-in-out;
 }
-@media screen and (max-width: 1300px) {
-  .flex-container {
-   padding-bottom: 4em;
-  }
-}
 
-
-.card:nth-child(1) { order: 1; }
-.card:nth-child(2) { order: 2; }
-.card:nth-child(3) { order: 4; }
-.card:nth-child(4) { order: 3; }
-   
-
-
+ 
  /* icons */
 
 .skillicon i {
@@ -597,12 +506,11 @@ color: rgb(21, 114, 182);
   text-align: center;
 }
 
-
-
 .icon1 i {
   font-size: 5em;
   padding-bottom: 1rem;
 }
+
 .icon i {
   text-align: center;
   font-size: 5em;
@@ -616,27 +524,16 @@ color: rgb(21, 114, 182);
   color: #616161;
 
 }
-.icon1 h3 {
+
+.icon1 > h3 {
   text-align: center;
   color: #616161;
-
 }
 
 
 
 /* SKILLS*/
-@media screen and (max-width: 800px) {
-  .wrapper2 h3 {
-   font-size: 14px;
-  }
-}
 
-
-@media screen and (max-width: 800px) {
-  .wrapper2 .flex-container2 {
-   padding-bottom: 2em;
-  }
-}
 
 
 #skills span {
@@ -663,6 +560,7 @@ color: rgb(21, 114, 182);
   transform-origin: center left;
   transform: scaleX(1);
 }
+
 #skills span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
@@ -677,6 +575,7 @@ color: rgb(21, 114, 182);
   transform-origin: center right;
   transform: scaleX(1);
 }
+
 #skills span:hover::after {
   transform-origin: center right;
   transform: scaleX(1);
@@ -686,20 +585,12 @@ color: rgb(21, 114, 182);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
-
 }
 
 .flex-container2 > div {
   padding-bottom: 4rem;
-
-
 }
 
-.flex-container2 > div h2 {
-  padding: 1rem;
-  text-align: center;
-}
 
 
 .wrapper2 {
@@ -725,7 +616,6 @@ color: rgb(21, 114, 182);
   transition: transform 0.5s ease;
 }
 
-
 #projects span::before {
   top: 0;
   transform-origin: center right;
@@ -735,10 +625,12 @@ color: rgb(21, 114, 182);
   transform-origin: center left;
   transform: scaleX(1);
 }
+
 #projects span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
 }
+
 #projects span::after {
   bottom: 0;
   transform-origin: center left;
@@ -748,6 +640,7 @@ color: rgb(21, 114, 182);
   transform-origin: center right;
   transform: scaleX(1);
 }
+
 #projects span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
@@ -756,6 +649,7 @@ color: rgb(21, 114, 182);
 .buttonpadding2 {
   padding-top: 2em;
 }
+
 a.button2 {
   display: inline-block;
   padding: 0.35em 1.2em;
@@ -773,60 +667,70 @@ a.button2 {
 a.button2:hover {
   color: #04C2C9;
   border-color: #04C2C9;
- 
 }
 
+.video iframe{
+  max-width: 100%;
+}
+
+.project {
+  position: relative;
+  width: 33%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  border-bottom: solid #E31B6D;
+}
+
+.project h3 {
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.project-container p {
+  text-align: center;
+  padding-left:15%;
+  padding-right: 15%;
+}
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: .7em;
+  padding-right: .7em;
+  padding-bottom: 8em;
+}
+
+.project-container > div {
+  width: 30%;
+}
+
+.projectbutton {
+  text-align: center;
+  padding-bottom: 20px;
+  
+}
+
+.pcontainer{
+  min-height: 150px;
+}
+
+/*GALLERY*/
 
 .wrapper4 {
   padding-top: 2em;
 }
-#projects {
-  padding-bottom: 4.5em;
-}
 
-#projects2 {
-  padding-bottom: 4.5em;
-}
-
-#projects3 {
-  padding-bottom: 4.5em;
-}
-
-.flex-container3 > div {
-  display: flex;
-  flex-wrap: wrap;
-  width: 40%;
-}
-
-
-.flex-container3 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.projectwords h3, p {
-  text-align: left;
-
-}
-.projectwords h3 {
-  padding-bottom: .6em;
-  text-align: left;
-
-}
-
-
-
-
-
-
-/*GALLERY*/
 .lazy {
   filter: blur(3px);
   -webkit-filter: blur(3px);
   width: fill;
 }
-
 
 #gallery span {
   position: relative;
@@ -871,45 +775,35 @@ a.button2:hover {
   transform: scaleX(1);
 }
 
-
 .headingtravel h2 {
    text-align: center;
   padding-top: .9em;
   padding-bottom: 2em;
 }
 
-@media screen and (max-width: 600px) {
-   .headingtravel h2 {
-    padding-bottom: 0px;
-  }
-}
-
 .gallerywrapper img {
   width: 100%;
 }
 
-
-
 #gallery {
   background-color: #f5f5f5;
- 
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 5vw);
-    grid-gap: 10px;
-    padding-left: 4em;
-    padding-right: 4em;
-    padding-bottom: 4em;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 10px;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 4em;
 }
 
 .gallery__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-box-shadow: 0 1px 1px rgba(0,0,0,0.2), 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2), 
               0 2px 2px rgba(0,0,0,0.2), 
               0 4px 4px rgba(0,0,0,0.2), 
               0 8px 8px rgba(0,0,0,0.2);
@@ -917,45 +811,45 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.2),
 }
 
 .gallery__item--1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .gallery__item--2 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .gallery__item--3 {
-    grid-column-start: 5;
-    grid-column-end: 9;
-    grid-row-start: 1;
-    grid-row-end: 6;
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 6;
 }
 
 .gallery__item--4 {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
 }
 
 .gallery__item--5 {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 6;
-    grid-row-end: 9;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 9;
 }
 
 .gallery__item--6 {
-    grid-column-start: 5;
-    grid-column-end: 9;
-    grid-row-start: 6;
-    grid-row-end: 9;
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 9;
 }
 
 /* MOBILE GALLERY */
@@ -964,7 +858,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.2),
 .header {
   text-align: center;
   padding: 32px;
-   background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
  
 .mobilecolor {
@@ -977,8 +871,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.2),
 }
 
 .row {
-
-   display: flex;
+  display: flex;
    /* IE 10 */
   flex-wrap: wrap;
   padding: 0 4px;
@@ -1335,153 +1228,67 @@ background-color: #04C2C9;
   color: #04C2C9;
 }
 
-@media screen and (max-width: 600px) {
+/* PROPPER QUERY */
+@media only screen and (max-width: 374px) {
   input[type=text], select, textarea {
-  width: 350px;
+    width: 300px !important;
+  }
+}
+/* Super extra small devices (phones, 599px and down) */
+@media only screen and (max-width: 599px) {
+  input[type=text], select, textarea {
+    width: 345px;
   }
 
-}
-@media screen and (max-width: 374px) {
-  input[type=text], select, textarea {
-  width: 300px;
+  .containerform {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .flex-container > div > p {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
-}
+  .flex-container {
+    padding-bottom: 4em;
+  }
 
-@media screen and (max-width: 700px) {
-   .textcenter {
+  .gallery {
+    display: none;
+  }
+
+  .flex-container2 > div {
+    width: 30%;
+    justify-content: space-between;
+  }
+  .textcenter {
     font-size: .7em;
     width: 100%;
     font-weight: 700;
   }
-}
-
-
-
-@media screen and (max-width: 800px) {
-   .mainwrapper {
-    font-size: 1.2rem;
+  .project-container > div {
+    width: 99%;
+    margin-bottom: 70px;
   }
-}
-
-@media screen and (max-width: 600px) {
-   .btns  {
-    width: 125px;
+  .project-container {
+    padding-bottom: 1em;
   }
-}
-
-@media screen and (max-width: 600px) {
-   .gallery {
-    display: none;
+   .project-container p {
+    padding-left: 5%;
+    padding-right: 5%;
   }
-}
-
-
-
-@media screen and (max-width: 800px) {
-   .flex-container2 > div {
-    width: 30%;
-    justify-content: space-between;
+  .video iframe {
+    height: 250px;
   }
-}
-
-@media screen and (max-width: 800px) {
-   .wrapper2 > div {
+  .containerform {
+    padding-left: 1em;
+    padding-right: 1em;
     width: 100%;
-    justify-content: space-between;
   }
-}
-
-
-
-@media screen and (max-width: 800px) {
-   .icon1 i {
-    font-size: 5em;
+  .sticky + #about {
+    padding-top: 95px;
   }
-}
-
-@media screen and (max-width: 800px) {
-   .flex-container2 > div {
-    padding-bottom: 40px;
-  }
-}
-
-
-@media screen and (min-width: 800px) {
-   .flex-container > div {
-    width: 40%;
-    justify-content: center;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-   .flex-container > div > p {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-
-@media screen and (min-width: 600px) {
-   .card p {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-   .flex-container > div > p {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-   .flex-container > div > p {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-   .flex-container > div {
-    width: 20%;
-    justify-content: center;
-    flex-basis: 22%;
-  }
-}
-
-
-
-@media screen and (min-width: 801px) {
-   .flex-container2 > div {
-    width: 25%;
-    justify-content: center;
-  }
-}
-
-
-
-
-@media screen and (min-width: 600px) {
-   .row {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 600px) {
-   .header {
-    display: none;
-  }
-}
-
-
-
-
-
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -1489,15 +1296,18 @@ background-color: #04C2C9;
     float: right;
     display: block;
   }
-
   a.mobilenone {
     display: none;
   }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
- This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
+  .headingtravel h2 {
+    padding-bottom: 0px;
+  }
+  .wrapper2 h3 {
+   font-size: 14px;
+  }
+  .wrapper2 .flex-container2 {
+   padding-bottom: 1em;
+  }
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
@@ -1516,76 +1326,180 @@ background-color: #04C2C9;
     width: 100%;
     text-align: left;
   }
+
+  .btns  {
+    width: 125px;
+  }
+
 }
 
 
-@media screen and (max-width: 600px) {
-  .containerform {
-    padding-left: 1em;
-    padding-right: 1em;
-    width: 100%;
+
+/* Small devices (600px and up) */
+
+@media only screen and (min-width: 600px) {
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+ This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
+
+
+  input[type=text], select, textarea {
+    width: 370px;
+  }
+
+  .mainwrapper {
+    font-size: 1.2rem;
+  }
+
+
+  .card p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .row {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+  .header {
+    display: none;
   }
   .sticky + #about {
-  padding-top: 95px;
+    padding-top: 92px;
   }
-
-}
-
-@media screen and (min-width: 600px) {
-  .sticky + #about {
-  padding-top: 92px;
-  }
-
-}
-
-@media screen and (min-width: 982px) {
-  .sticky + #about {
-  padding-top: 92px;
-  }
-
-}
-
-
-
-
-@media screen and (max-width: 1000px) {
-  .flex-container3 > div {
-    width: 100%;
-  }
-
-}
-
-
-@media screen and (max-width: 1000px) {
   .projectwords h3, p {
    text-align: center;
    padding-left: 3em;
    padding-right: 3em;
   }
+  .project-container > div {
+    width: 60%;
+    margin-bottom: 70px;
+  }
+  .project-container p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .wrapper2 h3 {
+   font-size: 14px;
+  }
+  .wrapper2 .flex-container2 {
+   padding-bottom: 2em;
+  }
+
+  .flex-container2 > div {
+    padding-bottom: 40px;
+    width: 25%;
+    justify-content: center;
+  }
+
 }
 
-@media screen and (max-width: 1000px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  .mainwrapper {
+    font-size: 1.2rem;
+  }
+  .wrapper2 > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .icon1 i {
+    font-size: 5em;
+  }
+  .flex-container2 > div {
+    padding-bottom: 60px;
+    width: 25%;
+    justify-content: center;
+  }
+
+
+  .video iframe {
+    height: 250px;
+  }
+  .project-container p {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .flex-container > div {
+    width: 40%;
+    justify-content: center;
+  }
+
   .buttonpadding2 {
-   text-align: center;
-   padding-left: 3em;
-   padding-right: 3em;
+    text-align: center;
+    padding-left: 3em;
+    padding-right: 3em;
   }
-}
-
-
-
-
-@media screen and (max-width: 1000px) {
   .wrapper3 p {
-   padding-left: 0pc;
-   padding-right: 0pc;
+    padding-left: 0pc;
+    padding-right: 0pc;
   }
+
+  .card:nth-child(1) { order: 1; }
+  .card:nth-child(2) { order: 2; }
+  .card:nth-child(3) { order: 3; }
+  .card:nth-child(4) { order: 4; }
+  
+  input[type=text], select, textarea {
+    width: 500px;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  .project-container > div {
+    width: 30%;
+    margin-bottom: 70px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .sticky + #about {
+    padding-top: 92px;
+  }
+
+ 
+  .wrapper2 h3 {
+   font-size: 1.17em;
+  }
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .flex-container > div > p {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+
+}
+
+/* Extra extra large devices (large laptops and desktops, 1500px and up) */
+@media screen and (min-width: 1500px) {
+  .flex-container > div > p {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+    .flex-container > div {
+    width: 20%;
+    justify-content: center;
+    flex-basis: 22%;
+  }
+
+  .card:nth-child(1) { order: 1; }
+  .card:nth-child(2) { order: 2; }
+  .card:nth-child(3) { order: 4; }
+  .card:nth-child(4) { order: 3; }
+  
 }
 
 
-@media screen and (max-width: 1000px) {
-  .video{
-   justify-content: center;
-   padding-top: 2em;
-  }
-  }
