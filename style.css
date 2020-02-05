@@ -36,6 +36,9 @@ body h2 {
   text-align:center;
   width:100%;
   backface-visibility: visible;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 
 .card-faces.front:hover i {
@@ -46,13 +49,22 @@ body h2 {
 .card-faces.front {
    backface-visibility: hidden;
    z-index: -1;
+   -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 
 }
 .test {
    backface-visibility: visible;
+   -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 .card-faces {
    backface-visibility: visible;
+   -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 .card-container {
   width:500px;
@@ -78,6 +90,7 @@ body h2 {
   position:relative;
   transition:1s ease-in-out;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.15), 0 4px 4px rgba(0,0,0,0.15), 0 8px 8px rgba(0,0,0,0.15);
   width: 100%;
   height: 400px;
@@ -89,6 +102,9 @@ body h2 {
   height:100%;
   width:100%;
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 /*  FRONT STYLES */
 .front {
@@ -102,6 +118,9 @@ body h2 {
 .front-title {
   text-align: center;
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
   padding-top: 70px;
   
 }
@@ -110,6 +129,9 @@ body h2 {
   text-align:center;
   width:100%;
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 
 /*  BACK STYLES */
@@ -572,6 +594,9 @@ a.button1:hover {
 .handicon i {
   color: grey;
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
   font-size: 2em;
   transition: all 0.2s;
  }
