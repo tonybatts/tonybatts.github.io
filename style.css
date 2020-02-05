@@ -1382,11 +1382,19 @@ background-color: #04C2C9;
   input[type=text], select, textarea {
     width: 300px !important;
   }
+
+  .handicon {
+    padding-top: 0px;
+  }
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
   input[type=text], select, textarea {
     width: 345px;
+  }
+
+  .handicon {
+    padding-top: 15px;
   }
 
   .topnav img {
@@ -1533,6 +1541,10 @@ background-color: #04C2C9;
 
   .mainwrapper {
     font-size: 1.2rem;
+  }
+
+  .handicon {
+    padding-top: 40px;
   }
 
 
