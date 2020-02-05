@@ -1394,7 +1394,12 @@ background-color: #04C2C9;
   }
 
   .handicon {
-    padding-top: 15px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+
+  .handicon i {
+    font-size: 30px;
   }
 
   .topnav img {
