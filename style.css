@@ -45,7 +45,6 @@ body h2 {
   color: #02C2C7;
 }
 
-
 .card-faces.front {
    backface-visibility: hidden;
    z-index: -1;
@@ -54,18 +53,21 @@ body h2 {
   -o-backface-visibility: hidden;
 
 }
+
 .test {
    backface-visibility: visible;
    -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -o-backface-visibility: hidden;
 }
+
 .card-faces {
    backface-visibility: visible;
    -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -o-backface-visibility: hidden;
 }
+
 .card-container {
   width:500px;
   height:400px;
@@ -75,15 +77,18 @@ body h2 {
   padding-top: 80px;
 
 }
+
 .card-container:hover {
   cursor: pointer;
 }
+
 .cardflex {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
 }
+
 .card1 {
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +102,7 @@ body h2 {
   padding-bottom: 40px;
 
 }
+
 .card-faces {
   position:absolute;
   height:100%;
@@ -106,6 +112,7 @@ body h2 {
   -webkit-backface-visibility: hidden;
   -o-backface-visibility: hidden;
 }
+
 /*  FRONT STYLES */
 .front {
   background-color: white;
@@ -124,6 +131,7 @@ body h2 {
   padding-top: 70px;
   
 }
+
 .cardp {
   padding-top: 55px;
   text-align:center;
@@ -164,13 +172,7 @@ body h2 {
 .card1.is-flipped {
   transform: rotateY(180deg);
 
-
 }
-
-
-
-
-
 
 /* Hero Image */
 #tonyimage img {
@@ -229,7 +231,6 @@ body h2 {
   margin-bottom: 10px;
   margin-right: 10px;
 }
-
 
 #nav-icon1 {
   width: 30px;
@@ -599,14 +600,14 @@ a.button1:hover {
   -o-backface-visibility: hidden;
   font-size: 2em;
   transition: all 0.2s;
- }
+}
 
 .handicon {
   text-align: right;
   padding-top: 25px;
   padding-right: 20px;
 
- }
+}
 
 .skillicon i {
   color: rgb(227, 79, 38);
@@ -681,7 +682,6 @@ color: rgb(21, 114, 182);
   text-align: center;
   padding-bottom: 1rem;
   color: #616161;
-
 }
 
 .icon1 > h3 {
@@ -747,8 +747,6 @@ color: rgb(21, 114, 182);
 .flex-container2 > div {
   padding-bottom: 4rem;
 }
-
-
 
 .wrapper2 {
   background-color: #f5f5f5;
@@ -905,6 +903,7 @@ a.button2:hover {
   transform-origin: center left;
   transform: scaleX(1);
 }
+
 #gallery span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
@@ -1013,6 +1012,7 @@ a.button2:hover {
 .mobilecolor {
   background-color: black;
 }
+
 .gallerywrapper {
   padding-bottom: 1em;
   background-color: #f5f5f5;
@@ -1069,7 +1069,7 @@ a.button2:hover {
 }
 
 .active2 {
-    color: #04C2C9;
+  color: #04C2C9;
   border-color: #04C2C9;
 }
 
@@ -1100,6 +1100,7 @@ a.button2:hover {
   transform-origin: center left;
   transform: scaleX(1);
 }
+
 .contactheading span:active::before {
   transform-origin: center left;
   transform: scaleX(1);
@@ -1114,11 +1115,11 @@ a.button2:hover {
   transform-origin: center right;
   transform: scaleX(1);
 }
+
 .contactheading  span:active::after {
   transform-origin: center right;
   transform: scaleX(1);
 }
-
 
 .formpadding {
   position: relative;
@@ -1134,6 +1135,7 @@ input, textarea {
   border: 1px solid transparent;
   transition: background-color 0.3s ease-in-out;
 }
+
 input:-webkit-autofill, textarea:-webkit-autofill {
     -webkit-box-shadow: #1B242F inset;
   transition: background-color 5000s ease-in-out 0s;
@@ -1150,8 +1152,6 @@ input:focus, textarea:focus {
   background-color: #3cefff;
   transition: transform 0.5s ease;
 }
-
-
 
 .bottom,
 .top {
@@ -1209,8 +1209,6 @@ input:focus ~ .left, textarea:focus ~.left {
   transform: scaleY(1);
 }
 
-
-
 label {
   color: #ffffff;
   font-size: 16px;
@@ -1242,6 +1240,7 @@ label {
 form {
   padding-bottom: 4em;
 }
+
 input[type=text], select, textarea {
   border-width: 0px;
   font-size: 16px;
@@ -1253,7 +1252,6 @@ input[type=text], select, textarea {
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
-
 input[type=email], select, textarea {
   font-size: 16px;
   border-width: 0px;
@@ -1264,8 +1262,6 @@ input[type=email], select, textarea {
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-
-
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
@@ -1285,16 +1281,11 @@ input[type=submit] {
   font-size: .8em;
 }
 
-
-
-
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   cursor: pointer;
   background-color: #02C2C7;
 }
-
-
 
 /* Add a background color and some padding around the form */
 .containerform {
@@ -1352,6 +1343,7 @@ background-color: #04C2C9;
 .media {
   text-align: center;
 }
+
 .media i {
   font-size: 3em;
   color: gray;
@@ -1386,11 +1378,43 @@ background-color: #04C2C9;
   .handicon {
     padding-top: 0px;
   }
+
+  .red-bar {
+    width: 5px;
+  }
+
+  .blue-bar {
+    width: 5px;
+  }
+
+  .topnav img {
+    font-size: 40px;
+  }
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
   input[type=text], select, textarea {
     width: 345px;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  .logo2  img{
+    display: block;
+  }
+
+   .topnav img {
+    font-size: 40px;
+  }
+
+  .blue-bar {
+    width: 5px;
+  }
+
+  .red-bar {
+    width: 5px;
   }
 
   .handicon {
@@ -1403,14 +1427,14 @@ background-color: #04C2C9;
   }
 
   .topnav img {
-  display: none;
-}
+    display: none;
+  }
 
-.topnav.responsive img {
-  right: 12px;
-  bottom: -10px;
-  display: block;
-}
+  .topnav.responsive img.logo2 {
+    right: 130px;
+    bottom: -10px;
+    display: block;
+  }
 
   .containerform {
     padding-left: 0px;
@@ -1491,7 +1515,6 @@ background-color: #04C2C9;
     display: block;
     text-align: left;
   }
- 
   .topnav.responsive {float: none;}
   .topnav.responsive {position: relative;}
   .topnav.responsive {
@@ -1499,29 +1522,29 @@ background-color: #04C2C9;
     width: 100%;
     text-align: left;
   }
-
   .btns  {
     width: 125px;
   }
-
   .card-container {
-  width:500px;
-  height:400px;
-  margin-bottom: 40px;
-  padding-top: 40px;
-  perspective: 2000px;
+    width:500px;
+    height:400px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    perspective: 2000px;
   }
-
   .front-title{
     left: 0px;
     text-align: center;
     padding-top: 60px;
   }
-
   .cardp {
     padding-top: 40px;
 
   }
+  .card:nth-child(1) { order: 1; }
+  .card:nth-child(2) { order: 2; }
+  .card:nth-child(3) { order: 4; }
+  .card:nth-child(4) { order: 3; }
 }
 
 
@@ -1529,35 +1552,27 @@ background-color: #04C2C9;
 /* Small devices (600px and up) */
 
 @media only screen and (min-width: 600px) {
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
- This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-
-
  .card-container {
   width:500px;
   height:400px;
   margin-bottom: 40px;
   }
-
+  .topnav img.logo2 {
+  display: none;
+}
   input[type=text], select, textarea {
     width: 370px;
   }
-
   .mainwrapper {
     font-size: 1.2rem;
   }
-
   .handicon {
     padding-top: 40px;
   }
-
-
   .card p {
     padding-left: 0px;
     padding-right: 0px;
-  }
-  
+  } 
   .row {
     display: none;
   }
@@ -1589,7 +1604,6 @@ background-color: #04C2C9;
   .wrapper2 .flex-container2 {
    padding-bottom: 2em;
   }
-
   .flex-container2 > div {
     padding-bottom: 40px;
     width: 25%;
@@ -1600,7 +1614,6 @@ background-color: #04C2C9;
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
   .mainwrapper {
     font-size: 1.2rem;
   }
@@ -1616,8 +1629,6 @@ background-color: #04C2C9;
     width: 25%;
     justify-content: center;
   }
-
-
   .video iframe {
     height: 250px;
     padding: 400px;
@@ -1630,7 +1641,6 @@ background-color: #04C2C9;
     width: 40%;
     justify-content: center;
   }
-
   .buttonpadding2 {
     text-align: center;
     padding-left: 3em;
@@ -1640,7 +1650,6 @@ background-color: #04C2C9;
     padding-left: 0pc;
     padding-right: 0pc;
   }
-
   .card:nth-child(1) { order: 1; }
   .card:nth-child(2) { order: 2; }
   .card:nth-child(3) { order: 3; }
@@ -1649,7 +1658,6 @@ background-color: #04C2C9;
   input[type=text], select, textarea {
     width: 500px;
   }
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -1664,13 +1672,9 @@ background-color: #04C2C9;
   .sticky + #about {
     padding-top: 92px;
   }
-
- 
   .wrapper2 h3 {
    font-size: 1.17em;
   }
-
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -1679,8 +1683,6 @@ background-color: #04C2C9;
     padding-left: 1em;
     padding-right: 1em;
   }
-
-
 }
 
 /* Extra extra large devices (large laptops and desktops, 1500px and up) */
@@ -1689,13 +1691,11 @@ background-color: #04C2C9;
     padding-left: 1em;
     padding-right: 1em;
   }
-
     .flex-container > div {
     width: 20%;
     justify-content: center;
     flex-basis: 22%;
   }
-
   .card:nth-child(1) { order: 1; }
   .card:nth-child(2) { order: 2; }
   .card:nth-child(3) { order: 4; }
