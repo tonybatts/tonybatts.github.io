@@ -230,25 +230,3 @@ images.forEach(image => {
 });
 })()
 
-
-// FLIP CARD ONCLICK
-const card = document.querySelectorAll(".card1");
-// window.load = flipAuto();
-  
-(function() {
-card.forEach(function(cards) {
-cards.addEventListener('click', function(){
-  
-  if (cards.classList.contains("is-flipped")) {
-    cards.classList.remove("is-flipped");
-    
-  } else {
-    cards.classList.add("is-flipped");
-  }
-  
-  })
-})
-})()
-
-
-
