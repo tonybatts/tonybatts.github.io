@@ -109,6 +109,9 @@
   },
   "retina_detect": true
 });
+
+
+
 // <!-- STICKY SCROLL NAV -->
 window.onscroll = function() {myFunction()};
 var scrollsticky = document.getElementById("scroll");
@@ -251,4 +254,13 @@ cards.addEventListener('click', function(){
 })()
 
 
+/* window.load = flipAuto();
+*/
+
+
+const shake = document.getElementById("myTopnav")
+
+function addShake(){
+ shake.classList.toggle("shake")
+}; 
 
