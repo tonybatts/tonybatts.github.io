@@ -38,6 +38,7 @@ body h2 {
   color: #02C2C7;
   font-size: 40px;
   z-index: 3;
+
 }
 
 .fas.fa-mug-hot.logo2.coffee {
@@ -46,6 +47,7 @@ body h2 {
 
  .shake > i.fas.fa-mug-hot.logo2.coffee {
   display: block;
+    transition: .5 ease-in;
 }
 
 
@@ -1418,6 +1420,7 @@ background-color: #04C2C9;
 }
 
 /* PROPPER QUERY */
+
 @media only screen and (max-width: 374px) {
   input[type=text], select, textarea {
     width: 300px !important;
@@ -1436,6 +1439,13 @@ background-color: #04C2C9;
 
   .topnav img {
     font-size: 40px;
+  }
+
+  #myTopnav.topnav.responsive img.logo2 {
+    right: 90px;
+    bottom: -10px;
+    display: block;
+    z-index: 2;
   }
 }
 /* Super extra small devices (phones, 599px and down) */
