@@ -31,6 +31,24 @@ body h2 {
   animation-iteration-count: infinite;
 }
 
+.coffee {
+  position: absolute;
+  bottom: 20px;
+  right: 5px;
+  color: #02C2C7;
+  font-size: 40px;
+  z-index: 3;
+}
+
+.fas.fa-mug-hot.logo2.coffee {
+  display: none;
+}
+
+ .shake > i.fas.fa-mug-hot.logo2.coffee {
+  display: block;
+}
+
+
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -196,7 +214,7 @@ body h2 {
   left:0;
   width:10px;
   height:100%;
-  background: #00ADEF;
+  background: #02C2C7;
 }
 
 .card1.is-flipped {
@@ -1404,17 +1422,16 @@ background-color: #04C2C9;
   input[type=text], select, textarea {
     width: 300px !important;
   }
-
   .handicon {
     padding-top: 0px;
   }
 
   .red-bar {
-    width: 5px;
+    width: 3px;
   }
 
   .blue-bar {
-    width: 5px;
+    width: 3px;
   }
 
   .topnav img {
@@ -1440,11 +1457,11 @@ background-color: #04C2C9;
   }
 
   .blue-bar {
-    width: 5px;
+    width: 3px;
   }
 
   .red-bar {
-    width: 5px;
+    width: 3px;
   }
 
   .handicon {
@@ -1464,6 +1481,7 @@ background-color: #04C2C9;
     right: 130px;
     bottom: -10px;
     display: block;
+    z-index: 2;
   }
 
   .containerform {
