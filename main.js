@@ -1,4 +1,3 @@
-
  particlesJS("particles-js", {
   "particles": {
     "number": {
@@ -254,7 +253,7 @@ cards.addEventListener('click', function(){
 })()
 
 
-/* window.load = flipAuto();
+/* SHAKE ANIMATION
 */
 
 

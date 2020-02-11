@@ -42,9 +42,9 @@
   <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-1536x2048.png">
   <link rel="preload" href="zenscroll-min.js" as="script">
   <link rel="preload" href="particles.min.js" as="script">
-  <script src="particles.min.js"></script>
+  <script defer src="particles.min.js"></script>
   <script defer src="zenscroll-min.js"></script>
-  <script defer src="main.js"></script>
+  <script defer src="nodefer.js"></script>
   <link rel="canonical" href="https://www.tonybatts.com/">
 </head>
 <body>
@@ -449,6 +449,19 @@ yMMm-`           -    -           `-mMMs
          console.log("Service worker has been registered for scope: " + reg.scope);
      });
  }
+</script>
+
+<script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "main.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
 </script>
   
   
