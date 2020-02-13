@@ -164,7 +164,6 @@ body h2 {
 }
 
 .buymeacoffeelink {
-  
   position: absolute;
   bottom: 20px;
   right: 6px;
@@ -1344,12 +1343,7 @@ background-color: #04C2C9;
     font-size: 40px;
   }
 
-  .logo2 {
-    right: 90px;
-    bottom: -10px;
-    display: block;
-    z-index: 2;
-  }
+  
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
