@@ -24,6 +24,124 @@ body h2 {
   font-size: 2em;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?m1fbpt');
+  src:  url('fonts/icomoon.eot?m1fbpt#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?m1fbpt') format('truetype'),
+    url('fonts/icomoon.woff?m1fbpt') format('woff'),
+    url('fonts/icomoon.svg?m1fbpt#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-keyboard_arrow_up:before {
+  content: "\e90e";
+}
+.icon-adobeindesign:before {
+  content: "\e900";
+  color: #fd3f93;
+}
+.icon-adobephotoshop:before {
+  content: "\e901";
+  color: #00c8ff;
+}
+.icon-apple:before {
+  content: "\e902";
+  color: #999;
+}
+.icon-bootstrap:before {
+  content: "\e903";
+  color: #563d7c;
+}
+.icon-buymeacoffee:before {
+  content: "\e904";
+  color: #ff813f;
+}
+.icon-coffeescript:before {
+  content: "\e905";
+}
+.icon-css3:before {
+  content: "\e906";
+  color: #1572b6;
+}
+.icon-git:before {
+  content: "\e907";
+  color: #f05032;
+}
+.icon-html5:before {
+  content: "\e908";
+  color: #e34f26;
+}
+.icon-javascript:before {
+  content: "\e909";
+  color: #f7df1e;
+}
+.icon-microsoftexcel:before {
+  content: "\e90a";
+  color: #217346;
+}
+.icon-php:before {
+  content: "\e90b";
+  color: #777bb4;
+}
+.icon-stackoverflow:before {
+  content: "\e90c";
+  color: #fe7a16;
+}
+.icon-wordpress:before {
+  content: "\e90d";
+  color: #21759b;
+}
+.icon-book:before {
+  content: "\f02d";
+}
+.icon-linkedin-square:before {
+  content: "\f08c";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-coffee:before {
+  content: "\f0f4";
+}
+.icon-code:before {
+  content: "\f121";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-git-square:before {
+  content: "\f1d2";
+}
+.icon-bed:before {
+  content: "\f236";
+}
+.icon-hotel:before {
+  content: "\f236";
+}
+.icon-hand-pointer-o:before {
+  content: "\f25a";
+}
+
+
+
 
 /* LOGO SHAKE ANIMATION */
 .shake > img {
@@ -31,23 +149,24 @@ body h2 {
   animation-iteration-count: infinite;
 }
 
-.coffee {
+.logo2 {
   position: absolute;
   bottom: 20px;
-  right: 5px;
+  right: 6px;
   color: #02C2C7;
   font-size: 40px;
   z-index: 3;
 
 }
 
-.fas.fa-mug-hot.logo2.coffee {
+.logo2 {
   display: none;
 }
 
- .shake > i.fas.fa-mug-hot.logo2.coffee {
+ .shake > .logo2 {
   display: block;
-    transition: .5 ease-in;
+  transition: all .5s ease-in;
+
 }
 
 
@@ -65,10 +184,6 @@ body h2 {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
-.logo2 {
-  cursor: pointer;
-}
 
 .particles-js {
   z-index: 3;
@@ -352,6 +467,7 @@ body h2 {
 
 }
 
+
 /* Hero Background */
 
 #particles-js {
@@ -508,49 +624,29 @@ a.button1:hover {
 
 /* ABOUT SECTION */
 
-#about span {
-  position: relative;
+
+
+
+.card:hover .icon-coffeescript {
+color: #04C2C9;
+transition: .2s;
 }
 
-#about span::before, #about span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #444649;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
+.card:hover .icon-book {
+color: #E31B6D;
+transition: .2s;
 }
 
-#about span::before {
-  top: 0;
-  transform-origin: center right;
+.card:hover .icon-bed {
+color: #04C2C9;
+transition: .2s;
 }
 
-#about span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
+.card:hover .icon-code {
+color: #E31B6D;
+transition: .2s;
 }
 
-#about span:active::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#about span::after {
-  bottom: 0;
-  transform-origin: center left;
-}
-
-#about span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
-#about span:active::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
 
 #about {
   padding-top: 2em;
@@ -659,134 +755,47 @@ a.button1:hover {
 
 }
 
-.skillicon i {
-  color: rgb(227, 79, 38);
-}
-
-.cicon i {
-color: rgb(21, 114, 182);
-}
-
-.jsicon i {
-  color:rgb(247, 223, 30);
-}
-
-.bsicon i {
-  color: rgb(86, 61, 124);
-}
-
-.giticon i {
-  color: rgb(240, 80, 50);
-}
-
-.wpicon i {
-  color: #21759b;
-}
-
-.psicon i {
-  color: rgb(60, 50, 123);
-}
-
-.idicon i {
-  color: rgb(231, 73, 160);
-}
-
-.aicon i {
-  color: rgb(153, 153, 153);
-}
-
-.liicon i {
-  color: #474A8A;
-}
-
-.eicon i {
-  color: rgb(29, 111, 66);
-}
-
-.soicon i {
-  color: rgb(244, 128, 36);
-}
-
-.icon {
-  text-align: center;
-
-}
 
 .icon1 {
   text-align: center;
 }
 
-.icon1 i {
+
+.spancss  {
   font-size: 5em;
   padding-bottom: 1rem;
 }
 
-.icon i {
+.icon  {
   text-align: center;
-  font-size: 5em;
-  padding-bottom: 1rem;
+  font-size: 6rem;
   color: #252934;
+}
+.icon i {
+  padding-bottom: 1.3rem;
 }
 
 .icon h3 {
   text-align: center;
   padding-bottom: 1rem;
   color: #616161;
+  font-size: 1.4rem;
 }
 
 .icon1 > h3 {
+  padding-top: 1rem;
   text-align: center;
   color: #616161;
+  font-size: .5rem;
 }
+
+
 
 
 
 /* SKILLS*/
 
-#skills span {
-  position: relative;
-}
 
-#skills span::before, span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #444649;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-}
-
-#skills span::before {
-  top: 0;
-  transform-origin: center right;
-}
-
-#skills span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#skills span:active::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#skills span::after {
-  bottom: 0;
-  transform-origin: center left;
-}
-
-#skills  span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
-
-#skills span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
 
 .flex-container2 {
   display: flex;
@@ -806,50 +815,6 @@ color: rgb(21, 114, 182);
 
 /*PROJECTS*/
 
-#projects span {
-  position: relative;
-}
-
-#projects span::before, #projects span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #444649;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-}
-
-#projects span::before {
-  top: 0;
-  transform-origin: center right;
-}
-
-#projects span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#projects span:active::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#projects span::after {
-  bottom: 0;
-  transform-origin: center left;
-}
-
-#projects  span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
-
-#projects span:active::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
 
 .buttonpadding2 {
   padding-top: 2em;
@@ -927,50 +892,6 @@ a.button2:hover {
   filter: blur(3px);
   -webkit-filter: blur(3px);
   width: fill;
-}
-
-#gallery span {
-  position: relative;
-}
-
-#gallery span::before, #gallery span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #444649;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-}
-
-#gallery span::before {
-  top: 0;
-  transform-origin: center right;
-}
-
-#gallery span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#gallery span:active::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-#gallery span::after {
-  bottom: 0;
-  transform-origin: center left;
-}
-
-#gallery span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
-#gallery span:active::after {
-  transform-origin: center right;
-  transform: scaleX(1);
 }
 
 .headingtravel h2 {
@@ -1130,46 +1051,6 @@ a.button2:hover {
   position: relative;
 }
 
-.contactheading span::before, .contactheading span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: #04C2C9;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-}
-
-.contactheading span::before {
-  top: 0;
-  transform-origin: center right;
-}
-
-.contactheading span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-.contactheading span:active::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-.contactheading span::after {
-  bottom: 0;
-  transform-origin: center left;
-}
-
-.contactheading  span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
-
-.contactheading  span:active::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
 
 .formpadding {
   position: relative;
@@ -1381,11 +1262,12 @@ footer i {
 background-color: #04C2C9;
 }
 
-.backtotop i {
+.backtotop .icon-keyboard_arrow_up {
   color: white;
+  font-size: 1.2em;
 }
 
-.backtotop i:hover {
+.backtotop .icon-keyboard_arrow_up:hover {
   color:  #E31B6D;
   transition: background .5s;
 }
@@ -1394,16 +1276,20 @@ background-color: #04C2C9;
   text-align: center;
 }
 
-.media i {
+.media a {
+  text-decoration: none;
+}
+
+.media span {
   font-size: 3em;
   color: gray;
   padding-left: .6rem;
   padding-right: .6rem;
 }
 
-.media i:hover {
+.media span:hover {
   color: #04C2C9;
-  transition: background .5s;
+  transition: all .3s;
 }
 
 #smalltext {
@@ -1441,7 +1327,7 @@ background-color: #04C2C9;
     font-size: 40px;
   }
 
-  #myTopnav.topnav.responsive img.logo2 {
+  .logo2 {
     right: 90px;
     bottom: -10px;
     display: block;
@@ -1606,7 +1492,6 @@ background-color: #04C2C9;
 }
 
 
-
 /* Small devices (600px and up) */
 
 @media only screen and (min-width: 600px) {
@@ -1615,7 +1500,7 @@ background-color: #04C2C9;
   height:400px;
   margin-bottom: 40px;
   }
-  .topnav img.logo2 {
+  .logo2 {
   display: none;
 }
   input[type=text], select, textarea {
@@ -1679,9 +1564,7 @@ background-color: #04C2C9;
     width: 100%;
     justify-content: space-between;
   }
-  .icon1 i {
-    font-size: 5em;
-  }
+
   .flex-container2 > div {
     padding-bottom: 60px;
     width: 25%;
