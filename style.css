@@ -206,7 +206,7 @@ body h2 {
   -o-backface-visibility: hidden;
 }
 
-.card-faces.front:hover i {
+.card-faces.front:hover span {
   color: #02C2C7;
 }
 
@@ -738,7 +738,7 @@ transition: .2s;
  
  /* icons */
 
-.handicon i {
+.icon-hand-pointer-o {
   color: grey;
   backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -1365,7 +1365,7 @@ background-color: #04C2C9;
     margin-top: -10px;
   }
 
-  .handicon i {
+  .icon-hand-pointer-o {
     font-size: 30px;
   }
 
