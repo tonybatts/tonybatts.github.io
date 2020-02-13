@@ -164,31 +164,25 @@ body h2 {
 }
 
 .buymeacoffeelink {
-  display: block;
+  
   position: absolute;
   bottom: 20px;
   right: 6px;
   z-index: 3;
 }
 
-
-
 #myTopnav a.buymeacoffeelink  {
   padding-top: 30px;
   display: none;
 }
 
-
-
  #myTopnav.shake.responsive a.buymeacoffeelink {
   display: block;
 }
 
-
  .shake > .logo2 {
-  display: block;
+  display: none;
   transition: all .5s ease-in;
-
 }
 
 
@@ -1362,6 +1356,11 @@ background-color: #04C2C9;
   input[type=text], select, textarea {
     width: 345px;
   }
+
+ .shake > .logo2 {
+  display: block;
+  transition: all .5s ease-in;
+}
 
   iframe {
     width: 100%;
