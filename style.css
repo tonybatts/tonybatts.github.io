@@ -1549,7 +1549,7 @@ background-color: #04C2C9;
 
   .icon-keyboard_arrow_up.bounce {
     border: none;
-    bottom: -100;
+    bottom: -150px;
   }
 }
 
