@@ -110,93 +110,92 @@
   "retina_detect": true
 });
 
-
-
+// <!--  NAV -->
+const activeBtn = document.querySelectorAll(".btns");
+const nav = document.querySelector("#myTopnav");
+const icon = document.querySelector("#nav-icon1")
 // <!-- STICKY SCROLL NAV -->
-window.onscroll = function() {myFunction()};
-var scrollsticky = document.getElementById("scroll");
-var sticky = scrollsticky.offsetTop;
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    scrollsticky.classList.add("sticky");
+// window.onscroll = function () {scrollStickyNav()};
+
+// function scrollStickyNav() {
+//   if (window.pageYOffset > sticky) {
+//     scrollsticky.classList.add("sticky");
+//   } else {
+//     scrollsticky.classList.remove("sticky");
+//   }
+// }
+// <!-- ACTIVE NAV + MOBILE NAV -->
+
+// Set active class on clicked nav links
+
+activeBtn.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+  var current = document.querySelectorAll(".active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  openDropNav()
+  icon.classList.toggle("open")
+  })
+})
+
+const openDropNav = function () {
+  if (nav.className === "topnav") {
+    nav.className += " responsive";
   } else {
-    scrollsticky.classList.remove("sticky");
+    nav.className = "topnav";
   }
 }
-// <!-- ACTIVE NAV -->
-// Get the container element
-var btnContainer = document.getElementById("activeButton");
-// Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("btns");
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-//<!-- RESPONSIVE DROPDOWN NAV -->
-function myFunction1() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+
+document.querySelector(".hamburger").addEventListener("click", function () {
+  icon.classList.toggle("open")
+  openDropNav()
+})
+
 // <!-- MOBILE GALLERY -->
-// Get the elements with class="column"
-var elements = document.getElementsByClassName("column");
-// Declare a loop variable
-var i;
-// Full-width images
-function one() {
-    for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "100%";  // IE10
-    elements[i].style.flex = "100%";
-  }
-}
-// Two images side by side
-function two() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "50%";  // IE10
-    elements[i].style.flex = "50%";
-  }
-}
-// Add active class to the current button (highlight it)
-var header = document.getElementById("buttonActive");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active2");
+
+const galleryItems = document.querySelectorAll(".column");
+const mobileActiveButton = document.querySelector("#buttonActive");
+const mobileGalleryBtns = mobileActiveButton.querySelectorAll(".btn");
+
+// Change mobile gallery column
+document.querySelector("#galleryButtonOne").addEventListener("click", function () {
+  galleryItems.forEach(function (image) {
+    image.style.msFlex = "100%";  // IE10
+    image.style.flex = "100%";
+  })
+})
+
+document.querySelector("#galleryButtonTwo").addEventListener("click", function () {
+  galleryItems.forEach(function (image) {
+    image.style.msFlex = "50%";  // IE10
+    image.style.flex = "50%";
+
+  })
+})
+
+// Add active mobile gallery class
+mobileGalleryBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const current = document.querySelectorAll(".active2");
     current[0].className = current[0].className.replace(" active2", "");
     this.className += " active2";
-  });
-}
+  })
+})
+
 // Defer youtube
-function init() {
-var vidDefer = document.getElementsByTagName('iframe');
-for (var i=0; i<vidDefer.length; i++) {
-if(vidDefer[i].getAttribute('data-src')) {
-vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-} } }
-window.onload = init;
- // <!-- Hamburger animation-->
-function hamburger(){
-  var icon = document.getElementById('nav-icon1')
-  icon.classList.remove('open')
+let deferVideo = function () {
+  const vidDefer = document.querySelectorAll("iframe");
+  vidDefer.forEach(function (vid) {
+    if (vid.getAttribute('data-src')) {
+      vid.setAttribute('src', vid.getAttribute('data-src'));
+    }
+  })
 }
-function hamburgerOpen(){
-  var icon = document.getElementById('nav-icon1')
-  icon.classList.toggle('open')
-}
+window.onload = deferVideo();
 
 /** lazy load **/
-
 document.addEventListener("DOMContentLoaded", function() {
   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
@@ -216,53 +215,47 @@ document.addEventListener("DOMContentLoaded", function() {
   } 
 });
 
-/* animate on scroll */
-(function (){
-const images = document.querySelectorAll('.item');
+// SLIDE UP ANIMATION ON SCROLL
+let slideUpAnimation = function (){
+  const images = document.querySelectorAll('.item');
 
-observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-      entry.target.classList.add('animate');
-    } 
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('animate');
+      } 
+    });
   });
-});
 
-images.forEach(image => {
-  observer.observe(image);
-});
-})()
-
+  images.forEach(image => {
+    observer.observe(image);
+  });
+}
+window.onload = slideUpAnimation()
 
 // FLIP CARD ONCLICK
 const card = document.querySelectorAll(".card1");
-// window.load = flipAuto();
   
-(function() {
-card.forEach(function(cards) {
-cards.addEventListener('click', function(){
+let flipCard = function() {
+  card.forEach(function(cards) {
+    cards.addEventListener('click', function(){
   
-  if (cards.classList.contains("is-flipped")) {
-    cards.classList.remove("is-flipped");
+      if (cards.classList.contains("is-flipped")) {
+        cards.classList.remove("is-flipped");
     
-  } else {
-    cards.classList.add("is-flipped");
-  }
-  
+      } else {
+        cards.classList.add("is-flipped");
+      }
+    })
   })
-})
-})()
+}
+window.onload = flipCard()
 
-
-/* window.load = flipAuto();
-*/
-
-
-const shake = document.getElementById("myTopnav")
-
-function addShake(){
- shake.classList.toggle("shake")
-}; 
-
-
-
+// Shake animation
+const shake = document.querySelector("#myTopnav")
+const coffeeShakes = function () {
+  document.querySelector(".coffee-shake").addEventListener("click", function () {
+    shake.classList.toggle("shake")
+  })
+}
+window.onload = coffeeShakes()

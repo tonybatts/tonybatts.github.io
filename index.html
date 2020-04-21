@@ -112,19 +112,19 @@ yMMm-`           -    -           `-mMMs
 
 <div class="mainwrapper">
   <!-- DROPDOWN NAV -->
-<div class="scrollsticky" id="scroll">
+<nav class="scrollsticky" id="scroll">
   <div id="activeButton">  
     <div class="topnav" id="myTopnav">
       <span class="icon-buymeacoffee logo2"></span>
       <a class="buymeacoffeelink" href="https://www.buymeacoffee.com/tonybatts" target="_blank" rel="noopener"></a>
-      <img class="logo1" srcset="images/TB-27w.png 1x, images/TB-27w-retina.png 2x" alt="Tony Batts Logo" src="images/TB-27w.png" aria-hidden="true"><img class="logo2" onclick="addShake(shake)" srcset="images/TB-90w.png 1x, images/TB-90w-retina.png 2x" src="images/TB-90w.png" alt="Mobile Tony Batts Logo" aria-hidden="true">
-      <a href="#home" onclick="myFunction1(); hamburger()" class="btns active mobilenone">HOME</a>
-      <a href="#about" onclick="myFunction1(); hamburger()" class="btns">ABOUT</a>
-      <a href="#skills" onclick="myFunction1(); hamburger()" class="btns">SKILLS</a>
-      <a href="#projects" onclick="myFunction1(); hamburger()" class="btns">PROJECTS</a>
-      <a href="#contact" onclick="myFunction1();hamburger()" class="btns">CONTACT</a>
-      <a href="javascript:void(0);" class="icon hamburger" aria-label="Mobile Menu Toggle" onclick="myFunction1()">
-        <div id="nav-icon1" onclick="hamburgerOpen()">
+      <img class="logo1" srcset="images/TB-27w.png 1x, images/TB-27w-retina.png 2x" alt="Tony Batts Logo" src="images/TB-27w.png" aria-hidden="true"><img class="logo2 coffee-shake"  srcset="images/TB-90w.png 1x, images/TB-90w-retina.png 2x" src="images/TB-90w.png" alt="Mobile Tony Batts Logo" aria-hidden="true">
+      <a href="#home" class="btns active mobilenone">HOME</a>
+      <a href="#about" class="btns">ABOUT</a>
+      <a href="#skills" class="btns">SKILLS</a>
+      <a href="#projects" class="btns">PROJECTS</a>
+      <a href="#contact" class="btns">CONTACT</a>
+      <a href="javascript:void(0);" class="icon hamburger" aria-label="Mobile Menu Toggle" >
+        <div id="nav-icon1">
           <span></span>
           <span></span>
           <span></span>
@@ -132,7 +132,7 @@ yMMm-`           -    -           `-mMMs
       </a>
     </div>
   </div>
-</div>
+</nav>
 
 
 <!-- ABOUT SECTION -->
@@ -178,7 +178,7 @@ yMMm-`           -    -           `-mMMs
     </p>
   </div>
   </section>
-</div>
+<!-- </div> -->
 
 <!-- SKILLS SECTION -->
 <div class="wrapper2" id="skills">
@@ -362,8 +362,8 @@ yMMm-`           -    -           `-mMMs
 <!-- MOBILE GALLERY -->
 <div id="mobilecolor">
 <div class="header" id="buttonActive">
-  <button class="btn active2" onclick="two()">1</button>
-  <button class="btn" onclick="one()">2</button>
+  <button id ="galleryButtonOne" class="btn active2">1</button>
+  <button id ="galleryButtonTwo" class="btn">2</button>
 </div> 
 <div class="gallerywrapper">
 <div class="row"> 
@@ -445,7 +445,7 @@ yMMm-`           -    -           `-mMMs
   <span id="myName">TONY BATTS</span><span id="year"> &copy;2019-2020</span>
  </p>
 </footer>
-
+</div>
 <!-- LOAD SERVICE WORKER -->
 <script>
  if (!navigator.serviceWorker.controller) {

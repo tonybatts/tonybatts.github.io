@@ -52,7 +52,6 @@ body h2 {
   width: 60px;
   height: 60px ;
   margin-left:-30px;
-  border: 2px solid white;
   animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   -moz-animation: bounce 2s infinite;
@@ -603,6 +602,9 @@ function myFunction() {
 /* STICKY NAV */
 .scrollsticky {
   z-index: 100;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
 }
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
@@ -1059,7 +1061,7 @@ a.button2:hover {
 
 /* Create two equal columns that sits next to each other */
 .column {
-  flex: 50%;
+  flex: 100%;
   padding: 0 4px;
 }
 
