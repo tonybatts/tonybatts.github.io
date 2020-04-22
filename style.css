@@ -607,18 +607,6 @@ function myFunction() {
   top: -1px;
 }
 
-/* The sticky class is added to the header with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + #about {
-  padding-top: 94px;
-}
-
 /* HERO IMAGE */
 
 .heroimage {
@@ -851,13 +839,7 @@ transition: .2s;
   font-size: .5rem;
 }
 
-
-
-
-
 /* SKILLS*/
-
-
 
 .flex-container2 {
   display: flex;
@@ -876,7 +858,6 @@ transition: .2s;
 }
 
 /*PROJECTS*/
-
 
 .buttonpadding2 {
   padding-top: 2em;
@@ -1061,7 +1042,7 @@ a.button2:hover {
 
 /* Create two equal columns that sits next to each other */
 .column {
-  flex: 100%;
+  flex: 50%;
   padding: 0 4px;
 }
 
@@ -1106,13 +1087,10 @@ a.button2:hover {
   border-color: #04C2C9;
 }
 
-
-
 /* CONTACT */
 .contactheading span {
   position: relative;
 }
-
 
 .formpadding {
   position: relative;

@@ -5,7 +5,7 @@
     "background_color": "#f5f5f5",
     "display": "standalone",
     "scope": "/",
-    "start_url": "https://www.tonybatts.com/",
+    "start_url": "https://tonybatts.github.io/",
     "description": "Portfolio for Tony Batts",
     "orientation": "any",
     "icons": [
@@ -28,7 +28,7 @@
         },
         {
             "src": "/favicon-16x16.png",
-            "sizes": "180x180"
+            "sizes": "16x16"
         },
         {
             "src": "/safari-pinned-tab.svg",

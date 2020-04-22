@@ -160,16 +160,15 @@ const mobileGalleryBtns = mobileActiveButton.querySelectorAll(".btn");
 // Change mobile gallery column
 document.querySelector("#galleryButtonOne").addEventListener("click", function () {
   galleryItems.forEach(function (image) {
-    image.style.msFlex = "100%";  // IE10
-    image.style.flex = "100%";
+    image.style.msFlex = "50%";  // IE10
+    image.style.flex = "50%";
   })
 })
 
 document.querySelector("#galleryButtonTwo").addEventListener("click", function () {
   galleryItems.forEach(function (image) {
-    image.style.msFlex = "50%";  // IE10
-    image.style.flex = "50%";
-
+    image.style.msFlex = "100%";  // IE10
+    image.style.flex = "100%";
   })
 })
 
@@ -259,3 +258,15 @@ const coffeeShakes = function () {
   })
 }
 window.onload = coffeeShakes()
+
+// remove slide up animation if user comes from link to bottom of the page
+const removeSlideIn = function () {
+  if (location.hash.includes("#contact")) {
+    const slideUpItems = document.querySelectorAll(".item")
+    slideUpItems.forEach(function (item) {
+      item.classList.remove("item")
+    })
+  }
+}
+window.onload = removeSlideIn()
+
