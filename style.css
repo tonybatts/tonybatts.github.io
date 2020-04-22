@@ -1030,7 +1030,7 @@ a.button2:hover {
 .gallerywrapper {
   padding-bottom: 1em;
   background-color: #f5f5f5;
-
+  overflow-y: hidden;
 }
 
 .row {
