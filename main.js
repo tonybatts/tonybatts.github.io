@@ -176,12 +176,22 @@ mobileGalleryBtns.forEach(function (btn) {
 
 // Defer youtube
 let deferVideo = function () {
-  const vidDefer = document.querySelectorAll("iframe");
-  vidDefer.forEach(function (vid) {
-    if (vid.getAttribute('data-src')) {
-      vid.setAttribute('src', vid.getAttribute('data-src'));
-    }
-  })
+  const vidDefer = document.querySelectorAll("iframe"); 
+  if ("IntersectionObserver" in window) {
+    let lazyYoutube = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyVid = entry.target;
+          lazyVid.src = lazyVid.dataset.src;
+          lazyVid.classList.remove("lazyVid");
+          lazyYoutube.unobserve(lazyVid);
+        }
+      });
+    });
+    vidDefer.forEach(function(lazyVid) {
+    lazyYoutube.observe(lazyVid);
+    });
+  }
 }
 window.onload = deferVideo();
 
