@@ -24,6 +24,10 @@ body h2 {
   font-size: 2em;
 }
 
+nav {
+  z-index: 99;
+}
+
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?m1fbpt');
