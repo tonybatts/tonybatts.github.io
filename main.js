@@ -114,25 +114,18 @@
 const activeBtn = document.querySelectorAll(".btns");
 const nav = document.querySelector("#myTopnav");
 const icon = document.querySelector("#nav-icon1")
-// <!-- STICKY SCROLL NAV -->
-// window.onscroll = function () {scrollStickyNav()};
-
-// function scrollStickyNav() {
-//   if (window.pageYOffset > sticky) {
-//     scrollsticky.classList.add("sticky");
-//   } else {
-//     scrollsticky.classList.remove("sticky");
-//   }
-// }
-// <!-- ACTIVE NAV + MOBILE NAV -->
 
 // Set active class on clicked nav links
 
 activeBtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
-  var current = document.querySelectorAll(".active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
+  let current = document.querySelectorAll(".active");
+  if (current[0]) {
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  } else {
+    this.className += " active";
+  }
   openDropNav()
   icon.classList.toggle("open")
   })
@@ -269,4 +262,5 @@ const removeSlideIn = function () {
   }
 }
 window.onload = removeSlideIn()
+
 
