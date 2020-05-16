@@ -273,4 +273,107 @@ const removeSlideIn = function () {
 }
 window.onload = removeSlideIn()
 
+// Word guess game
+
+const Hangman = function (word, remainingGuesses) {
+  this.word = word.toLowerCase().split("")
+  this.remainingGuesses = remainingGuesses
+  this.guessedLetters = []
+  this.status = "playing"
+}
+
+Hangman.prototype.getPuzzle = function () {
+  let puzzle = ""
+  this.word.forEach((newletter) => {
+
+    if (this.guessedLetters.includes(newletter) || newletter === " ") {
+      puzzle += newletter
+    } else {
+      puzzle += "_"
+    }
+
+  })
+
+  return puzzle.toUpperCase()
+
+}
+
+Hangman.prototype.makeGuess = function (guess) {
+  guess = guess.toLowerCase()
+  const isUnique = !this.guessedLetters.includes(guess)
+  const isBadGuess = !this.word.includes(guess)
+
+  if (isUnique) {
+    this.guessedLetters.push(guess)
+  }
+
+  if (isUnique && isBadGuess) {
+    this.remainingGuesses--
+  }
+
+}
+
+Hangman.prototype.calculateStatus = function () {
+  const failed = this.remainingGuesses === 0
+  const finished = !this.getPuzzle().includes("_")
+  if (failed) {
+    this.status = "failed"
+  } else if (finished) {
+    this.status = "finished"
+  } else {
+    this.status = "playing"
+  }
+}
+
+Hangman.prototype.gameOver = function (eventListener) {
+  if (this.status === "failed") {
+    window.removeEventListener("keypress", eventListener)
+    const guessesEl = document.querySelector("#guesses")
+    guessesEl.style.color = "#E31B6D"
+    let puzzleEl = document.querySelector("#puzzle")
+    puzzleEl.classList.add("incorrect") 
+    setTimeout(() => { 
+      puzzleEl.textContent = "SORRY TRY AGAIN"
+      puzzleEl.classList.remove("incorrect")
+    }, 550)
+  }
+}
+
+Hangman.prototype.winner = function (eventListener) {
+  if (this.status === "finished") {
+    window.removeEventListener("keypress", eventListener)
+    const guessesEl = document.querySelector("#guesses")
+    guessesEl.style.color = "#04C2C9"
+    const myImage = document.querySelector(".tony-image")
+    myImage.src = "images/rick.gif"
+    myImage.srcset = "images/rick.gif"
+    document.querySelector(".mobilenone").click()
+  }
+}
+
+document.querySelector(".logo1").addEventListener("click", () => {
+  
+  const puzzleEl = document.querySelector("#puzzle")
+  const guessesEl = document.querySelector("#guesses")
+  const game1 = new Hangman("Never gonna give you up", 5)
+  
+  puzzleEl.textContent = game1.getPuzzle()
+  guessesEl.style.color = ""
+  guessesEl.textContent = game1.remainingGuesses
+
+  const windowEvent = (e) => {
+    const guess = String.fromCharCode(e.charCode)
+      game1.makeGuess(guess)
+      guessesEl.textContent = game1.remainingGuesses
+      puzzleEl.textContent = game1.getPuzzle()
+      // guessesEl.textContent = game1.remainingGuesses
+      game1.calculateStatus()
+      game1.gameOver(windowEvent)
+      game1.winner(windowEvent)
+      
+  }
+
+  window.addEventListener("keypress", windowEvent)
+
+})
 
