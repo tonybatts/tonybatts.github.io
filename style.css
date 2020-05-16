@@ -37,6 +37,7 @@ p#puzzle {
   position: absolute;
   right: -35px;
   bottom: 20px;
+  display: none;
 }
 
     .incorrect {
@@ -1729,6 +1730,10 @@ background-color: #04C2C9;
     padding-right: 89px;
     margin-top: 15px;
     letter-spacing: 10px;
+  }
+
+  #guesses {
+    display: inline-block;
   }
 
 }
