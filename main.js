@@ -347,6 +347,12 @@ Hangman.prototype.winner = function (eventListener) {
     const myImage = document.querySelector(".tony-image")
     myImage.src = "images/rick.gif"
     myImage.srcset = "images/rick.gif"
+    const firstTitle = document.querySelector("#first-title")
+    firstTitle.textContent = "Never gonna "
+    const secondTitle = document.querySelector("#second-title")
+    secondTitle.textContent = " down"
+    const name = document.querySelector("#tony")
+    name.textContent = "let you"
     document.querySelector(".mobilenone").click()
   }
 }
@@ -377,3 +383,36 @@ document.querySelector(".logo1").addEventListener("click", () => {
 
 })
 
+// pokemon
+
+let fetchPokemon = function () {
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+    .then(response => response.json())
+    .then(function (allpokemon) {
+      const pokemonArray = allpokemon.results
+      const pokemon = pokemonArray[Math.floor(Math.random() * pokemonArray.length)];
+      fetchPokemonData(pokemon);
+    })
+}
+
+function fetchPokemonData(pokemon) {
+  const url = pokemon.url // <--- this is saving the pokemon url to a variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
+  fetch(url)
+    .then(response => response.json())
+    .then(function (pokeData) {
+      renderPokemon(pokeData)
+    })
+}
+
+function renderPokemon(pokeData) {
+  const firstTitle = document.querySelector("#first-title")
+  const secondTitle = document.querySelector("#second-title")
+  firstTitle.textContent = "Meet my "
+  const pokeName = document.querySelector("#tony")
+  pokeName.textContent = `${pokeData.name.toUpperCase()}.`
+  secondTitle.textContent = "I'm a Pokémaster"
+  const pokeImage = document.querySelector('.tony-image')
+  pokeImage.src = pokeData.sprites.front_default
+  pokeImage.srcset = pokeData.sprites.front_default
+}
+document.querySelector(".tony-image").addEventListener("click", fetchPokemon)

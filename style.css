@@ -257,6 +257,10 @@ p#puzzle {
   display: none;
 }
 
+.logo1:hover {
+  cursor: pointer
+}
+
 .buymeacoffeelink {
   position: absolute;
   bottom: 20px;
@@ -665,6 +669,8 @@ function myFunction() {
   text-align: center;
   background-color: #252934;
 }
+
+
 
 .textcenter {
   position: absolute;
@@ -1593,6 +1599,9 @@ background-color: #04C2C9;
   height:400px;
   margin-bottom: 40px;
   }
+  #second-title {
+  padding-left: 4px;
+}
   .logo2 {
   display: none;
 }
