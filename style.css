@@ -1425,6 +1425,9 @@ background-color: #04C2C9;
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
+  #second-title {
+    width: 100%;
+  }
   input[type=text], select, textarea {
     width: 345px;
   }
@@ -1599,6 +1602,7 @@ background-color: #04C2C9;
   height:400px;
   margin-bottom: 40px;
   }
+
   #second-title {
   padding-left: 4px;
 }
