@@ -405,14 +405,16 @@ function fetchPokemonData(pokemon) {
 }
 
 function renderPokemon(pokeData) {
-  const firstTitle = document.querySelector("#first-title")
-  const secondTitle = document.querySelector("#second-title")
-  firstTitle.textContent = "Meet my "
-  const pokeName = document.querySelector("#tony")
-  pokeName.textContent = `${pokeData.name.toUpperCase()}.`
-  secondTitle.textContent = "I'm a Pokémaster"
   const pokeImage = document.querySelector('.tony-image')
   pokeImage.src = pokeData.sprites.front_default
   pokeImage.srcset = pokeData.sprites.front_default
+  const firstTitle = document.querySelector("#first-title")
+  const secondTitle = document.querySelector("#second-title")
+  firstTitle.textContent = "Wild "
+  const pokeName = document.querySelector("#tony")
+  pokeName.textContent = `${pokeData.name.toUpperCase()}`
+  secondTitle.textContent = "appeared!"
+  
+  
 }
 document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
