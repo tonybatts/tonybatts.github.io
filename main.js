@@ -386,7 +386,7 @@ document.querySelector(".logo1").addEventListener("click", () => {
 // pokemon
 
 let fetchPokemon = function () {
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=475')
     .then(response => response.json())
     .then(function (allpokemon) {
       const pokemonArray = allpokemon.results
