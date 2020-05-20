@@ -385,18 +385,25 @@ document.querySelector(".logo1").addEventListener("click", () => {
 
 // pokemon
 
-let fetchPokemon = function () {
+const fetchPokemon = function () {
   fetch('https://pokeapi.co/api/v2/pokemon?limit=475')
     .then(response => response.json())
     .then(function (allpokemon) {
       const pokemonArray = allpokemon.results
-      const pokemon = pokemonArray[Math.floor(Math.random() * pokemonArray.length)];
-      fetchPokemonData(pokemon);
+      localStorage.setItem('pokeArray', JSON.stringify(pokemonArray));
+      document.querySelector(".tony-image").removeEventListener("click", fetchPokemon)
+      fetchPokemonData();
+      document.querySelector(".tony-image").addEventListener("click", fetchPokemonData)
+    }).catch(e => {
+      console.log("Could not grab Pokemon :(")
     })
 }
 
-function fetchPokemonData(pokemon) {
-  const url = pokemon.url // <--- this is saving the pokemon url to a variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
+function fetchPokemonData() {
+  let localPoke = localStorage.getItem("pokeArray")
+  localPoke = JSON.parse(localPoke)
+  const pokemon = localPoke[Math.floor(Math.random() * localPoke.length)];
+  const url = pokemon.url 
   fetch(url)
     .then(response => response.json())
     .then(function (pokeData) {
