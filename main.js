@@ -413,15 +413,23 @@ function fetchPokemonData() {
 
 function renderPokemon(pokeData) {
   const pokeImage = document.querySelector('.tony-image')
-  pokeImage.src = pokeData.sprites.front_default
-  pokeImage.srcset = pokeData.sprites.front_default
+  const randomNum = Math.floor(Math.random() * 475)
   const firstTitle = document.querySelector("#first-title")
   const secondTitle = document.querySelector("#second-title")
-  firstTitle.textContent = "Wild "
   const pokeName = document.querySelector("#tony")
-  pokeName.textContent = `${pokeData.name.toUpperCase()}`
-  secondTitle.textContent = "appeared!"
-  
-  
+  // Chance for shiny pokemon
+  if (randomNum === pokeData.id) {
+    pokeImage.src = pokeData.sprites.front_shiny
+    pokeImage.srcset = pokeData.sprites.front_shiny
+    firstTitle.textContent = "Shiny "
+    pokeName.textContent = `${pokeData.name.toUpperCase()}`
+    secondTitle.textContent = "appeared!"
+  } else {
+    pokeImage.src = pokeData.sprites.front_default
+    pokeImage.srcset = pokeData.sprites.front_default
+    firstTitle.textContent = "Wild "
+    pokeName.textContent = `${pokeData.name.toUpperCase()}`
+    secondTitle.textContent = "appeared!"
+  }  
 }
 document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
