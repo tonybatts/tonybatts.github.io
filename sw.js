@@ -1,3 +1,5 @@
+const cacheName = "version-1"
+
 self.addEventListener("install", function (event) {
   event.waitUntil(preLoad());
 });
@@ -29,7 +31,7 @@ var checkResponse = function (request) {
   });
 };
 const controller = new AbortController();
-const { signal } = controller 
+const { signal } = controller
 var addToCache = function (request) {
   return caches.open("offline").then(function (cache) {
     return fetch(request, { signal }).then(function (response) {
@@ -58,3 +60,8 @@ var returnFromCache = function (request) {
     });
   });
 };
+self.addEventListener('message', function (event) {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});

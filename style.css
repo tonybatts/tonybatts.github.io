@@ -32,6 +32,40 @@ p#puzzle {
     display: none;
 }
 
+#notification {
+  display: none;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+#notification.show {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #04C2C9;
+  color: #1B242F;
+  z-index: 999999;
+  padding: 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#toast {
+  color: #E31B6D;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+
 #guesses {
   color: white;
   position: absolute;
@@ -1425,6 +1459,9 @@ background-color: #04C2C9;
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
+  #notification.show {
+    padding: 15px;
+  }
   #second-title {
     width: 100%;
   }
