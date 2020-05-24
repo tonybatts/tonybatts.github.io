@@ -475,6 +475,8 @@ yMMm-`           -    -           `-mMMs
   <span id="myName">TONY BATTS</span><span id="year"> &copy;2019-2020</span>
  </p>
 </footer>
+
+<a id="reload"><div id="notification">A new version of this app is available. <span id="toast">Click here</span> to update.</div></a>
 </div>
 
 
@@ -486,6 +488,52 @@ yMMm-`           -    -           `-mMMs
          console.log("Service worker has been registered for scope: " + reg.scope);
      });
  }
+
+ let refreshing;
+  // The event listener that is fired when the service worker updates
+  // Here we reload the page
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+  });
+
+
+  let newWorker;
+
+    // The click event on the notification
+    document.getElementById('reload').addEventListener('click', function () {
+      newWorker.postMessage({ action: 'skipWaiting' });
+    });
+
+    if ('serviceWorker' in navigator) {
+      // Register the service worker
+      navigator.serviceWorker.register('/sw.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+
+          // An updated service worker has appeared in reg.installing!
+          newWorker = reg.installing;
+
+          newWorker.addEventListener('statechange', () => {
+
+            // Has service worker state changed?
+            switch (newWorker.state) {
+              case 'installed':
+
+                // There is a new service worker available, show the notification
+                if (navigator.serviceWorker.controller) {
+                  let notification = document.querySelector('#notification');
+                  notification.className = 'show';
+                }
+
+                break;
+            }
+          });
+        });
+      });
+
+    }
+
 </script>
   
   
