@@ -106,12 +106,14 @@ p#puzzle {
 		}
 
 
-@media screen and (orientation: landscape) {
-  #tonyimage h1  {
+
+
+@media screen and (orientation:landscape)
+and (max-device-width: 900px) {
+   #tonyimage h1  {
     font-size: 1.5em;
   }
 }
-
 
 @font-face {
   font-family: 'icomoon';
