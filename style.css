@@ -106,6 +106,13 @@ p#puzzle {
 		}
 
 
+@media screen and (orientation: landscape) {
+  #tonyimage h1  {
+    font-size: 1.5em;
+  }
+}
+
+
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?m1fbpt');
