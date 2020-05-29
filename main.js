@@ -386,7 +386,7 @@ document.querySelector(".logo1").addEventListener("click", () => {
 // pokemon
 
 const fetchPokemon = function () {
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=475')
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=493')
     .then(response => response.json())
     .then(function (allpokemon) {
       const pokemonArray = allpokemon.results
@@ -413,7 +413,7 @@ function fetchPokemonData() {
 
 function renderPokemon(pokeData) {
   const pokeImage = document.querySelector('.tony-image')
-  const randomNum = Math.floor(Math.random() * 475)
+  const randomNum = Math.floor(Math.random() * 493)
   const firstTitle = document.querySelector("#first-title")
   const secondTitle = document.querySelector("#second-title")
   const pokeName = document.querySelector("#tony")
