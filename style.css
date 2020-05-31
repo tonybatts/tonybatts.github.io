@@ -74,6 +74,51 @@ p#puzzle {
   display: none;
 }
 
+#tonyimage .poke-ball {
+  height: 60px;
+  width: auto;
+  margin-top: 40px;
+  display: none;
+}
+
+#tonyimage > .tony-image.poke-wiggle {
+  min-height: 300px;
+  width: auto;
+}
+
+#tonyimage .poke-ball.poke-caught {
+ animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+  20% {
+   
+    transform: rotate(7deg);
+  }
+  
+  40% {
+   
+    transform: rotate(-14deg);
+  }
+  
+  60% {
+   
+    transform: rotate(4deg);
+  }
+  
+  80% {
+
+    transform: rotate(-2deg);
+  }
+  
+  100% {
+   
+    transform: rotate(0deg);
+  }
+}
+
+
+
     .incorrect {
       color: #E31B6D !important;
 			-webkit-animation: kf_shake 0.4s 1 linear;
@@ -500,7 +545,8 @@ and (max-device-width: 900px) {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  /* width: 50%; */
+  width: 385px;
 
 }
 
@@ -1468,6 +1514,19 @@ background-color: #04C2C9;
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
+  #tonyimage img {
+    width: 187px;
+  }
+  #tonyimage .poke-ball {
+  height: 40px;
+  width: auto;
+  margin-top: 17px;
+  display: none;
+}
+  #tonyimage > .tony-image.poke-wiggle {
+  min-height: 0px;
+  width: 50%;
+  }
   #notification.show {
     padding: 15px;
   }

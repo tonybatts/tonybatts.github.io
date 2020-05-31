@@ -385,8 +385,66 @@ document.querySelector(".logo1").addEventListener("click", () => {
 
 // pokemon
 
+
+
+
+let catchPokemon = function () {
+  firstSentance = document.querySelector("#first-title")
+  secondSentance = document.querySelector("#second-title")
+  secondSentance.style.color = "white"
+  let localPoke = localStorage.getItem("pokemon")
+  localPoke = JSON.parse(localPoke)
+  const name = document.querySelector("#tony")
+  let image = document.querySelector(".tony-image")
+  let ball = document.querySelector(".poke-ball")
+  currentPoke = {
+    name: name.textContent,
+    sprite: image.src
+  }
+  currentPoke = JSON.stringify(currentPoke)
+
+  if (localStorage.getItem("pokemon") && ball.classList.value === "poke-ball poke-caught") {
+    name.textContent = localPoke.name
+    firstSentance.textContent = "Your "
+    secondSentance.textContent = " says hi!"
+    image.src = localPoke.sprite
+    image.srcset = localPoke.sprite
+    ball.classList.remove("poke-caught")
+  } else if (!localPoke) {
+    ball.classList.add("poke-caught")
+    secondSentance.style.color = "#83FF33"
+    secondSentance.textContent = " was caught!"
+    localStorage.setItem("pokemon", currentPoke)
+  } else if (ball.classList.value === "poke-ball" && !localPoke.name.includes(name.textContent)) {
+    ball.classList.add("poke-caught")
+    secondSentance.textContent = " was caught!"
+    secondSentance.style.color = "#83FF33"
+    localStorage.setItem("pokemon", currentPoke)
+  } else {
+    ball.classList.add("poke-caught")
+    firstSentance.textContent = ""
+    secondSentance.style.color = "#04C2C9"
+    secondSentance.textContent = " returned to pokeball"
+    localStorage.setItem("pokemon", currentPoke)
+  }
+}
+
+if (localStorage.getItem("pokemon")) {
+  let ball = document.querySelector(".poke-ball")
+  ball.style.display = "block"
+  ball.classList.add("poke-caught")
+  ball.addEventListener("click", catchPokemon)
+}
+
+let buildPokeball = function () {
+  let ball = document.querySelector(".poke-ball")
+  ball.style.display = "block"
+  document.querySelector(".poke-ball").addEventListener("click", catchPokemon)
+}
+
+
 const fetchPokemon = function () {
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=493')
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=475')
     .then(response => response.json())
     .then(function (allpokemon) {
       const pokemonArray = allpokemon.results
@@ -394,6 +452,8 @@ const fetchPokemon = function () {
       document.querySelector(".tony-image").removeEventListener("click", fetchPokemon)
       fetchPokemonData();
       document.querySelector(".tony-image").addEventListener("click", fetchPokemonData)
+      buildPokeball()
+      // document.querySelector(".tony-image").classList.add("poke-wiggle")
     }).catch(e => {
       console.log("Could not grab Pokemon :(")
     })
@@ -413,10 +473,13 @@ function fetchPokemonData() {
 
 function renderPokemon(pokeData) {
   const pokeImage = document.querySelector('.tony-image')
-  const randomNum = Math.floor(Math.random() * 493)
+  const randomNum = Math.floor(Math.random() * 475)
   const firstTitle = document.querySelector("#first-title")
   const secondTitle = document.querySelector("#second-title")
   const pokeName = document.querySelector("#tony")
+  
+  secondTitle.style.color = "white"
+
   // Chance for shiny pokemon
   if (randomNum === pokeData.id) {
     pokeImage.src = pokeData.sprites.front_shiny
@@ -433,3 +496,5 @@ function renderPokemon(pokeData) {
   }  
 }
 document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
+
+
