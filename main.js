@@ -498,3 +498,16 @@ function renderPokemon(pokeData) {
 document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
 
 
+// naruto
+
+let narutoRun = function () {
+  const naruto = document.querySelector(".naruto")
+  document.querySelector("#hidden-leaf").addEventListener("click", () => {
+    naruto.style.display = "block"
+    naruto.classList.add("run")
+    setTimeout(() => {
+      naruto.classList.remove("run")
+    }, 2000)
+  })
+}
+window.onload = narutoRun()
