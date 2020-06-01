@@ -65,44 +65,6 @@ p#puzzle {
   to {bottom: 30px; opacity: 1;}
 }
 
-		@-webkit-keyframes naruto_run {
-      0% { -webkit-transform: translate(10vw); }
-   
-			100% { -webkit-transform: translate(150vw); }
-		}
-		@-moz-keyframes naruto_run {
-  0% { -webkit-transform: translate(10vw); }
-
-			100% { -webkit-transform: translate(150vw); }
-		}
-		@-o-keyframes naruto_run {
-	  0% { -webkit-transform: translate(10vw); }
-
-			100% { -webkit-transform: translate(150vw); }
-		}
-
-
-.naruto {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  margin-left: -410px;
-  z-index: 1;
-  display: none;
-}
-
-.run {
- animation: naruto_run 6s;
-}
-
-#hidden-leaf {
-  width: 25px;
-  height: auto;
-  position: relative;
-  top: 5px;
-  left: 10px;
-  cursor: pointer;
-}
 
 #guesses {
   color: white;
@@ -1552,15 +1514,6 @@ background-color: #04C2C9;
 }
 /* Super extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
-  .run {
-    animation: naruto_run 3s;
-  }
-  .naruto {
-    margin-left: -120px;
-    height: 80px;
-    width: auto;
-    z-index: 9;
-  }
   #tonyimage img {
     width: 187px;
   }
@@ -1861,9 +1814,6 @@ background-color: #04C2C9;
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .run {
-    animation: naruto_run 3s;
-  }
 
   .project-container > div {
     width: 100%;
