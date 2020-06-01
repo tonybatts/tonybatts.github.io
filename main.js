@@ -503,7 +503,7 @@ document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
 let narutoRun = function () {
   const naruto = document.querySelector(".naruto")
   document.querySelector("#hidden-leaf").addEventListener("click", () => {
-    console.log("click")
+    naruto.style.display = "block"
     naruto.classList.add("run")
     setTimeout(() => {
       naruto.classList.remove("run")
