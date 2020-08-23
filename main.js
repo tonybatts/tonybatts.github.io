@@ -453,6 +453,7 @@ const fetchPokemon = function () {
       fetchPokemonData();
       document.querySelector(".tony-image").addEventListener("click", fetchPokemonData)
       buildPokeball()
+      document.querySelector(".tony-image").style.imageRendering = "pixelated"
       // document.querySelector(".tony-image").classList.add("poke-wiggle")
     }).catch(e => {
       console.log("Could not grab Pokemon :(")
@@ -511,3 +512,5 @@ let narutoRun = function () {
   })
 }
 window.onload = narutoRun()
+
+
