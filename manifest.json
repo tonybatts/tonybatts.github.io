@@ -33,6 +33,12 @@
         {
             "src": "/safari-pinned-tab.svg",
             "sizes": "180x180"
+        },
+        {
+            "src": "/maskable_icon.png",
+            "sizes": "512 × 512",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
