@@ -389,6 +389,7 @@ document.querySelector(".logo1").addEventListener("click", () => {
 
 
 let catchPokemon = function () {
+  document.querySelector(".tony-image").style.imageRendering = "pixelated"
   firstSentance = document.querySelector("#first-title")
   secondSentance = document.querySelector("#second-title")
   secondSentance.style.color = "white"
