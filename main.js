@@ -514,4 +514,6 @@ let narutoRun = function () {
 }
 window.onload = narutoRun()
 
+let defaultDuration = 2000 // ms
+zenscroll.setup(defaultDuration)
 
