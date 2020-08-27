@@ -1039,6 +1039,20 @@ transition: .2s;
 }
 
 /*PROJECTS*/
+.easter-egg-title {
+  text-align: center;
+  padding-top: 70px
+}
+
+.easter-egg-list {
+  margin: auto;
+  width: 50%;
+  padding-top: 42px;
+  font-size:1rem;
+  line-height: 25px;
+}
+
+
 
 .buttonpadding2 {
   padding-top: 2em;
