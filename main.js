@@ -275,6 +275,8 @@ window.onload = removeSlideIn()
 
 // Word guess game
 
+let playedBefore = 0
+
 const Hangman = function (word, remainingGuesses) {
   this.word = word.toLowerCase().split("")
   this.remainingGuesses = remainingGuesses
@@ -340,7 +342,7 @@ Hangman.prototype.gameOver = function (eventListener) {
 }
 
 Hangman.prototype.winner = function (eventListener) {
-  if (this.status === "finished") {
+  if (this.status === "finished" && playedBefore === 0) {
     window.removeEventListener("keypress", eventListener)
     const guessesEl = document.querySelector("#guesses")
     guessesEl.style.color = "#04C2C9"
@@ -354,6 +356,66 @@ Hangman.prototype.winner = function (eventListener) {
     const name = document.querySelector("#tony")
     name.textContent = "let you"
     document.querySelector(".mobilenone").click()
+    playedBefore = 1
+  } else if (this.status === "finished") {
+    window.removeEventListener("keypress", eventListener)
+    const guessesEl = document.querySelector("#guesses")
+    guessesEl.style.color = "#04C2C9"
+    const myImage = document.querySelector(".tony-image")
+    myImage.src = "images/warning.png"
+    myImage.srcset = "images/warning.png"
+    myImage.style.width = "200px"
+    myImage.style.padding = "20px"
+    const firstTitle = document.querySelector("#first-title")
+    firstTitle.textContent = "DO NOT"
+    const secondTitle = document.querySelector("#second-title")
+    secondTitle.textContent = ""
+    const name = document.querySelector("#tony")
+    name.textContent = " CLICK"
+    name.style.color = "#04C2C9"
+
+    myImage.addEventListener("click", () => {
+      document.body.innerHTML = ""
+      let upset = document.createElement("h1")
+      let fixButton = document.createElement("button")
+      let dontFixButton = document.createElement("button")
+
+      fixButton.style.padding = "15px"
+      fixButton.style.width = "90px"
+      dontFixButton.style.width = "90px"
+      dontFixButton.style.padding = "15px"
+      fixButton.style.margin = "10px"
+      dontFixButton.style.margin = "10px"
+      dontFixButton.textContent = "Not sorry"
+      fixButton.textContent = "Sorry"
+      upset.textContent = "Why did you delete my website???"
+
+      document.body.appendChild(upset)
+      document.body.appendChild(fixButton)
+      document.body.appendChild(dontFixButton)
+
+      let pettyUser = 0
+      let responses = ["Well that's just petty", "You monster!!!", "This site took me so long to build :(", "You've got to be a little sorry right?", "No shame...no shame at all", "Don't you have better things to do?", "I bet you think you're so cool going around deleting peoples hard work"]
+
+      fixButton.addEventListener("click", () => {
+        location.reload();
+      })
+
+      dontFixButton.addEventListener("click", () => {
+        if (pettyUser !== responses.length) {
+          upset.innerText = responses[pettyUser];
+          pettyUser++  
+        } else {
+          upset.innerText = "Ha! Now you have to be sorry! Muah haha!";
+          dontFixButton.textContent = "Sorry"
+          dontFixButton.addEventListener("click", () => {
+            location.reload();
+          })
+        }
+      })
+    })
+    document.querySelector(".mobilenone").click()
+    
   }
 }
 
@@ -362,20 +424,39 @@ document.querySelector(".logo1").addEventListener("click", () => {
   const puzzleEl = document.querySelector("#puzzle")
   const guessesEl = document.querySelector("#guesses")
   const game1 = new Hangman("Never gonna give you up", 5)
-  
-  puzzleEl.textContent = game1.getPuzzle()
-  guessesEl.style.color = ""
-  guessesEl.textContent = game1.remainingGuesses
+  const game2 = new Hangman("Self Destruct", 3)
+
+  if (playedBefore === 1) {
+    puzzleEl.textContent = game2.getPuzzle()
+    guessesEl.style.color = ""
+    guessesEl.textContent = game2.remainingGuesses
+  } else {
+    puzzleEl.textContent = game1.getPuzzle()
+    guessesEl.style.color = ""
+    guessesEl.textContent = game1.remainingGuesses
+  }
 
   const windowEvent = (e) => {
     const guess = String.fromCharCode(e.charCode)
-      game1.makeGuess(guess)
-      guessesEl.textContent = game1.remainingGuesses
-      puzzleEl.textContent = game1.getPuzzle()
-      // guessesEl.textContent = game1.remainingGuesses
-      game1.calculateStatus()
-      game1.gameOver(windowEvent)
-      game1.winner(windowEvent)
+
+      if (playedBefore === 1) {
+        game2.makeGuess(guess)
+        guessesEl.textContent = game2.remainingGuesses
+        puzzleEl.textContent = game2.getPuzzle()
+        // guessesEl.textContent = game1.remainingGuesses
+        game2.calculateStatus()
+        game2.gameOver(windowEvent)
+        game2.winner(windowEvent)
+      } else {
+        game1.makeGuess(guess)
+        guessesEl.textContent = game1.remainingGuesses
+        puzzleEl.textContent = game1.getPuzzle()
+        // guessesEl.textContent = game1.remainingGuesses
+        game1.calculateStatus()
+        game1.gameOver(windowEvent)
+        game1.winner(windowEvent)
+      }
+      
       
   }
 

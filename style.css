@@ -117,6 +117,7 @@ p#puzzle {
   width: auto;
   margin-top: 40px;
   display: none;
+  cursor: pointer;
 }
 
 #tonyimage > .tony-image.poke-wiggle {
@@ -585,6 +586,7 @@ and (max-device-width: 900px) {
   margin-right: auto;
   /* width: 50%; */
   width: 385px;
+  cursor: pointer;
 
 }
 
