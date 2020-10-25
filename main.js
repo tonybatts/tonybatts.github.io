@@ -556,7 +556,7 @@ function fetchPokemonData() {
 
 function renderPokemon(pokeData) {
   const pokeImage = document.querySelector('.tony-image')
-  const randomNum = Math.floor(Math.random() * 493)
+  const randomNum = Math.floor(Math.random() * 494)
   const firstTitle = document.querySelector("#first-title")
   const secondTitle = document.querySelector("#second-title")
   const pokeName = document.querySelector("#tony")
