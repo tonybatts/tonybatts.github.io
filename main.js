@@ -584,13 +584,15 @@ document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
 // naruto
 
 let narutoRun = function () {
-  const naruto = document.querySelector(".naruto")
   document.querySelector("#hidden-leaf").addEventListener("click", () => {
-    naruto.style.display = "block"
-    naruto.classList.add("run")
-    setTimeout(() => {
-      naruto.classList.remove("run")
-    }, 2000)
+    // build naruto dom element
+    const narutoImg = document.createElement("img")
+    narutoImg.classList.add("naruto", "run")
+    narutoImg.src = "images/naruto.GIF"
+    document.body.appendChild(narutoImg)
+    // remove naruto dom element after animation
+    const narutos = document.querySelectorAll(".naruto")
+    narutos.forEach((oneNaruto) => oneNaruto.addEventListener("animationend", () => oneNaruto.remove()))
   })
 }
 window.onload = narutoRun()
