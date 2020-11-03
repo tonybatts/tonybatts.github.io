@@ -408,6 +408,21 @@ and (max-device-width: 900px) {
   transition: all .5s ease-in;
 }
 
+.toasty{
+  position: fixed;
+  right: -260px;
+  bottom:0;
+}
+
+.animateIn{
+  animation: 2s left forwards ease;
+}
+@keyframes left {
+    0% {right: -260px;}
+    50% {right: 0px;}
+  100%{right: -260px;}
+}
+
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -1872,6 +1887,7 @@ background-color: #04C2C9;
   input[type=text], select, textarea {
     width: 500px;
   }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -1918,7 +1934,6 @@ background-color: #04C2C9;
   #guesses {
     display: inline-block;
   }
-
 }
 
 /* Extra extra large devices (large laptops and desktops, 1500px and up) */
@@ -1936,6 +1951,7 @@ background-color: #04C2C9;
     justify-content: center;
     flex-basis: 22%;
   }
+
   .card:nth-child(1) { order: 1; }
   .card:nth-child(2) { order: 2; }
   .card:nth-child(3) { order: 4; }
