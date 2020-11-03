@@ -412,6 +412,7 @@ and (max-device-width: 900px) {
   position: fixed;
   right: -260px;
   bottom:0;
+  z-index: 9999999;
 }
 
 .animateIn{
