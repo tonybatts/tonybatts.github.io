@@ -416,14 +416,14 @@ and (max-device-width: 900px) {
 }
 
 .animateIn{
-  animation: 2s left forwards ease;
+  animation: .8s left forwards ease;
 }
+
 @keyframes left {
     0% {right: -260px;}
     50% {right: 0px;}
   100%{right: -260px;}
 }
-
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
