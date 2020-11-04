@@ -601,16 +601,20 @@ let keyPress = {
   keys: ""
 }
 
+let audio = new Audio('sound/toasty.mp3')
+
 let konamiCode = function (e) {
   keyPress.keys = keyPress.keys + e.keyCode
   if (keyPress.keys == 38384040373937396665) {
+    
+    audio.play()
     let dan = document.createElement("img")
     dan.src = "images/toasty.png"
     dan.style.width = "260px"
     dan.classList.add("toasty", "animateIn")
+
     document.body.appendChild(dan)
-    let audio = new Audio('sound/toasty.mp3')
-    audio.play()
+    
     const danel = document.querySelector(".toasty")
     danel.addEventListener("animationend", () => dan.remove())
     document.querySelector("body").removeEventListener("keydown", konamiCode)
