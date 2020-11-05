@@ -421,7 +421,9 @@ and (max-device-width: 900px) {
 
 @keyframes left {
     0% {right: -260px;}
+    20% {right: 0px;}
     50% {right: 0px;}
+    60% {right: 0px;}
   100%{right: -260px;}
 }
 
