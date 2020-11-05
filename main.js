@@ -597,18 +597,19 @@ let narutoRun = function () {
 }
 window.onload = narutoRun()
 
-let keyPress = {
+// Konami Code
+
+const keyPress = {
   keys: ""
 }
 
-let audio = new Audio('sound/toasty.mp3')
+const audio = new Audio('sound/toasty.mp3')
 
-let konamiCode = function (e) {
+const konamiCode = function (e) {
   keyPress.keys = keyPress.keys + e.keyCode
-  if (keyPress.keys == 38384040373937396665) {
-    
+  if (keyPress.keys === "38384040373937396665") {
     audio.play()
-    let dan = document.createElement("img")
+    const dan = document.createElement("img")
     dan.src = "images/toasty.png"
     dan.style.width = "260px"
     dan.classList.add("toasty", "animateIn")
@@ -618,7 +619,7 @@ let konamiCode = function (e) {
     const danel = document.querySelector(".toasty")
     danel.addEventListener("animationend", () => dan.remove())
     document.querySelector("body").removeEventListener("keydown", konamiCode)
-
+    
   } else if (keyPress.keys.length >= 20) {
     document.querySelector("body").removeEventListener("keydown", konamiCode)
   }
