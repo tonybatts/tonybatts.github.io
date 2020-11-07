@@ -607,7 +607,7 @@ const audio = new Audio('sound/toasty.mp3')
 
 const konamiCode = function (e) {
   keyPress.keys = keyPress.keys + e.keyCode
-  if (keyPress.keys === "38384040373937396665") {
+  if (keyPress.keys === "38384040373937396665" && navigator.userAgent.toLowerCase().includes("chrome")) {
     audio.play()
     const dan = document.createElement("img")
     dan.src = "images/toasty.png"
@@ -620,10 +620,25 @@ const konamiCode = function (e) {
     danel.addEventListener("animationend", () => dan.remove())
     document.querySelector("body").removeEventListener("keydown", konamiCode)
     
+  } else if (keyPress.keys === "38384040373937396665" && !navigator.userAgent.toLowerCase().includes("chrome")) {
+    audio.play()
+    setTimeout(function () { 
+      const dan = document.createElement("img")
+      dan.src = "images/toasty.png"
+      dan.style.width = "260px"
+      dan.classList.add("toasty", "animateIn")
+
+      document.body.appendChild(dan)
+
+      const danel = document.querySelector(".toasty")
+      danel.addEventListener("animationend", () => dan.remove())
+      document.querySelector("body").removeEventListener("keydown", konamiCode)
+    }, 1000)
   } else if (keyPress.keys.length >= 20) {
     document.querySelector("body").removeEventListener("keydown", konamiCode)
   }
 }
+
 
 window.onload = document.querySelector("body").addEventListener("keydown", konamiCode)
 
