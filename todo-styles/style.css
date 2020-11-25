@@ -146,6 +146,21 @@ a {
     text-decoration: underline;
 }
 
+.flex-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+}
+
+#input-container {
+        display: flex;
+}
+#new-todo {
+        display: flex;
+        /* justify-content: space-between; */
+        width: 100%;
+}
+
 /* Note editor */
 
 .title-input {
@@ -227,13 +242,22 @@ a {
     font-size: 16px;
     }
     #todos {
-        height: calc(100vh - 350px);
+        /* height: calc(100vh - 350px); */
         overflow-y: scroll;
+        padding-bottom: 70px;
+        
     }
     #new-todo {
         position: fixed;
         bottom: 20px;
         left: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .flex-input {
+        display: flex;
+        justify-content: space-between;
     }
     .list-title {
         position: sticky;
@@ -249,13 +273,24 @@ a {
         left: 0;
         background-color: #353239;
     }
-   
+    .button--add-todo {
+        position: fixed;
+        right: 20px;
+    }
+
+    .flex-input--text, .input--mobile {
+        flex-grow: 1;
+    }
+
+    .flex-input--button, .button--add--todo {
+        flex-grow: 2;
+    }
 
 }
 
 @media screen and (max-width: 400px) {
     #todos {
-        height: calc(100vh - 330px);
+        /* height: calc(100vh - 330px); */
         overflow-y: scroll;
     }
 }
