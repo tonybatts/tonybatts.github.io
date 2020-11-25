@@ -223,7 +223,25 @@ a {
 }
 
 @media screen and (max-width: 800px) {
-  .input {
+    .input {
     font-size: 16px;
     }
+    #todos {
+        max-height: 70vh;
+        overflow-y: scroll;
+    }
+    #new-todo {
+        position: fixed;
+        bottom: 4vh;
+    }
+    .list-title {
+        position: sticky;
+        height: 30px;
+        background-color: #2B292E;
+        top: 0;
+        font-size: 18px;
+    }
+   
+    
+
 }
