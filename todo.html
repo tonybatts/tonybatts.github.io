@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="I built this todo app with vanilla JavaScript as a way to help deepen my knowledge">
+        <meta name="keywords" content="Anthony Batts, Tony Batts, HTML, CSS, JavaScript, Portfolio, graphic design, web design, website builder, web developer, web designer, webdesign, website creator, responsive web design">
+        <meta name="author" content="Tony Batts">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <link rel="preload" href="todo-styles/style.css" as="style">
+        <title>To-do It</title>
+        <link href="todo-styles/style.css" rel="stylesheet">
+        <link href="apple-touch-icon.png" rel="icon">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">TODO IT</h1>
+                <h2 class="header__subtitle">What do you need to do</h2>
+            </div>
+        </header>
+
+        <div class="actions">
+            <div class="actions__container">
+                <input id="filter" class="input" placeholder="Search todos">
+                <label class="checkbox">
+                    <input id="hide-completed" type="checkbox"> Hide completed
+                </label>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div id="todos"></div>
+            <form id="new-todo">
+                <input type="text" class="input" placeholder="Add todo" name="text">
+                <button class="button">Add todo</button>
+            </form>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+        <script src="todo-scripts/todo-functions.js"></script>
+        <script src="todo-scripts/todo-app.js"></script>
+    </body>
+</html>
