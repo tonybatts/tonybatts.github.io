@@ -227,7 +227,7 @@ a {
     font-size: 16px;
     }
     #todos {
-        height: 70vh;
+        height: calc(100vh - 230px);
         overflow-y: scroll;
     }
     #new-todo {
