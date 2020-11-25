@@ -278,13 +278,17 @@ a {
         right: 20px;
     }
 
-    .flex-input--text, .input--mobile {
+    /* .flex-input--text, .input--mobile {
         flex-grow: 1;
     }
 
     .flex-input--button, .button--add--todo {
         flex-grow: 2;
     }
+
+    .button {
+        border-bottom: none;
+    } */
 
 }
 
