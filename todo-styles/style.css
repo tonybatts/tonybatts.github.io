@@ -227,7 +227,7 @@ a {
     font-size: 16px;
     }
     #todos {
-        height: calc(100vh - 230px);
+        height: calc(100vh - 430px);
         overflow-y: scroll;
     }
     #new-todo {
@@ -255,7 +255,7 @@ a {
 
 @media screen and (max-width: 400px) {
     #todos {
-        height: calc(100vh - 230px);
+        height: calc(100vh - 330px);
         overflow-y: scroll;
     }
 }
