@@ -252,8 +252,7 @@ a {
     font-size: 16px;
     }
     #todos {
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
+        min-height: calc(100vh - 150px);
         overflow-y: scroll;
         padding-bottom: 75px;  
     }
