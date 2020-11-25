@@ -252,3 +252,10 @@ a {
    
 
 }
+
+@media screen and (max-width: 400px) {
+    #todos {
+        height: calc(100vh - 230px);
+        overflow-y: scroll;
+    }
+}
