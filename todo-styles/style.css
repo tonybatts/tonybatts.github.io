@@ -227,12 +227,13 @@ a {
     font-size: 16px;
     }
     #todos {
-        max-height: 70vh;
+        height: 70vh;
         overflow-y: scroll;
     }
     #new-todo {
         position: fixed;
-        bottom: 4vh;
+        bottom: 20px;
+        left: 20px;
     }
     .list-title {
         position: sticky;
@@ -241,7 +242,13 @@ a {
         top: 0;
         font-size: 18px;
     }
+    #input-container {
+        height: 75px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #353239;
+    }
    
-    
 
 }
