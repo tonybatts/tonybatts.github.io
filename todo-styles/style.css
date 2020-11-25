@@ -249,7 +249,7 @@ a {
     }
     #new-todo {
         position: fixed;
-        bottom: 30px;
+        bottom: 40px;
         left: 20px;
         display: flex;
         justify-content: space-between;
