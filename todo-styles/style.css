@@ -70,7 +70,7 @@ a {
 .hide-show-header {
     font-size: 30px;
     position: absolute;
-    top: 104px;
+    top: 106px;
     right: 15px;
     color:#aaa;
     cursor: pointer;
@@ -78,7 +78,7 @@ a {
 }
 .rotate {
     transform: rotate(180deg);
-    top: 3px;
+    top: 2px;
 
 }
 
