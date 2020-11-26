@@ -9,6 +9,7 @@ const filters = {
 
 renderTodos(todos, filters)
 
+
 // renderTodos(todos, filters)
 
 document.querySelector("#filter").addEventListener("input", (e) => {

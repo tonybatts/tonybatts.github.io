@@ -67,6 +67,25 @@ a {
   padding: 1.6rem 0;
 }
 
+.hide-show-header {
+    font-size: 30px;
+    position: absolute;
+    top: 103px;
+    right: 15px;
+    color:#aaa;
+    cursor: pointer;
+
+}
+.rotate {
+    transform: rotate(180deg);
+    top: 5px;
+
+}
+
+.hide {
+    display: none;  
+}
+
 .header__title {
   font-size: 3.2rem;
   margin-bottom: .4rem;
@@ -307,11 +326,22 @@ a {
         padding: 0px 0.6rem;
     }
 
+
 }
 
 @media screen and (max-width: 400px) {
     #new-todo {
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .checkbox {
+        font-size: 1.2rem;
+    }
+    .list-item__container {
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
+    .list-item {
+        padding: .8rem 1.3rem;
     }
 }
