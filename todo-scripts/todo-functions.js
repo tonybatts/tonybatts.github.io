@@ -110,3 +110,16 @@ const generateSummaryDOM = (incompleteTodos) => {
     return summary
 }
 
+// Toggle the header on and off
+const hideHeader = () => {
+    document.querySelector(".hide-show-header").addEventListener("click", () => {
+        document.querySelector(".header").classList.toggle("hide")
+        document.querySelector(".hide-show-header").classList.toggle("rotate")
+    })
+}
+hideHeader()
+
+
+
+
+
