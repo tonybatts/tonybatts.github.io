@@ -6,6 +6,8 @@ I built this site from the ground up using JavaScript, CSS3, and HTML5. I decide
 
 My portfolio is a progressive web app (PWA) This means that you can download it onto your device, and it will work when there is no internet available as well as some other cool stuff under the hood. This site is hosted on github pages, meaning I have no access to the .htaccess file. This limitation made optimizing my site a creative task. I was still able to achieve straight 100’s on my lighthouse audit. I treat my portfolio like a playground, if I have a ridiculous idea in the middle of the night I’ll pop out of bed and code it into my site.
 
+While I was building this portfolio I occasionally started to add easter eggs, little hidden gems that I thought would make people happy if they were to stumble across one. I started with 1. Then 1 turned into 2, and now there are currently 8 easter eggs hidden throughout this website. I will likely end up adding more if a new idea pops up, I've had a lot of fun creating them. If you end up looking for all 8 and need a hint feel free to ask me, or crack open the dev tools and poke around!
+
 ## Todo app
 https://www.tonybatts.com/todo
 
