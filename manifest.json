@@ -5,7 +5,7 @@
     "background_color": "#f5f5f5",
     "display": "standalone",
     "scope": "/",
-    "start_url": "./index.html",
+    "start_url": "https://www.tonybatts.com/todo",
     "description": "Portfolio for Tony Batts",
     "orientation": "any",
     "icons": [
