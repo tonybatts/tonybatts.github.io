@@ -272,48 +272,54 @@ and (max-device-width: 900px) {
 }
 
 
-
-
-.icon-keyboard_arrow_up:before {
-  content: "\e90e";
+.icon-webpack:before {
+  content: "\e905";
+  color: #8dd6f9;
 }
-.icon-adobeindesign:before {
-  content: "\e900";
-  color: #fd3f93;
+.icon-react:before {
+  content: "\e906";
+  color: #61dafb;
+}
+.icon-keyboard_arrow_up:before {
+  content: "\e913";
+}
+.icon-npm:before {
+  content: "\e907";
+  color: #cb3837;
 }
 .icon-adobephotoshop:before {
-  content: "\e901";
+  content: "\e90d";
   color: #00c8ff;
 }
 .icon-apple:before {
-  content: "\e902";
+  content: "\e90c";
   color: #999;
 }
 .icon-bootstrap:before {
-  content: "\e903";
+  content: "\e90f";
   color: #563d7c;
 }
 .icon-buymeacoffee:before {
-  content: "\e904";
-  color: #02C2C7;
+  content: "\e917";
+  color: #04C2C9;
 }
 .icon-coffeescript:before {
-  content: "\e905";
+  content: "\e916";
 }
 .icon-css3:before {
-  content: "\e906";
+  content: "\e911";
   color: #1572b6;
 }
 .icon-git:before {
-  content: "\e907";
+  content: "\e908";
   color: #f05032;
 }
 .icon-html5:before {
-  content: "\e908";
+  content: "\e912";
   color: #e34f26;
 }
 .icon-javascript:before {
-  content: "\e909";
+  content: "\e910";
   color: #f7df1e;
 }
 .icon-microsoftexcel:before {
@@ -325,42 +331,37 @@ and (max-device-width: 900px) {
   color: #777bb4;
 }
 .icon-stackoverflow:before {
-  content: "\e90c";
+  content: "\e909";
   color: #fe7a16;
 }
 .icon-wordpress:before {
-  content: "\e90d";
+  content: "\e90e";
   color: #21759b;
 }
 .icon-book:before {
-  content: "\f02d";
+  content: "\e918";
 }
 .icon-linkedin-square:before {
-  content: "\f08c";
+  content: "\e900";
 }
 .icon-envelope:before {
-  content: "\f0e0";
-}
-.icon-coffee:before {
-  content: "\f0f4";
+  content: "\e91b";
 }
 .icon-code:before {
-  content: "\f121";
+  content: "\e919";
 }
-.icon-instagram:before {
-  content: "\f16d";
+.icon-instagram1:before {
+  content: "\ea92";
+  font-size: .92em;
 }
 .icon-git-square:before {
-  content: "\f1d2";
+  content: "\e904";
 }
 .icon-bed:before {
-  content: "\f236";
-}
-.icon-hotel:before {
-  content: "\f236";
+  content: "\e914";
 }
 .icon-hand-pointer-o:before {
-  content: "\f25a";
+  content: "\e915";
 }
 
 /* LOGO SHAKE ANIMATION */
