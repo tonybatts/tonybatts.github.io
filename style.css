@@ -1003,7 +1003,10 @@ transition: .2s;
   text-align: right;
   padding-top: 25px;
   padding-right: 20px;
+}
 
+.handicon-padding {
+  padding-top: 25px;
 }
 
 
@@ -1569,6 +1572,9 @@ background-color: #04C2C9;
   .handicon {
     padding-top: 0px;
   }
+  .handicon-padding {
+    padding-top: 0px;
+  }
 
   .red-bar {
     width: 3px;
@@ -1646,6 +1652,10 @@ background-color: #04C2C9;
   .handicon {
     padding-top: 0px;
     margin-top: -10px;
+  }
+
+  .handicon-padding {
+    padding-top: 0px;
   }
 
   .icon-hand-pointer-o {
@@ -1803,6 +1813,9 @@ background-color: #04C2C9;
   }
   .handicon {
     padding-top: 40px;
+  }
+  .handicon-padding {
+    padding-top: 25px;
   }
   .card p {
     padding-left: 0px;
