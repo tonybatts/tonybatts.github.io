@@ -1000,15 +1000,10 @@ transition: .2s;
 }
 
 .handicon {
-  text-align: right;
-  padding-top: 25px;
-  padding-right: 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
-
-.handicon-padding {
-  padding-top: 25px;
-}
-
 
 .icon1 {
   text-align: center;
@@ -1564,6 +1559,20 @@ background-color: #04C2C9;
 }
 
 /* PROPPER QUERY */
+@media only screen and (max-width: 325px) {
+  .card {
+    padding: 40px 20px;
+  }
+
+  .spancss {
+    font-size: 4em;
+  }
+
+  .wrapper3 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 
 @media only screen and (max-width: 374px) {
   input[type=text], select, textarea {
@@ -1647,12 +1656,12 @@ background-color: #04C2C9;
   }
 
   .handicon {
-    padding-top: 0px;
-    margin-top: -10px;
+    bottom: 10px;
+    right: 10px;
   }
 
   .icon-hand-pointer-o {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .topnav img {
@@ -1660,10 +1669,17 @@ background-color: #04C2C9;
   }
 
   .topnav.responsive img.logo2 {
-    right: 130px;
-    bottom: -10px;
+    /* right: 130px;
+    bottom: -10px; */
     display: block;
     z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    left: 34px;
+    right: 0;
+    top: 40px;
+    text-align: center;
+    cursor: pointer;
   }
 
   .containerform {
