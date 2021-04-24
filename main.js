@@ -652,11 +652,12 @@ const mobileLogo = document.querySelector(".coffee-shake")
 document.querySelector(".akatsuki").addEventListener("click", () => {
   console.log("click")
   document.querySelector(".topnav").classList.remove("shake")
+  mobileLogo.style.display = "none"
   mobileLogo.style.width = "140px"
   mobileLogo.style.imageRendering = "pixelated"
-  // mobileLogo.style.pointerEvents = "none"
   mobileLogo.src = "images/itachi.gif"
   mobileLogo.srcset = "images/itachi.gif"
+  mobileLogo.style.display = "block"
 
 })
 
