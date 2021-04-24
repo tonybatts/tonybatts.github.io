@@ -2000,4 +2000,11 @@ background-color: #04C2C9;
 }
 
 
+@media screen and (min-width: 600px) and (max-height: 850px) {
+  .icon-keyboard_arrow_up.bounce {
+    bottom: -120px;
+  }
+}
+
+
 
