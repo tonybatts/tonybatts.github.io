@@ -258,7 +258,6 @@ const shake = document.querySelector("#myTopnav")
 const coffeeShakes = function () {
   document.querySelector(".coffee-shake").addEventListener("click", function () {
     shake.classList.toggle("shake")
-    document.querySelector(".coffee-shake").style.width = "auto"
     document.querySelector(".coffee-shake").style.imageRendering = "auto"
     document.querySelector(".coffee-shake").src = "images/TB-90w.png"
     document.querySelector(".coffee-shake").srcset = "images/TB-90w.png 1x, images/TB-90w-retina.png 2x"
@@ -652,12 +651,9 @@ const mobileLogo = document.querySelector(".coffee-shake")
 document.querySelector(".akatsuki").addEventListener("click", () => {
   console.log("click")
   document.querySelector(".topnav").classList.remove("shake")
-  mobileLogo.style.display = "none"
-  mobileLogo.style.width = "140px"
   mobileLogo.style.imageRendering = "pixelated"
   mobileLogo.src = "images/itachi.gif"
   mobileLogo.srcset = "images/itachi.gif"
-  mobileLogo.style.display = "block"
 
 })
 
