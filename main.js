@@ -649,11 +649,10 @@ window.onload = document.querySelector("body").addEventListener("keydown", konam
 // ITACHI EASTER EGG
 const mobileLogo = document.querySelector(".coffee-shake")
 document.querySelector(".akatsuki").addEventListener("click", () => {
-  console.log("click")
   document.querySelector(".topnav").classList.remove("shake")
   mobileLogo.style.imageRendering = "pixelated"
-  mobileLogo.src = "images/itachi.gif"
   mobileLogo.srcset = "images/itachi.gif"
+  mobileLogo.src = "images/itachi.gif"
 
 })
 
