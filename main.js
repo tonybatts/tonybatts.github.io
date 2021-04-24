@@ -1,5 +1,5 @@
 
- particlesJS("particles-js", {
+particlesJS("particles-js", {
   "particles": {
     "number": {
       "value": 160,
@@ -119,15 +119,15 @@ const icon = document.querySelector("#nav-icon1")
 
 activeBtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
-  let current = document.querySelectorAll(".active");
-  if (current[0]) {
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  } else {
-    this.className += " active";
-  }
-  openDropNav()
-  icon.classList.toggle("open")
+    let current = document.querySelectorAll(".active");
+    if (current[0]) {
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    } else {
+      this.className += " active";
+    }
+    openDropNav()
+    icon.classList.toggle("open")
   })
 })
 
@@ -176,10 +176,10 @@ mobileGalleryBtns.forEach(function (btn) {
 
 // Defer youtube
 let deferVideo = function () {
-  const vidDefer = document.querySelectorAll("iframe"); 
+  const vidDefer = document.querySelectorAll("iframe");
   if ("IntersectionObserver" in window) {
-    let lazyYoutube = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
+    let lazyYoutube = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           let lazyVid = entry.target;
           lazyVid.src = lazyVid.dataset.src;
@@ -188,19 +188,19 @@ let deferVideo = function () {
         }
       });
     });
-    vidDefer.forEach(function(lazyVid) {
-    lazyYoutube.observe(lazyVid);
+    vidDefer.forEach(function (lazyVid) {
+      lazyYoutube.observe(lazyVid);
     });
   }
 }
 window.onload = deferVideo();
 
 /** lazy load **/
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
+    let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
@@ -211,21 +211,21 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
 
-    lazyImages.forEach(function(lazyImage) {
+    lazyImages.forEach(function (lazyImage) {
       lazyImageObserver.observe(lazyImage);
     });
-  } 
+  }
 });
 
 // SLIDE UP ANIMATION ON SCROLL
-let slideUpAnimation = function (){
+let slideUpAnimation = function () {
   const images = document.querySelectorAll('.item');
 
   observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.intersectionRatio > 0) {
         entry.target.classList.add('animate');
-      } 
+      }
     });
   });
 
@@ -237,14 +237,14 @@ window.onload = slideUpAnimation()
 
 // FLIP CARD ONCLICK
 const card = document.querySelectorAll(".card1");
-  
-let flipCard = function() {
-  card.forEach(function(cards) {
-    cards.addEventListener('click', function(){
-  
+
+let flipCard = function () {
+  card.forEach(function (cards) {
+    cards.addEventListener('click', function () {
+
       if (cards.classList.contains("is-flipped")) {
         cards.classList.remove("is-flipped");
-    
+
       } else {
         cards.classList.add("is-flipped");
       }
@@ -258,6 +258,10 @@ const shake = document.querySelector("#myTopnav")
 const coffeeShakes = function () {
   document.querySelector(".coffee-shake").addEventListener("click", function () {
     shake.classList.toggle("shake")
+    document.querySelector(".coffee-shake").style.width = "auto"
+    document.querySelector(".coffee-shake").style.imageRendering = "auto"
+    document.querySelector(".coffee-shake").src = "images/TB-90w.png"
+    document.querySelector(".coffee-shake").srcset = "images/TB-90w.png 1x, images/TB-90w-retina.png 2x"
   })
 }
 window.onload = coffeeShakes()
@@ -333,8 +337,8 @@ Hangman.prototype.gameOver = function (eventListener) {
     const guessesEl = document.querySelector("#guesses")
     guessesEl.style.color = "#E31B6D"
     let puzzleEl = document.querySelector("#puzzle")
-    puzzleEl.classList.add("incorrect") 
-    setTimeout(() => { 
+    puzzleEl.classList.add("incorrect")
+    setTimeout(() => {
       puzzleEl.textContent = "SORRY TRY AGAIN"
       puzzleEl.classList.remove("incorrect")
     }, 550)
@@ -404,7 +408,7 @@ Hangman.prototype.winner = function (eventListener) {
       dontFixButton.addEventListener("click", () => {
         if (pettyUser !== responses.length) {
           upset.innerText = responses[pettyUser];
-          pettyUser++  
+          pettyUser++
         } else {
           upset.innerText = "Ha! Now you have to be sorry! Muah haha!";
           dontFixButton.textContent = "Sorry"
@@ -415,12 +419,12 @@ Hangman.prototype.winner = function (eventListener) {
       })
     })
     document.querySelector(".mobilenone").click()
-    
+
   }
 }
 
 document.querySelector(".logo1").addEventListener("click", () => {
-  
+
   const puzzleEl = document.querySelector("#puzzle")
   const guessesEl = document.querySelector("#guesses")
   const game1 = new Hangman("Never gonna give you up", 5)
@@ -439,25 +443,25 @@ document.querySelector(".logo1").addEventListener("click", () => {
   const windowEvent = (e) => {
     const guess = String.fromCharCode(e.charCode)
 
-      if (playedBefore === 1) {
-        game2.makeGuess(guess)
-        guessesEl.textContent = game2.remainingGuesses
-        puzzleEl.textContent = game2.getPuzzle()
-        // guessesEl.textContent = game1.remainingGuesses
-        game2.calculateStatus()
-        game2.gameOver(windowEvent)
-        game2.winner(windowEvent)
-      } else {
-        game1.makeGuess(guess)
-        guessesEl.textContent = game1.remainingGuesses
-        puzzleEl.textContent = game1.getPuzzle()
-        // guessesEl.textContent = game1.remainingGuesses
-        game1.calculateStatus()
-        game1.gameOver(windowEvent)
-        game1.winner(windowEvent)
-      }
-      
-      
+    if (playedBefore === 1) {
+      game2.makeGuess(guess)
+      guessesEl.textContent = game2.remainingGuesses
+      puzzleEl.textContent = game2.getPuzzle()
+      // guessesEl.textContent = game1.remainingGuesses
+      game2.calculateStatus()
+      game2.gameOver(windowEvent)
+      game2.winner(windowEvent)
+    } else {
+      game1.makeGuess(guess)
+      guessesEl.textContent = game1.remainingGuesses
+      puzzleEl.textContent = game1.getPuzzle()
+      // guessesEl.textContent = game1.remainingGuesses
+      game1.calculateStatus()
+      game1.gameOver(windowEvent)
+      game1.winner(windowEvent)
+    }
+
+
   }
 
   window.addEventListener("keypress", windowEvent)
@@ -546,7 +550,7 @@ function fetchPokemonData() {
   let localPoke = localStorage.getItem("pokeArray")
   localPoke = JSON.parse(localPoke)
   const pokemon = localPoke[Math.floor(Math.random() * localPoke.length)];
-  const url = pokemon.url 
+  const url = pokemon.url
   fetch(url)
     .then(response => response.json())
     .then(function (pokeData) {
@@ -560,7 +564,7 @@ function renderPokemon(pokeData) {
   const firstTitle = document.querySelector("#first-title")
   const secondTitle = document.querySelector("#second-title")
   const pokeName = document.querySelector("#tony")
-  
+
   secondTitle.style.color = "white"
 
   // Chance for shiny pokemon
@@ -576,7 +580,7 @@ function renderPokemon(pokeData) {
     firstTitle.textContent = "Wild "
     pokeName.textContent = `${pokeData.name.toUpperCase()}`
     secondTitle.textContent = "appeared!"
-  }  
+  }
 }
 document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
 
@@ -615,14 +619,14 @@ const konamiCode = function (e) {
     dan.classList.add("toasty", "animateIn")
 
     document.body.appendChild(dan)
-    
+
     const danel = document.querySelector(".toasty")
     danel.addEventListener("animationend", () => dan.remove())
     document.querySelector("body").removeEventListener("keydown", konamiCode)
-    
+
   } else if (keyPress.keys === "38384040373937396665" && !navigator.userAgent.toLowerCase().includes("chrome")) {
     audio.play()
-    setTimeout(function () { 
+    setTimeout(function () {
       const dan = document.createElement("img")
       dan.src = "images/toasty.png"
       dan.style.width = "260px"
@@ -641,6 +645,20 @@ const konamiCode = function (e) {
 
 
 window.onload = document.querySelector("body").addEventListener("keydown", konamiCode)
+
+
+// ITACHI EASTER EGG
+const mobileLogo = document.querySelector(".coffee-shake")
+document.querySelector(".akatsuki").addEventListener("click", () => {
+  console.log("click")
+  document.querySelector(".topnav").classList.remove("shake")
+  mobileLogo.style.width = "140px"
+  mobileLogo.style.imageRendering = "pixelated"
+  // mobileLogo.style.pointerEvents = "none"
+  mobileLogo.src = "images/itachi.gif"
+  mobileLogo.srcset = "images/itachi.gif"
+
+})
 
 let defaultDuration = 2000 // ms
 zenscroll.setup(defaultDuration)

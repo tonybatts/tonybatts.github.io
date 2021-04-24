@@ -365,7 +365,7 @@ and (max-device-width: 900px) {
 }
 
 /* LOGO SHAKE ANIMATION */
-.shake > img {
+.shake > .coffee-shake  {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
@@ -750,6 +750,8 @@ and (max-device-width: 900px) {
   max-height: 100px;
   transition: all 0.5s;
 }
+
+
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -1635,6 +1637,22 @@ background-color: #04C2C9;
   transition: all .5s ease-in;
 }
 
+.shake > .akatsuki {
+  position: absolute;
+  top: 100px;
+  right: 6px;
+  display: block;
+  transition: all .5s ease-in;
+}
+
+.coffee-shake {
+  width: auto;
+}
+
+.akatsuki {
+  width: 47px;
+}
+
   iframe {
     width: 100%;
   }
@@ -1802,6 +1820,9 @@ background-color: #04C2C9;
 /* Small devices (600px and up) */
 
 @media only screen and (min-width: 600px) {
+  .akatsuki {
+    display: none;
+  }
  .card-container {
   width:500px;
   height:400px;
