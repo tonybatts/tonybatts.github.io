@@ -1,6 +1,3 @@
-
-
-
 const normalParticles = {
   "particles": {
     "number": {
@@ -223,33 +220,30 @@ const akatsukiParticles = {
   "retina_detect": true
 }
 
-
-
-
-particlesJS("particles-js", normalParticles);
+particlesJS("particles-js", normalParticles)
 
 // <!--  NAV -->
-const activeBtn = document.querySelectorAll(".btns");
-const nav = document.querySelector("#myTopnav");
+const activeBtn = document.querySelectorAll(".btns")
+const nav = document.querySelector("#myTopnav")
 const icon = document.querySelector("#nav-icon1")
 
 // Set active class on clicked nav links
 
 activeBtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    let current = document.querySelectorAll(".active");
+    let current = document.querySelectorAll(".active")
     if (current[0]) {
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
+      current[0].className = current[0].className.replace(" active", "")
+      this.className += " active"
     } else {
-      this.className += " active";
+      this.className += " active"
     }
     openDropNav()
     icon.classList.toggle("open")
   })
 })
 
-const openDropNav = function () {
+const openDropNav = () => {
   if (nav.className === "topnav") {
     nav.className += " responsive";
     document.querySelector(".logo2.coffee-shake").style.display = "block"
@@ -259,114 +253,114 @@ const openDropNav = function () {
   }
 }
 
-document.querySelector(".hamburger").addEventListener("click", function () {
+document.querySelector(".hamburger").addEventListener("click", () => {
   icon.classList.toggle("open")
   openDropNav()
 })
 
 // <!-- MOBILE GALLERY -->
 
-const galleryItems = document.querySelectorAll(".column");
-const mobileActiveButton = document.querySelector("#buttonActive");
-const mobileGalleryBtns = mobileActiveButton.querySelectorAll(".btn");
+const galleryItems = document.querySelectorAll(".column")
+const mobileActiveButton = document.querySelector("#buttonActive")
+const mobileGalleryBtns = mobileActiveButton.querySelectorAll(".btn")
 
 // Change mobile gallery column
-document.querySelector("#galleryButtonOne").addEventListener("click", function () {
-  galleryItems.forEach(function (image) {
-    image.style.msFlex = "50%";  // IE10
-    image.style.flex = "50%";
+document.querySelector("#galleryButtonOne").addEventListener("click", () => {
+  galleryItems.forEach((image) => {
+    image.style.msFlex = "50%" // IE10
+    image.style.flex = "50%"
   })
 })
 
-document.querySelector("#galleryButtonTwo").addEventListener("click", function () {
-  galleryItems.forEach(function (image) {
-    image.style.msFlex = "100%";  // IE10
-    image.style.flex = "100%";
+document.querySelector("#galleryButtonTwo").addEventListener("click", () => {
+  galleryItems.forEach((image) => {
+    image.style.msFlex = "100%"  // IE10
+    image.style.flex = "100%"
   })
 })
 
 // Add active mobile gallery class
 mobileGalleryBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    const current = document.querySelectorAll(".active2");
-    current[0].className = current[0].className.replace(" active2", "");
-    this.className += " active2";
+    const current = document.querySelectorAll(".active2")
+    current[0].className = current[0].className.replace(" active2", "")
+    this.className += " active2"
   })
 })
 
 // Defer youtube
-let deferVideo = function () {
-  const vidDefer = document.querySelectorAll("iframe");
+let deferVideo = () => {
+  const vidDefer = document.querySelectorAll("iframe")
   if ("IntersectionObserver" in window) {
     let lazyYoutube = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          let lazyVid = entry.target;
-          lazyVid.src = lazyVid.dataset.src;
-          lazyVid.classList.remove("lazyVid");
-          lazyYoutube.unobserve(lazyVid);
+          let lazyVid = entry.target
+          lazyVid.src = lazyVid.dataset.src
+          lazyVid.classList.remove("lazyVid")
+          lazyYoutube.unobserve(lazyVid)
         }
-      });
-    });
-    vidDefer.forEach(function (lazyVid) {
-      lazyYoutube.observe(lazyVid);
-    });
+      })
+    })
+    vidDefer.forEach((lazyVid) => {
+      lazyYoutube.observe(lazyVid)
+    })
   }
 }
-window.onload = deferVideo();
+window.onload = deferVideo()
 
 /** lazy load **/
-document.addEventListener("DOMContentLoaded", function () {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+document.addEventListener("DOMContentLoaded", () => {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"))
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
+    let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
+          let lazyImage = entry.target
+          lazyImage.src = lazyImage.dataset.src
+          lazyImage.srcset = lazyImage.dataset.srcset
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
         }
-      });
-    });
+      })
+    })
 
-    lazyImages.forEach(function (lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
+    lazyImages.forEach((lazyImage) => {
+      lazyImageObserver.observe(lazyImage)
+    })
   }
-});
+})
 
 // SLIDE UP ANIMATION ON SCROLL
 let slideUpAnimation = function () {
-  const images = document.querySelectorAll('.item');
+  const images = document.querySelectorAll('.item')
 
   observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.intersectionRatio > 0) {
-        entry.target.classList.add('animate');
+        entry.target.classList.add('animate')
       }
     });
   });
 
   images.forEach(image => {
-    observer.observe(image);
+    observer.observe(image)
   });
 }
 window.onload = slideUpAnimation()
 
 // FLIP CARD ONCLICK
-const card = document.querySelectorAll(".card1");
+const card = document.querySelectorAll(".card1")
 
 let flipCard = function () {
   card.forEach(function (cards) {
     cards.addEventListener('click', function () {
 
       if (cards.classList.contains("is-flipped")) {
-        cards.classList.remove("is-flipped");
+        cards.classList.remove("is-flipped")
 
       } else {
-        cards.classList.add("is-flipped");
+        cards.classList.add("is-flipped")
       }
     })
   })
@@ -465,44 +459,40 @@ Hangman.prototype.gameOver = function (eventListener) {
 }
 
 Hangman.prototype.winner = function (eventListener) {
+  const guessesEl = document.querySelector("#guesses")
+  const myImage = document.querySelector(".tony-image")
+  const firstTitle = document.querySelector("#first-title")
+  const secondTitle = document.querySelector("#second-title")
+  const name = document.querySelector("#tony")
+
   if (this.status === "finished" && playedBefore === 0) {
     window.removeEventListener("keypress", eventListener)
-    const guessesEl = document.querySelector("#guesses")
     guessesEl.style.color = "#04C2C9"
-    const myImage = document.querySelector(".tony-image")
     myImage.src = "images/rick.gif"
     myImage.srcset = "images/rick.gif"
-    const firstTitle = document.querySelector("#first-title")
     firstTitle.textContent = "Never gonna "
-    const secondTitle = document.querySelector("#second-title")
     secondTitle.textContent = " down"
-    const name = document.querySelector("#tony")
     name.textContent = "let you"
     document.querySelector(".mobilenone").click()
     playedBefore = 1
   } else if (this.status === "finished" && playedBefore === 2) {
     window.removeEventListener("keypress", eventListener)
-    const guessesEl = document.querySelector("#guesses")
     guessesEl.style.color = "#04C2C9"
-    const myImage = document.querySelector(".tony-image")
     myImage.src = "images/warning.png"
     myImage.srcset = "images/warning.png"
     myImage.style.width = "200px"
     myImage.style.padding = "20px"
-    const firstTitle = document.querySelector("#first-title")
     firstTitle.textContent = "DO NOT"
-    const secondTitle = document.querySelector("#second-title")
     secondTitle.textContent = ""
-    const name = document.querySelector("#tony")
     name.textContent = " CLICK"
     name.style.color = "#04C2C9"
     playedBefore = 2
 
     myImage.addEventListener("click", () => {
       document.body.innerHTML = ""
-      let upset = document.createElement("h1")
-      let fixButton = document.createElement("button")
-      let dontFixButton = document.createElement("button")
+      const upset = document.createElement("h1")
+      const fixButton = document.createElement("button")
+      const dontFixButton = document.createElement("button")
 
       fixButton.style.padding = "15px"
       fixButton.style.width = "90px"
@@ -519,7 +509,7 @@ Hangman.prototype.winner = function (eventListener) {
       document.body.appendChild(dontFixButton)
 
       let pettyUser = 0
-      let responses = ["Well that's just petty", "You monster!!!", "This site took me so long to build :(", "You've got to be a little sorry right?", "No shame...no shame at all", "Don't you have better things to do?", "I bet you think you're so cool going around deleting peoples hard work"]
+      const responses = ["Well that's just petty", "You monster!!!", "This site took me so long to build :(", "You've got to be a little sorry right?", "No shame...no shame at all", "Don't you have better things to do?", "I bet you think you're so cool going around deleting peoples hard work"]
 
       fixButton.addEventListener("click", () => {
         location.reload();
@@ -541,27 +531,20 @@ Hangman.prototype.winner = function (eventListener) {
     document.querySelector(".mobilenone").click()
 
   } else if (this.status === "finished" && playedBefore === 1) {
-    const guessesEl = document.querySelector("#guesses")
     guessesEl.style.color = "#04C2C9"
-    const myImage = document.querySelector(".tony-image")
     myImage.style.imageRendering = "pixelated"
     myImage.src = "images/itachi.gif"
     myImage.srcset = "images/itachi.gif"
-    const firstTitle = document.querySelector("#first-title")
     firstTitle.textContent = "Forgive me"
-    const secondTitle = document.querySelector("#second-title")
     secondTitle.textContent = " "
-    const name = document.querySelector("#tony")
     name.textContent = " Sasuke..."
     document.querySelector(".mobilenone").click()
-
     particlesJS("particles-js", akatsukiParticles);
     playedBefore = 2
   }
 }
 
 document.querySelector(".logo1").addEventListener("click", () => {
-
   const puzzleEl = document.querySelector("#puzzle")
   const guessesEl = document.querySelector("#guesses")
   const game1 = new Hangman("Never gonna give you up", 5)
@@ -610,8 +593,6 @@ document.querySelector(".logo1").addEventListener("click", () => {
       game1.gameOver(windowEvent)
       game1.winner(windowEvent)
     }
-
-
   }
 
   window.addEventListener("keypress", windowEvent)
@@ -619,8 +600,6 @@ document.querySelector(".logo1").addEventListener("click", () => {
 })
 
 // pokemon
-
-
 
 
 let catchPokemon = function () {
@@ -718,7 +697,121 @@ function renderPokemon(pokeData) {
   secondTitle.style.color = "white"
 
   // Chance for shiny pokemon
+
   if (randomNum === pokeData.id) {
+    let shinyPokemonParticles = {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#04c2c9"
+        },
+        "shape": {
+          "type": "image",
+          "stroke": {
+            "width": 0,
+            "color": "#e31b6d"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": pokeData.sprites.front_shiny,
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 1,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 50,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 4,
+            "size_min": 0.3,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 600
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "bubble"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 250,
+            "size": 0,
+            "duration": 2,
+            "opacity": 0,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 400,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    }
+
+    localStorage.setItem("shiny", pokeData.sprites.front_shiny)
+    particlesJS("particles-js", shinyPokemonParticles)
     pokeImage.src = pokeData.sprites.front_shiny
     pokeImage.srcset = pokeData.sprites.front_shiny
     firstTitle.textContent = "Shiny "
@@ -734,6 +827,118 @@ function renderPokemon(pokeData) {
 }
 document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
 
+if (localStorage.getItem("shiny")) {
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 100,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#04c2c9"
+      },
+      "shape": {
+        "type": "image",
+        "stroke": {
+          "width": 0,
+          "color": "#e31b6d"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+        "image": {
+          "src": localStorage.getItem("shiny"),
+          "width": 100,
+          "height": 100
+        }
+      },
+      "opacity": {
+        "value": 1,
+        "random": true,
+        "anim": {
+          "enable": true,
+          "speed": 1,
+          "opacity_min": 0,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 50,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 4,
+          "size_min": 0.3,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": false,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 1,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 600
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "bubble"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 400,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 250,
+          "size": 0,
+          "duration": 2,
+          "opacity": 0,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 400,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  })
+}
 
 // naruto
 
