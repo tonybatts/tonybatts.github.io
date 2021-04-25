@@ -755,7 +755,13 @@ and (max-device-width: 900px) {
   transition: all 0.5s;
 }
 
+#activeButton > .topnav > img.coffee-shake.logo2 {
+  display: none;
+}
 
+#activeButton > .topnav.responsive > img.coffee-shake.logo2 {
+  display: block;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
