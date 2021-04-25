@@ -651,8 +651,12 @@ const mobileLogo = document.querySelector(".coffee-shake")
 document.querySelector(".akatsuki").addEventListener("click", () => {
   document.querySelector(".topnav").classList.remove("shake")
   mobileLogo.style.imageRendering = "pixelated"
-  mobileLogo.srcset = "images/itachi.gif"
-  mobileLogo.src = "images/itachi.gif"
+  mobileLogo.style.display = "none"
+  setTimeout(() => {
+    mobileLogo.srcset = "images/itachi.gif"
+    mobileLogo.src = "images/itachi.gif"
+    mobileLogo.style.display = "block"
+  }, 100);
 
 })
 
