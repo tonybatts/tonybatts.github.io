@@ -224,6 +224,8 @@ const akatsukiParticles = {
 }
 
 
+
+
 particlesJS("particles-js", normalParticles);
 
 // <!--  NAV -->
@@ -478,7 +480,7 @@ Hangman.prototype.winner = function (eventListener) {
     name.textContent = "let you"
     document.querySelector(".mobilenone").click()
     playedBefore = 1
-  } else if (this.status === "finished") {
+  } else if (this.status === "finished" && playedBefore === 2) {
     window.removeEventListener("keypress", eventListener)
     const guessesEl = document.querySelector("#guesses")
     guessesEl.style.color = "#04C2C9"
@@ -494,6 +496,7 @@ Hangman.prototype.winner = function (eventListener) {
     const name = document.querySelector("#tony")
     name.textContent = " CLICK"
     name.style.color = "#04C2C9"
+    playedBefore = 2
 
     myImage.addEventListener("click", () => {
       document.body.innerHTML = ""
@@ -537,6 +540,23 @@ Hangman.prototype.winner = function (eventListener) {
     })
     document.querySelector(".mobilenone").click()
 
+  } else if (this.status === "finished" && playedBefore === 1) {
+    const guessesEl = document.querySelector("#guesses")
+    guessesEl.style.color = "#04C2C9"
+    const myImage = document.querySelector(".tony-image")
+    myImage.style.imageRendering = "pixelated"
+    myImage.src = "images/itachi.gif"
+    myImage.srcset = "images/itachi.gif"
+    const firstTitle = document.querySelector("#first-title")
+    firstTitle.textContent = "Forgive me"
+    const secondTitle = document.querySelector("#second-title")
+    secondTitle.textContent = " "
+    const name = document.querySelector("#tony")
+    name.textContent = " Sasuke..."
+    document.querySelector(".mobilenone").click()
+
+    particlesJS("particles-js", akatsukiParticles);
+    playedBefore = 2
   }
 }
 
@@ -546,11 +566,16 @@ document.querySelector(".logo1").addEventListener("click", () => {
   const guessesEl = document.querySelector("#guesses")
   const game1 = new Hangman("Never gonna give you up", 5)
   const game2 = new Hangman("Self Destruct", 3)
+  const game3 = new Hangman("akatsuki", 3)
 
-  if (playedBefore === 1) {
+  if (playedBefore === 2) {
     puzzleEl.textContent = game2.getPuzzle()
     guessesEl.style.color = ""
     guessesEl.textContent = game2.remainingGuesses
+  } else if (playedBefore === 1) {
+    puzzleEl.textContent = game3.getPuzzle()
+    guessesEl.style.color = ""
+    guessesEl.textContent = game3.remainingGuesses
   } else {
     puzzleEl.textContent = game1.getPuzzle()
     guessesEl.style.color = ""
@@ -560,7 +585,7 @@ document.querySelector(".logo1").addEventListener("click", () => {
   const windowEvent = (e) => {
     const guess = String.fromCharCode(e.charCode)
 
-    if (playedBefore === 1) {
+    if (playedBefore === 2) {
       game2.makeGuess(guess)
       guessesEl.textContent = game2.remainingGuesses
       puzzleEl.textContent = game2.getPuzzle()
@@ -568,6 +593,14 @@ document.querySelector(".logo1").addEventListener("click", () => {
       game2.calculateStatus()
       game2.gameOver(windowEvent)
       game2.winner(windowEvent)
+    } else if (playedBefore === 1) {
+      game3.makeGuess(guess)
+      guessesEl.textContent = game3.remainingGuesses
+      puzzleEl.textContent = game3.getPuzzle()
+      // guessesEl.textContent = game1.remainingGuesses
+      game3.calculateStatus()
+      game3.gameOver(windowEvent)
+      game3.winner(windowEvent)
     } else {
       game1.makeGuess(guess)
       guessesEl.textContent = game1.remainingGuesses
