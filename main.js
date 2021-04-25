@@ -134,8 +134,10 @@ activeBtn.forEach(function (btn) {
 const openDropNav = function () {
   if (nav.className === "topnav") {
     nav.className += " responsive";
+    document.querySelector(".logo2.coffee-shake").style.display = "block"
   } else {
     nav.className = "topnav";
+    document.querySelector(".logo2.coffee-shake").style.display = "none"
   }
 }
 
