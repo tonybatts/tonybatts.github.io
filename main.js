@@ -115,7 +115,7 @@ const normalParticles = {
 const akatsukiParticles = {
   "particles": {
     "number": {
-      "value": 160,
+      "value": 100,
       "density": {
         "enable": true,
         "value_area": 800
@@ -137,6 +137,117 @@ const akatsukiParticles = {
         "src": "images/akatsuki-2.png",
         "width": 100,
         "height": 60
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 1,
+        "opacity_min": 0,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 20,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 4,
+        "size_min": 0.3,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 600
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 250,
+        "size": 0,
+        "duration": 2,
+        "opacity": 0,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 400,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}
+
+const leafParticles = {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#04c2c9"
+    },
+    "shape": {
+      "type": "image",
+      "stroke": {
+        "width": 0,
+        "color": "#e31b6d"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "images/hidden-leaf.svg",
+        "width": 100,
+        "height": 100
       }
     },
     "opacity": {
@@ -705,6 +816,7 @@ document.querySelector(".tony-image").addEventListener("click", fetchPokemon)
 
 let narutoRun = function () {
   document.querySelector("#hidden-leaf").addEventListener("click", () => {
+    particlesJS("particles-js", leafParticles);
     // build naruto dom element
     const narutoImg = document.createElement("img")
     narutoImg.classList.add("naruto", "run")
