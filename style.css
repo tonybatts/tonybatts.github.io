@@ -1459,7 +1459,7 @@ textarea:focus {
 }
 
 .requirements {
-  color: rgb(208, 51, 31);
+  color: #e31b6d;
   display: none;
   margin-bottom: 10px;
   margin-top: -6px;

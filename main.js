@@ -1100,7 +1100,7 @@ window.addEventListener("load", () => {
 
 document.querySelector(".tony-form").addEventListener("focusin", (event) => {
   if (event.target.type !== "submit") {
-    event.target.style.border = "0px solid rgb(208, 51, 31)";
+    event.target.style.border = "0px solid #e31b6d";
   }
 });
 
@@ -1112,7 +1112,7 @@ document.querySelector(".tony-form").addEventListener("focusout", (event) => {
 
   // adds red border if required feild is empty
   if (event.target.value.length < 1 && event.target.hasAttribute("required")) {
-    event.target.style.border = "1px solid rgb(208, 51, 31)";
+    event.target.style.border = "1px solid #e31b6d";
   }
 
   if (event.target.value.length < 1 && event.target.hasAttribute("required")) {
@@ -1122,6 +1122,6 @@ document.querySelector(".tony-form").addEventListener("focusout", (event) => {
     event.target.hasAttribute("required")
   ) {
     event.target.parentElement.nextElementSibling.style.display = "none";
-    event.target.style.border = "0px solid rgb(208, 51, 31)";
+    event.target.style.border = "0px solid #e31b6d";
   }
 });
