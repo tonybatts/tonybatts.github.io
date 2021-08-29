@@ -1,4 +1,4 @@
-const cacheName = "version-9.31";
+const cacheName = "version-9.3"
 
 self.addEventListener("install", function (event) {
   event.waitUntil(preLoad());
@@ -13,11 +13,9 @@ var preLoad = function () {
 };
 
 self.addEventListener("fetch", function (event) {
-  event.respondWith(
-    checkResponse(event.request).catch(function () {
-      return returnFromCache(event.request);
-    })
-  );
+  event.respondWith(checkResponse(event.request).catch(function () {
+    return returnFromCache(event.request);
+  }));
   event.waitUntil(addToCache(event.request));
 });
 
@@ -33,23 +31,21 @@ var checkResponse = function (request) {
   });
 };
 const controller = new AbortController();
-const { signal } = controller;
+const { signal } = controller
 var addToCache = function (request) {
   return caches.open("offline").then(function (cache) {
-    return fetch(request, { signal })
-      .then(function (response) {
-        if (response.url.includes("pokemon")) {
-          controller.abort();
-        } else {
-          console.log(response.url + " was cached");
-          return cache.put(request, response);
-        }
-        // console.log(response.url + " was cached");
-        // return cache.put(request, response);
-      })
-      .catch((e) => {
-        console.log(`Pokemon was not cached :)`);
-      });
+    return fetch(request, { signal }).then(function (response) {
+      if (response.url.includes("pokemon")) {
+        controller.abort()
+      } else {
+        console.log(response.url + " was cached");
+        return cache.put(request, response);
+      }
+      // console.log(response.url + " was cached");
+      // return cache.put(request, response);
+    }).catch(e => {
+      console.log(`Pokemon was not cached :)`);
+    });
   });
 };
 
@@ -64,8 +60,8 @@ var returnFromCache = function (request) {
     });
   });
 };
-self.addEventListener("message", function (event) {
-  if (event.data.action === "skipWaiting") {
+self.addEventListener('message', function (event) {
+  if (event.data.action === 'skipWaiting') {
     self.skipWaiting();
   }
 });
