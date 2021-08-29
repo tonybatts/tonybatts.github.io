@@ -1106,7 +1106,6 @@ document.querySelector(".tony-form").addEventListener("focusin", (event) => {
 
 document.querySelector(".tony-form").addEventListener("focusout", (event) => {
   // removes white space in form values
-  console.log(event.target.type);
   if (event.target.value.length > 0) {
     event.target.value = event.target.value.trim();
   }
