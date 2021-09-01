@@ -1,4 +1,4 @@
-const cacheName = "version-9.34";
+const cacheName = "version-9.35";
 
 self.addEventListener("install", function (event) {
   event.waitUntil(preLoad());
