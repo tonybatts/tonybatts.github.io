@@ -243,18 +243,11 @@ p#puzzle {
   }
 }
 
-@media screen and (orientation: landscape) and (max-device-width: 900px) {
-  #tonyimage h1 {
-    font-size: 1.5em;
-  }
-}
-
 @font-face {
   font-family: "icomoon";
   src: url("fonts/icomoon.eot?m1fbpt");
   src: url("fonts/icomoon.eot?m1fbpt#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?m1fbpt") format("truetype"),
-    url("fonts/icomoon.woff?m1fbpt") format("woff"),
+    url("fonts/icomoon.ttf?m1fbpt") format("truetype"), url("fonts/icomoon.woff?m1fbpt") format("woff"),
     url("fonts/icomoon.svg?m1fbpt#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
@@ -569,6 +562,7 @@ p#puzzle {
 }
 
 .topnav img {
+  z-index: 9;
   position: absolute;
   right: 40px;
   padding-bottom: 40px;
@@ -638,8 +632,8 @@ p#puzzle {
   transition: 0.6s ease-in-out;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15),
+    0 8px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
   height: 400px;
   padding-bottom: 40px;
@@ -715,10 +709,10 @@ p#puzzle {
 
 /* Hero Image */
 #tonyimage img {
+  height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 50%; */
   width: 385px;
   cursor: pointer;
 }
@@ -931,17 +925,6 @@ p#puzzle {
   display: none;
 }
 
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-*/
-
 /* STICKY NAV */
 .scrollsticky {
   z-index: 100;
@@ -962,6 +945,8 @@ function myFunction() {
 }
 
 .textcenter {
+  max-width: 600px;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1058,8 +1043,8 @@ a.button1:hover {
   width: 400px;
   margin-top: 20px;
   padding: 40px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15),
+    0 8px 8px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
 
@@ -1308,8 +1293,8 @@ a.button2:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2),
-    0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2),
+    0 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 .gallery__item--1 {
@@ -1714,6 +1699,12 @@ footer i {
   color: #04c2c9;
 }
 
+@media screen and (max-width: 300px) {
+  .heroimage .textcenter {
+    font-size: 0.6rem;
+  }
+}
+
 /* PROPPER QUERY */
 @media only screen and (max-width: 325px) {
   .card {
@@ -1913,9 +1904,9 @@ footer i {
   .dropdown .dropbtn {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
+  .topnav span.icon {
+    display: flex;
+    justify-content: flex-end;
   }
   a.mobilenone {
     display: none;
@@ -1938,9 +1929,16 @@ footer i {
     top: 0;
   }
   .topnav.responsive a {
-    float: none;
     display: block;
     text-align: left;
+  }
+  .mobile-drop-flex {
+    float: left;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .topnav.responsive {
     float: none;

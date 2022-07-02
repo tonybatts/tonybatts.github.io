@@ -368,15 +368,12 @@ window.onload = flipCard();
 // Shake animation
 const shake = document.querySelector("#myTopnav");
 const coffeeShakes = function () {
-  document
-    .querySelector(".coffee-shake")
-    .addEventListener("click", function () {
-      shake.classList.toggle("shake");
-      document.querySelector(".coffee-shake").style.imageRendering = "auto";
-      document.querySelector(".coffee-shake").src = "images/TB-90w.png";
-      document.querySelector(".coffee-shake").srcset =
-        "images/TB-90w.png 1x, images/TB-90w-retina.png 2x";
-    });
+  document.querySelector(".coffee-shake").addEventListener("click", function () {
+    shake.classList.toggle("shake");
+    document.querySelector(".coffee-shake").style.imageRendering = "auto";
+    document.querySelector(".coffee-shake").src = "images/TB-90w.png";
+    document.querySelector(".coffee-shake").srcset = "images/TB-90w.png 1x, images/TB-90w-retina.png 2x";
+  });
 };
 window.onload = coffeeShakes();
 
@@ -620,10 +617,7 @@ let catchPokemon = function () {
   };
   currentPoke = JSON.stringify(currentPoke);
 
-  if (
-    localStorage.getItem("pokemon") &&
-    ball.classList.value === "poke-ball poke-caught"
-  ) {
+  if (localStorage.getItem("pokemon") && ball.classList.value === "poke-ball poke-caught") {
     name.textContent = localPoke.name;
     firstSentance.textContent = "Your ";
     secondSentance.textContent = " says hi!";
@@ -635,10 +629,7 @@ let catchPokemon = function () {
     secondSentance.style.color = "#83FF33";
     secondSentance.textContent = " was caught!";
     localStorage.setItem("pokemon", currentPoke);
-  } else if (
-    ball.classList.value === "poke-ball" &&
-    !localPoke.name.includes(name.textContent)
-  ) {
+  } else if (ball.classList.value === "poke-ball" && !localPoke.name.includes(name.textContent)) {
     ball.classList.add("poke-caught");
     secondSentance.textContent = " was caught!";
     secondSentance.style.color = "#83FF33";
@@ -671,13 +662,9 @@ const fetchPokemon = function () {
     .then(function (allpokemon) {
       const pokemonArray = allpokemon.results;
       localStorage.setItem("pokeArray", JSON.stringify(pokemonArray));
-      document
-        .querySelector(".tony-image")
-        .removeEventListener("click", fetchPokemon);
+      document.querySelector(".tony-image").removeEventListener("click", fetchPokemon);
       fetchPokemonData();
-      document
-        .querySelector(".tony-image")
-        .addEventListener("click", fetchPokemonData);
+      document.querySelector(".tony-image").addEventListener("click", fetchPokemonData);
       buildPokeball();
       document.querySelector(".tony-image").style.imageRendering = "pixelated";
       // document.querySelector(".tony-image").classList.add("poke-wiggle")
@@ -963,9 +950,7 @@ let narutoRun = function () {
     document.body.appendChild(narutoImg);
     // remove naruto dom element after animation
     const narutos = document.querySelectorAll(".naruto");
-    narutos.forEach((oneNaruto) =>
-      oneNaruto.addEventListener("animationend", () => oneNaruto.remove())
-    );
+    narutos.forEach((oneNaruto) => oneNaruto.addEventListener("animationend", () => oneNaruto.remove()));
   });
 };
 window.onload = narutoRun();
@@ -980,10 +965,7 @@ const audio = new Audio("sound/toasty.mp3");
 
 const konamiCode = function (e) {
   keyPress.keys = keyPress.keys + e.keyCode;
-  if (
-    keyPress.keys === "38384040373937396665" &&
-    navigator.userAgent.toLowerCase().includes("chrome")
-  ) {
+  if (keyPress.keys === "38384040373937396665" && navigator.userAgent.toLowerCase().includes("chrome")) {
     audio.play();
     const dan = document.createElement("img");
     dan.src = "images/toasty.png";
@@ -995,10 +977,7 @@ const konamiCode = function (e) {
     const danel = document.querySelector(".toasty");
     danel.addEventListener("animationend", () => dan.remove());
     document.querySelector("body").removeEventListener("keydown", konamiCode);
-  } else if (
-    keyPress.keys === "38384040373937396665" &&
-    !navigator.userAgent.toLowerCase().includes("chrome")
-  ) {
+  } else if (keyPress.keys === "38384040373937396665" && !navigator.userAgent.toLowerCase().includes("chrome")) {
     audio.play();
     setTimeout(function () {
       const dan = document.createElement("img");
@@ -1017,9 +996,7 @@ const konamiCode = function (e) {
   }
 };
 
-window.onload = document
-  .querySelector("body")
-  .addEventListener("keydown", konamiCode);
+window.onload = document.querySelector("body").addEventListener("keydown", konamiCode);
 
 // ITACHI EASTER EGG
 const mobileLogo = document.querySelector(".coffee-shake");
@@ -1041,9 +1018,6 @@ document.querySelector(".akatsuki").addEventListener("click", () => {
     { once: true }
   );
 });
-
-let defaultDuration = 2000; // ms
-zenscroll.setup(defaultDuration);
 
 // HANDLE FORM
 
@@ -1117,10 +1091,7 @@ document.querySelector(".tony-form").addEventListener("focusout", (event) => {
 
   if (event.target.value.length < 1 && event.target.hasAttribute("required")) {
     event.target.parentElement.nextElementSibling.style.display = "block";
-  } else if (
-    event.target.value.length > 0 &&
-    event.target.hasAttribute("required")
-  ) {
+  } else if (event.target.value.length > 0 && event.target.hasAttribute("required")) {
     event.target.parentElement.nextElementSibling.style.display = "none";
     event.target.style.border = "0px solid #e31b6d";
   }
