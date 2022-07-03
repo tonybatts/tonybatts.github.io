@@ -1,44 +1,43 @@
 {
-    "name": "Tony Batts",
-    "short_name": "Tony",
-    "theme_color": "#1B242F",
-    "background_color": "#f5f5f5",
-    "display": "standalone",
-    "scope": "/",
-    "start_url": "https://www.tonybatts.com/todo",
-    "description": "Portfolio for Tony Batts",
-    "orientation": "any",
-    "icons": [
-        {
-            "src": "/favicon-32x32.png",
-            "sizes": "32x32"
-        },
-        {
-        
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512"
-        },
-        {
-            "src": "/apple-touch-icon.png",
-            "sizes": "180x180"
-        },
-        {
-            "src": "/mstile-150x150.png",
-            "sizes": "150x150"
-        },
-        {
-            "src": "/favicon-16x16.png",
-            "sizes": "16x16"
-        },
-        {
-            "src": "/safari-pinned-tab.svg",
-            "sizes": "180x180"
-        },
-        {
-            "src": "/maskable_icon.png",
-            "sizes": "512 × 512",
-            "type": "image/png",
-            "purpose": "any maskable"
-        }
-    ]
+  "name": "Tony Batts",
+  "short_name": "Tony",
+  "theme_color": "#1B242F",
+  "background_color": "#f5f5f5",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "https://www.tonybatts.com/todo",
+  "description": "Portfolio for Tony Batts",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "images/pwa/android-chrome-512x512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "images/pwa/mstile-150x150.png",
+      "sizes": "150x150"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/safari-pinned-tab.svg",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "512 × 512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
