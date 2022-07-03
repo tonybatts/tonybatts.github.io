@@ -122,7 +122,7 @@ p#puzzle {
 
 #hidden-leaf {
   width: 25px;
-  height: auto;
+  height: 25px;
   position: relative;
   top: 5px;
   left: 10px;
@@ -1340,6 +1340,10 @@ a.button2:hover {
 }
 
 /* MOBILE GALLERY */
+
+.explore-mobile {
+  height: auto;
+}
 
 .header {
   text-align: center;
