@@ -1904,6 +1904,9 @@ footer i {
   .dropdown .dropbtn {
     display: none;
   }
+  span.icon.hamburger {
+    float: right;
+  }
   .topnav span.icon {
     display: flex;
     justify-content: flex-end;
