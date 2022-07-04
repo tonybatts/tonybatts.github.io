@@ -131,7 +131,7 @@ const akatsukiParticles = {
         nb_sides: 5
       },
       image: {
-        src: "images/akatsuki-2.png",
+        src: "images/akatsuki-2.webp",
         width: 100,
         height: 60
       }
