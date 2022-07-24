@@ -220,15 +220,126 @@ const akatsukiParticles = {
   retina_detect: true
 };
 
+const shinyPokemonParticles = {
+  particles: {
+    number: {
+      value: 100,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#04c2c9"
+    },
+    shape: {
+      type: "image",
+      stroke: {
+        width: 0,
+        color: "#e31b6d"
+      },
+      polygon: {
+        nb_sides: 5
+      },
+      image: {
+        src: "pokemon",
+        width: 100,
+        height: 100
+      }
+    },
+    opacity: {
+      value: 1,
+      random: true,
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0,
+        sync: false
+      }
+    },
+    size: {
+      value: 50,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 4,
+        size_min: 0.3,
+        sync: false
+      }
+    },
+    line_linked: {
+      enable: false,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 1,
+      direction: "none",
+      random: true,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 600
+      }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "bubble"
+      },
+      onclick: {
+        enable: true,
+        mode: "repulse"
+      },
+      resize: true
+    },
+    modes: {
+      grab: {
+        distance: 400,
+        line_linked: {
+          opacity: 1
+        }
+      },
+      bubble: {
+        distance: 250,
+        size: 0,
+        duration: 2,
+        opacity: 0,
+        speed: 3
+      },
+      repulse: {
+        distance: 400,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      },
+      remove: {
+        particles_nb: 2
+      }
+    }
+  },
+  retina_detect: true
+};
+
+// PARTICLES
 particlesJS("particles-js", normalParticles);
 
-// <!--  NAV -->
+// NAV
 const activeBtn = document.querySelectorAll(".btns");
 const nav = document.querySelector("#myTopnav");
 const icon = document.querySelector("#nav-icon1");
 
 // Set active class on clicked nav links
-
 activeBtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
     let current = document.querySelectorAll(".active");
@@ -258,8 +369,7 @@ document.querySelector(".hamburger").addEventListener("click", () => {
   openDropNav();
 });
 
-// <!-- MOBILE GALLERY -->
-
+// MOBILE GALLERY
 const galleryItems = document.querySelectorAll(".column");
 const mobileActiveButton = document.querySelector("#buttonActive");
 const mobileGalleryBtns = mobileActiveButton.querySelectorAll(".btn");
@@ -288,8 +398,8 @@ mobileGalleryBtns.forEach(function (btn) {
   });
 });
 
-// Defer youtube
-let deferVideo = () => {
+// LAZY LOAD IFRAMES
+const deferVideo = () => {
   const vidDefer = document.querySelectorAll("iframe");
   if ("IntersectionObserver" in window) {
     let lazyYoutube = new IntersectionObserver(function (entries, observer) {
@@ -307,9 +417,10 @@ let deferVideo = () => {
     });
   }
 };
-window.onload = deferVideo();
 
-/** lazy load **/
+deferVideo();
+
+// LAZY LOAD IMAGES
 document.addEventListener("DOMContentLoaded", () => {
   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   if ("IntersectionObserver" in window) {
@@ -332,7 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // SLIDE UP ANIMATION ON SCROLL
-let slideUpAnimation = function () {
+const slideUpAnimation = function () {
   const images = document.querySelectorAll(".item");
 
   observer = new IntersectionObserver((entries) => {
@@ -347,12 +458,13 @@ let slideUpAnimation = function () {
     observer.observe(image);
   });
 };
-window.onload = slideUpAnimation();
 
-// FLIP CARD ONCLICK
+slideUpAnimation();
+
+// FLIP CARD
 const card = document.querySelectorAll(".card1");
 
-let flipCard = function () {
+const flipCard = function () {
   card.forEach(function (cards) {
     cards.addEventListener("click", function () {
       if (cards.classList.contains("is-flipped")) {
@@ -363,9 +475,10 @@ let flipCard = function () {
     });
   });
 };
-window.onload = flipCard();
 
-// Shake animation
+flipCard();
+
+// COFFEE SHAKES
 const shake = document.querySelector("#myTopnav");
 const coffeeShakes = function () {
   document.querySelector(".coffee-shake").addEventListener("click", function () {
@@ -375,9 +488,10 @@ const coffeeShakes = function () {
     document.querySelector(".coffee-shake").srcset = "images/TB-90w.png 1x, images/TB-90w-retina.png 2x";
   });
 };
-window.onload = coffeeShakes();
 
-// remove slide up animation if user comes from link to bottom of the page
+coffeeShakes();
+
+// REMOVE SLIDE IN ANIMATION IF USER LANDS ON FORM
 const removeSlideIn = function () {
   if (location.hash.includes("#contact")) {
     const slideUpItems = document.querySelectorAll(".item");
@@ -386,10 +500,10 @@ const removeSlideIn = function () {
     });
   }
 };
-window.onload = removeSlideIn();
 
-// Word guess game
+removeSlideIn();
 
+// WORK GUESS GAME
 let playedBefore = 0;
 
 const Hangman = function (word, remainingGuesses) {
@@ -599,23 +713,24 @@ document.querySelector(".logo1").addEventListener("click", () => {
   window.addEventListener("keypress", windowEvent);
 });
 
-// pokemon
+// POKEMON EASTER EGG
+let pokemonClicks = 0;
 
-let catchPokemon = function () {
-  document.querySelector(".tony-image").style.imageRendering = "pixelated";
-  firstSentance = document.querySelector("#first-title");
-  secondSentance = document.querySelector("#second-title");
-  secondSentance.style.color = "white";
-  let localPoke = localStorage.getItem("pokemon");
-  localPoke = JSON.parse(localPoke);
+const catchPokemon = () => {
   const name = document.querySelector("#tony");
-  let image = document.querySelector(".tony-image");
-  let ball = document.querySelector(".poke-ball");
-  currentPoke = {
+  const firstSentance = document.querySelector("#first-title");
+  const secondSentance = document.querySelector("#second-title");
+  const localPoke = JSON.parse(localStorage.getItem("pokemon"));
+  const image = document.querySelector(".tony-image");
+  const ball = document.querySelector(".poke-ball");
+
+  secondSentance.style.color = "white";
+  image.style.imageRendering = "pixelated";
+
+  currentPoke = JSON.stringify({
     name: name.textContent,
     sprite: image.src
-  };
-  currentPoke = JSON.stringify(currentPoke);
+  });
 
   if (localStorage.getItem("pokemon") && ball.classList.value === "poke-ball poke-caught") {
     name.textContent = localPoke.name;
@@ -624,15 +739,10 @@ let catchPokemon = function () {
     image.src = localPoke.sprite;
     image.srcset = localPoke.sprite;
     ball.classList.remove("poke-caught");
-  } else if (!localPoke) {
+  } else if (!localPoke || (ball.classList.value === "poke-ball" && !localPoke.name.includes(name.textContent))) {
     ball.classList.add("poke-caught");
     secondSentance.style.color = "#83FF33";
     secondSentance.textContent = " was caught!";
-    localStorage.setItem("pokemon", currentPoke);
-  } else if (ball.classList.value === "poke-ball" && !localPoke.name.includes(name.textContent)) {
-    ball.classList.add("poke-caught");
-    secondSentance.textContent = " was caught!";
-    secondSentance.style.color = "#83FF33";
     localStorage.setItem("pokemon", currentPoke);
   } else {
     ball.classList.add("poke-caught");
@@ -643,305 +753,107 @@ let catchPokemon = function () {
   }
 };
 
-if (localStorage.getItem("pokemon")) {
-  let ball = document.querySelector(".poke-ball");
+const buildPokeball = (isOnLoad = false) => {
+  const ball = document.querySelector(".poke-ball");
   ball.style.display = "block";
-  ball.classList.add("poke-caught");
-  ball.addEventListener("click", catchPokemon);
-}
 
-let buildPokeball = function () {
-  let ball = document.querySelector(".poke-ball");
-  ball.style.display = "block";
+  if (isOnLoad) {
+    ball.classList.add("poke-caught");
+  }
+
   document.querySelector(".poke-ball").addEventListener("click", catchPokemon);
 };
 
-const fetchPokemon = function () {
-  fetch("https://pokeapi.co/api/v2/pokemon?limit=493")
-    .then((response) => response.json())
-    .then(function (allpokemon) {
-      const pokemonArray = allpokemon.results;
-      localStorage.setItem("pokeArray", JSON.stringify(pokemonArray));
-      document.querySelector(".tony-image").removeEventListener("click", fetchPokemon);
-      fetchPokemonData();
-      document.querySelector(".tony-image").addEventListener("click", fetchPokemonData);
-      buildPokeball();
-      document.querySelector(".tony-image").style.imageRendering = "pixelated";
-      // document.querySelector(".tony-image").classList.add("poke-wiggle")
-    })
-    .catch((e) => {
-      console.log("Could not grab Pokemon :(");
-    });
-};
-
-function fetchPokemonData() {
-  let localPoke = localStorage.getItem("pokeArray");
-  localPoke = JSON.parse(localPoke);
-  const pokemon = localPoke[Math.floor(Math.random() * localPoke.length)];
-  const url = pokemon.url;
-  fetch(url)
-    .then((response) => response.json())
-    .then(function (pokeData) {
-      renderPokemon(pokeData);
-    });
+// show pokeball if user has a store pokemon on load
+if (localStorage.getItem("pokemon")) {
+  buildPokeball(true);
 }
 
-function renderPokemon(pokeData) {
+const getPokemonList = async () => {
+  try {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=493");
+    const data = await response.json();
+    const pokemonArray = data.results;
+
+    // cache the resopnse in local storage
+    localStorage.setItem("pokeArray", JSON.stringify(pokemonArray));
+
+    // after storing response we don't want to make this api request again
+    document.querySelector(".tony-image").removeEventListener("click", getPokemonList);
+
+    // fetch one of the pokemon
+    fetchPokemonData();
+
+    // fetch another pokemon whenever a user clicks the pokemon image
+    document.querySelector(".tony-image").addEventListener("click", fetchPokemonData);
+
+    // initialize pokeball and functionlity
+    buildPokeball();
+
+    // this makes the pokemon pixel art crisp
+    document.querySelector(".tony-image").style.imageRendering = "pixelated";
+  } catch (error) {
+    console.log(`Could not grab Pokemon :(: ${error}`);
+  }
+};
+
+const fetchPokemonData = async () => {
+  try {
+    const localPoke = JSON.parse(localStorage.getItem("pokeArray"));
+    const randomPokemon = localPoke[Math.floor(Math.random() * localPoke.length)];
+    const response = await fetch(randomPokemon.url);
+    const data = await response.json();
+
+    renderPokemon(data);
+  } catch (error) {
+    console.log("Error getting pokemon", error);
+  }
+};
+
+const renderPokemon = (pokeData) => {
   const pokeImage = document.querySelector(".tony-image");
   const randomNum = Math.floor(Math.random() * 494);
   const firstTitle = document.querySelector("#first-title");
   const secondTitle = document.querySelector("#second-title");
   const pokeName = document.querySelector("#tony");
-
   secondTitle.style.color = "white";
 
   // Chance for shiny pokemon
+  if (randomNum === pokeData.id || (pokemonClicks > 0 && pokemonClicks % 50 === 0)) {
+    let particles = JSON.stringify(shinyPokemonParticles).replace("pokemon", pokeData.sprites.front_shiny);
 
-  if (randomNum === pokeData.id) {
-    let shinyPokemonParticles = {
-      particles: {
-        number: {
-          value: 100,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: "#04c2c9"
-        },
-        shape: {
-          type: "image",
-          stroke: {
-            width: 0,
-            color: "#e31b6d"
-          },
-          polygon: {
-            nb_sides: 5
-          },
-          image: {
-            src: pokeData.sprites.front_shiny,
-            width: 100,
-            height: 100
-          }
-        },
-        opacity: {
-          value: 1,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0,
-            sync: false
-          }
-        },
-        size: {
-          value: 50,
-          random: true,
-          anim: {
-            enable: false,
-            speed: 4,
-            size_min: 0.3,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: false,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 600
-          }
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "bubble"
-          },
-          onclick: {
-            enable: true,
-            mode: "repulse"
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 250,
-            size: 0,
-            duration: 2,
-            opacity: 0,
-            speed: 3
-          },
-          repulse: {
-            distance: 400,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true
-    };
-
+    // display shiny every time a user visits again
     localStorage.setItem("shiny", pokeData.sprites.front_shiny);
-    particlesJS("particles-js", shinyPokemonParticles);
+    particlesJS("particles-js", JSON.parse(particles));
     pokeImage.src = pokeData.sprites.front_shiny;
     pokeImage.srcset = pokeData.sprites.front_shiny;
     firstTitle.textContent = "Shiny ";
     pokeName.textContent = `${pokeData.name.toUpperCase()}`;
     secondTitle.textContent = "appeared!";
   } else {
+    // display normal pokemon
     pokeImage.src = pokeData.sprites.front_default;
     pokeImage.srcset = pokeData.sprites.front_default;
     firstTitle.textContent = "Wild ";
     pokeName.textContent = `${pokeData.name.toUpperCase()}`;
     secondTitle.textContent = "appeared!";
   }
-}
-document.querySelector(".tony-image").addEventListener("click", fetchPokemon);
 
+  // increment clicks - if a user clicks 50 times give them a shiny
+  pokemonClicks++;
+};
+
+// if user has previously found a shiny, show on load
 if (localStorage.getItem("shiny")) {
-  particlesJS("particles-js", {
-    particles: {
-      number: {
-        value: 100,
-        density: {
-          enable: true,
-          value_area: 800
-        }
-      },
-      color: {
-        value: "#04c2c9"
-      },
-      shape: {
-        type: "image",
-        stroke: {
-          width: 0,
-          color: "#e31b6d"
-        },
-        polygon: {
-          nb_sides: 5
-        },
-        image: {
-          src: localStorage.getItem("shiny"),
-          width: 100,
-          height: 100
-        }
-      },
-      opacity: {
-        value: 1,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 1,
-          opacity_min: 0,
-          sync: false
-        }
-      },
-      size: {
-        value: 50,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 4,
-          size_min: 0.3,
-          sync: false
-        }
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: "#ffffff",
-        opacity: 0.4,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        direction: "none",
-        random: true,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 600
-        }
-      }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: true,
-          mode: "bubble"
-        },
-        onclick: {
-          enable: true,
-          mode: "repulse"
-        },
-        resize: true
-      },
-      modes: {
-        grab: {
-          distance: 400,
-          line_linked: {
-            opacity: 1
-          }
-        },
-        bubble: {
-          distance: 250,
-          size: 0,
-          duration: 2,
-          opacity: 0,
-          speed: 3
-        },
-        repulse: {
-          distance: 400,
-          duration: 0.4
-        },
-        push: {
-          particles_nb: 4
-        },
-        remove: {
-          particles_nb: 2
-        }
-      }
-    },
-    retina_detect: true
-  });
+  const particles = JSON.stringify(shinyPokemonParticles).replace("pokemon", localStorage.getItem("shiny"));
+  particlesJS("particles-js", JSON.parse(particles));
 }
 
-// naruto
+// fetch entire list of pokemon info
+document.querySelector(".tony-image").addEventListener("click", getPokemonList);
 
-let narutoRun = function () {
+// NARUTO RUN
+const narutoRun = () => {
   document.querySelector("#hidden-leaf").addEventListener("click", () => {
     // build naruto dom element
     const narutoImg = document.createElement("img");
@@ -953,10 +865,10 @@ let narutoRun = function () {
     narutos.forEach((oneNaruto) => oneNaruto.addEventListener("animationend", () => oneNaruto.remove()));
   });
 };
-window.onload = narutoRun();
 
-// Konami Code
+narutoRun();
 
+// KONAMI CODE
 const keyPress = {
   keys: ""
 };
@@ -1020,7 +932,6 @@ document.querySelector(".akatsuki").addEventListener("click", () => {
 });
 
 // HANDLE FORM
-
 let submitForm = async (e) => {
   e.preventDefault();
 
