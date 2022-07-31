@@ -875,13 +875,14 @@ const keyPress = {
 
 const audio = new Audio("sound/toasty.mp3");
 
-const showDan = () => {
+const showDan = (small = false) => {
   const dan = document.createElement("img");
+  const width = small ? "100px" : "260px";
 
   audio.play();
 
   dan.src = "images/toasty.png";
-  dan.style.width = "260px";
+  dan.style.width = width;
   dan.classList.add("toasty", "animateIn");
   dan.addEventListener("animationend", () => dan.remove());
 
@@ -977,7 +978,7 @@ let submitForm = async (e) => {
     });
 
     if (isMobile()) {
-      showDan();
+      showDan(true);
     }
   }
 };
