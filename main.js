@@ -877,7 +877,7 @@ const audio = new Audio("sound/toasty.mp3");
 
 const showDan = (small = false) => {
   const dan = document.createElement("img");
-  const width = small ? "100px" : "260px";
+  const width = small ? "200px" : "260px";
 
   audio.play();
 
