@@ -875,40 +875,39 @@ const keyPress = {
 
 const audio = new Audio("sound/toasty.mp3");
 
-const konamiCode = function (e) {
-  keyPress.keys = keyPress.keys + e.keyCode;
-  if (keyPress.keys === "38384040373937396665" && navigator.userAgent.toLowerCase().includes("chrome")) {
-    audio.play();
-    const dan = document.createElement("img");
-    dan.src = "images/toasty.png";
-    dan.style.width = "260px";
-    dan.classList.add("toasty", "animateIn");
+const showDan = () => {
+  const dan = document.createElement("img");
 
-    document.body.appendChild(dan);
+  audio.play();
 
-    const danel = document.querySelector(".toasty");
-    danel.addEventListener("animationend", () => dan.remove());
+  dan.src = "images/toasty.png";
+  dan.style.width = "260px";
+  dan.classList.add("toasty", "animateIn");
+  dan.addEventListener("animationend", () => dan.remove());
+
+  document.body.appendChild(dan);
+};
+
+const konamiCode = (e) => {
+  keyPress.keys += e.keyCode;
+  if (keyPress.keys === "38384040373937396665") {
+    showDan();
     document.querySelector("body").removeEventListener("keydown", konamiCode);
-  } else if (keyPress.keys === "38384040373937396665" && !navigator.userAgent.toLowerCase().includes("chrome")) {
-    audio.play();
-    setTimeout(function () {
-      const dan = document.createElement("img");
-      dan.src = "images/toasty.png";
-      dan.style.width = "260px";
-      dan.classList.add("toasty", "animateIn");
-
-      document.body.appendChild(dan);
-
-      const danel = document.querySelector(".toasty");
-      danel.addEventListener("animationend", () => dan.remove());
-      document.querySelector("body").removeEventListener("keydown", konamiCode);
-    }, 1000);
   } else if (keyPress.keys.length >= 20) {
     document.querySelector("body").removeEventListener("keydown", konamiCode);
   }
 };
 
 window.onload = document.querySelector("body").addEventListener("keydown", konamiCode);
+
+// CHECK IF USER IS MOBILE
+const isMobile = () => {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 // ITACHI EASTER EGG
 const mobileLogo = document.querySelector(".coffee-shake");
@@ -976,6 +975,10 @@ let submitForm = async (e) => {
     document.querySelectorAll(".requirements").forEach((el) => {
       el.style.display = "none";
     });
+
+    if (isMobile()) {
+      showDan();
+    }
   }
 };
 
