@@ -334,21 +334,22 @@ const shinyPokemonParticles = {
 // PARTICLES
 particlesJS("particles-js", normalParticles);
 
+// CHECK IF USER IS MOBILE
+const isMobile = () => {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 // NAV
 const activeBtn = document.querySelectorAll(".btns");
 const nav = document.querySelector("#myTopnav");
 const icon = document.querySelector("#nav-icon1");
 
-// Set active class on clicked nav links
 activeBtn.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    let current = document.querySelectorAll(".active");
-    if (current[0]) {
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-    } else {
-      this.className += " active";
-    }
+  btn.addEventListener("click", () => {
     openDropNav();
     icon.classList.toggle("open");
   });
@@ -368,6 +369,47 @@ document.querySelector(".hamburger").addEventListener("click", () => {
   icon.classList.toggle("open");
   openDropNav();
 });
+
+const home = document.querySelector("#home-nav");
+const about = document.querySelector("#about-nav");
+const skills = document.querySelector("#skills-nav");
+const projects = document.querySelector("#projects-nav");
+const contact = document.querySelector("#contact-nav");
+
+const scrollNav = () => {
+  const contactOffset = isMobile() ? 50 : 500;
+  const position = document.querySelector(".scrollsticky").getBoundingClientRect().y + 10;
+  const homeSection = document.querySelector("#home").getBoundingClientRect().y;
+  const aboutSection = document.querySelector("#about").getBoundingClientRect().y;
+  const skillsSection = document.querySelector("#skills").getBoundingClientRect().y;
+  const projectsSection = document.querySelector("#projects").getBoundingClientRect().y;
+  const contactSection = document.querySelector("#contact").getBoundingClientRect().y - contactOffset;
+
+  if (position >= homeSection && position < aboutSection && !home.classList.contains("active")) {
+    document.querySelector(".active").classList.remove("active");
+    home.classList.add("active");
+  } else if (position >= aboutSection && position < skillsSection && !about.classList.contains("active")) {
+    document.querySelector(".active").classList.remove("active");
+    about.classList.add("active");
+  } else if (position >= skillsSection && position < projectsSection && !skills.classList.contains("active")) {
+    document.querySelector(".active").classList.remove("active");
+    skills.classList.add("active");
+  } else if (position >= projectsSection && position < contactSection && !projects.classList.contains("active")) {
+    document.querySelector(".active").classList.remove("active");
+    projects.classList.add("active");
+  } else if (position > contactSection && !contact.classList.contains("active")) {
+    document.querySelector(".active").classList.remove("active");
+    contact.classList.add("active");
+  }
+};
+
+window.addEventListener(
+  "scroll",
+  (e) => {
+    scrollNav();
+  },
+  { passive: true }
+);
 
 // MOBILE GALLERY
 const galleryItems = document.querySelectorAll(".column");
@@ -900,15 +942,6 @@ const konamiCode = (e) => {
 };
 
 window.onload = document.querySelector("body").addEventListener("keydown", konamiCode);
-
-// CHECK IF USER IS MOBILE
-const isMobile = () => {
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    return true;
-  } else {
-    return false;
-  }
-};
 
 // ITACHI EASTER EGG
 const mobileLogo = document.querySelector(".coffee-shake");
