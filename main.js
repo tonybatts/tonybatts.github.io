@@ -755,6 +755,21 @@ document.querySelector(".logo1").addEventListener("click", () => {
   window.addEventListener("keypress", windowEvent);
 });
 
+const tryToCatchMissingNo = () => {
+  document.body.innerHTML = "";
+  let message = document.createElement("h1");
+  message.classList.add("blink");
+  message.textContent = "Game data corrupted";
+  document.body.appendChild(message);
+  const messageInDom = document.querySelector(".blink");
+
+  setInterval(() => {
+    messageInDom.textContent.includes(".")
+      ? (messageInDom.textContent = "Game data corrupted")
+      : (messageInDom.textContent = "Game data corrupted.");
+  }, 500);
+};
+
 // POKEMON EASTER EGG
 let pokemonClicks = 0;
 
@@ -768,6 +783,12 @@ const catchPokemon = () => {
 
   secondSentance.style.color = "white";
   image.style.imageRendering = "pixelated";
+
+  // catching missingno corrupts game data!
+  if (name.textContent === "MISSINGNO.") {
+    tryToCatchMissingNo();
+    return;
+  }
 
   currentPoke = JSON.stringify({
     name: name.textContent,
@@ -858,10 +879,19 @@ const renderPokemon = (pokeData) => {
   const firstTitle = document.querySelector("#first-title");
   const secondTitle = document.querySelector("#second-title");
   const pokeName = document.querySelector("#tony");
+
   secondTitle.style.color = "white";
 
-  // Chance for shiny pokemon
-  if (randomNum === pokeData.id || (pokemonClicks > 0 && pokemonClicks % 50 === 0)) {
+  if (randomNum === pokeData.id) {
+    // missingno chance
+    pokeImage.classList.add("missingno");
+    pokeImage.src = "images/missingno.webp";
+    pokeImage.srcset = "images/missingno.webp";
+    firstTitle.textContent = "Wild ";
+    pokeName.textContent = `MISSINGNO.`;
+    secondTitle.textContent = "appeared!";
+  } else if (pokemonClicks > 0 && pokemonClicks % 50 === 0) {
+    // Chance for shiny pokemon
     let particles = JSON.stringify(shinyPokemonParticles).replace("pokemon", pokeData.sprites.front_shiny);
 
     // display shiny every time a user visits again
