@@ -1191,9 +1191,14 @@ p {
 .easter-egg-list {
   margin: auto;
   width: 50%;
-  padding-top: 42px;
+  padding-top: 22px;
   font-size: 1rem;
   line-height: 25px;
+}
+
+.easter-egg-total {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .buttonpadding2 {
