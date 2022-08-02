@@ -154,6 +154,11 @@ p#puzzle {
   width: auto;
 }
 
+#tonyimage > .tony-image.missingno {
+  width: 100px;
+  padding-bottom: 20px;
+}
+
 #tonyimage .poke-ball.poke-caught {
   animation: wiggle 2s infinite;
 }
